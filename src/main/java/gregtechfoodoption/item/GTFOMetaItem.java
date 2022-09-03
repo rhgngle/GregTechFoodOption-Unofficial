@@ -209,6 +209,22 @@ public class GTFOMetaItem extends StandardMetaItem {
     public static MetaItem<?>.MetaValueItem ICE_CREAM_MELON;
     public static MetaItem<?>.MetaValueItem ICE_CREAM_BEAR;
     public static MetaItem<?>.MetaValueItem ICE_CREAM_CHIP;
+    
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_1;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_2;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_3;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_4;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_5;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_6;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_7;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_8;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_9;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_10;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_11;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_12;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_13;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_14;
+    public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_15;
 
     public GTFOMetaItem() {
         super();
