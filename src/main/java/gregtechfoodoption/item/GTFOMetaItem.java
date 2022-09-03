@@ -543,6 +543,37 @@ public class GTFOMetaItem extends StandardMetaItem {
         CUCUMBER_SEED = addItem(164, "seed.cucumber");
         CUCUMBER_SEED.addComponents(new GTFOCropSeedBehaviour(GTFOCrops.CROP_CUCUMBER, CUCUMBER_SEED.getStackForm(), CUCUMBER.getStackForm()));
 
+        ORGANIC_CIRCUIT_1 = addItem(175, "circuit.organic.lv").addComponents(new GTFOFoodStats(2, 1.5f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_2 = addItem(176, "circuit.organic.mv").addComponents(new GTFOFoodStats(4, 2f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_3 = addItem(177, "circuit.organic.hv").addComponents(new GTFOFoodStats(8, 2.5f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_4 = addItem(178, "circuit.organic.ev").addComponents(new GTFOFoodStats(16, 3f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_5 = addItem(179, "circuit.organic.iv").addComponents(new GTFOFoodStats(32, 3.5f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_6 = addItem(180, "circuit.organic.luv").addComponents(new GTFOFoodStats(64, 4f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_7 = addItem(181, "circuit.organic.zpm").addComponents(new GTFOFoodStats(128, 4.5f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_8 = addItem(182, "circuit.organic.uv").addComponents(new GTFOFoodStats(256, 5f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_9 = addItem(183, "circuit.organic.uhv").addComponents(new GTFOFoodStats(512, 5.5f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_10 = addItem(184, "circuit.organic.uev").addComponents(new GTFOFoodStats(1024, 6f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_11 = addItem(185, "circuit.organic.uiv").addComponents(new GTFOFoodStats(2048, 6.5f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_12 = addItem(186, "circuit.organic.uxv").addComponents(new GTFOFoodStats(4096, 7f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_13 = addItem(187, "circuit.organic.opv").addComponents(new GTFOFoodStats(8192, 7.5f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_14 = addItem(188, "circuit.organic.max").addComponents(new GTFOFoodStats(16384, 8f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+        ORGANIC_CIRCUIT_15 = addItem(189, "circuit.organic.ulv").addComponents(new GTFOFoodStats(1, 1f, false, false, ItemStack.EMPTY)
+                .setEatingDuration(1));
+
         if (GTFOConfig.gtfoncConfig.nuclearCompat && GTFOConfig.gtfoncConfig.addSmogus) {
             int heal = 44;
             double saturation = 8.6;
