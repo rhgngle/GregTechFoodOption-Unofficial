@@ -1,12 +1,16 @@
 package gregtechfoodoption.item;
 
+import gregtech.api.GTValues;
 import gregtech.api.items.metaitem.stats.IFoodBehavior;
 import gregtech.api.items.metaitem.stats.IItemBehaviour;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.RandomPotionEffect;
 import gregtechfoodoption.utils.GTFOUtils;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.EnumAction;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import java.util.Arrays;
@@ -16,6 +20,7 @@ import java.util.function.Supplier;
 public class GTFOFoodStats implements IFoodBehavior, IItemBehaviour { // These names suck
     public final int foodLevel;
     public final float saturation;
+    protected int returnChance = 0;
     public final boolean isDrink;
     public final boolean alwaysEdible;
     public final RandomPotionEffect[] potionEffects;
@@ -64,7 +69,7 @@ public class GTFOFoodStats implements IFoodBehavior, IItemBehaviour { // These n
                 }
             }
 
-            if (this.stackSupplier != null) {
+            if (this.stackSupplier != null && GTValues.RNG.nextDouble() * 100.0D > (double) returnChance) {
                 ItemStack containerItem = stackSupplier.get().copy();
                 if (player == null || !player.capabilities.isCreativeMode) {
                     if (itemStack.isEmpty()) {
@@ -95,5 +100,14 @@ public class GTFOFoodStats implements IFoodBehavior, IItemBehaviour { // These n
 
     public int getEatingDuration() {
         return eatingDuration;
+    }
+
+    public GTFOFoodStats setReturnChance(int chance) {
+        this.returnChance = chance;
+        return this;
+    }
+
+    public int getReturnChance() {
+        return returnChance;
     }
 }
