@@ -13,6 +13,7 @@ import gregtechfoodoption.GTFOValues;
 import gregtechfoodoption.block.GTFOBlockCasing;
 import gregtechfoodoption.block.GTFOMetaBlocks;
 import gregtechfoodoption.block.GTFOMetalCasing;
+import gregtechfoodoption.item.GTFOMetaItem;
 import gregtechfoodoption.machines.GTFOTileEntities;
 import net.minecraft.util.IStringSerializable;
 import net.minecraftforge.fml.common.Loader;
@@ -29,6 +30,8 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.blocks.BlockWireCoil.CoilType.CUPRONICKEL;
 import static gregtech.loaders.recipe.CraftingComponent.*;
 import static gregtech.loaders.recipe.MetaTileEntityLoader.registerMachineRecipe;
+
+import gregtechfoodoption.utils.*;
 
 public class GTFOMachineRecipes {
     public static void init() {
@@ -70,13 +73,13 @@ public class GTFOMachineRecipes {
                 'I', new UnificationEntry(plate, Polytetrafluoroethylene)
         );
 */
-        registerMachineRecipe(GTFOTileEntities.SLICER, "PCA", "SHC", "LOA", 'P', PISTON, 'C', CIRCUIT, 'A', CABLE, 'S', SAWBLADE, 'H', HULL, 'L', DENSE_PLATE, 'O', CONVEYOR);
-        registerMachineRecipe(GTFOTileEntities.CUISINE_ASSEMBLER, "AOC", "RHR", "AOC", 'C', CIRCUIT, 'A', CABLE, 'R', ROBOT_ARM, 'H', HULL, 'O', CONVEYOR);
-        registerMachineRecipe(GTFOTileEntities.MICROWAVE, "LAC", "LHE", "LMC", 'H', HULL, 'M', MOTOR, 'E', EMITTER, 'C', CIRCUIT, 'A', CABLE, 'L', new UnificationEntry(OrePrefix.plate, Materials.Lead));
-        registerMachineRecipe(GTFOTileEntities.MOB_AGE_SORTER, "OWS", "OHW", "OCW", 'O', CONVEYOR, 'W', CABLE, 'H', HULL, 'C', CIRCUIT, 'S', SENSOR);
-        registerMachineRecipe(GTFOTileEntities.MOB_EXTERMINATOR, "EIE", "WHW", "CSC", 'E', EMITTER, 'W', CABLE, 'I', WIRE_QUAD, 'H', HULL, 'C', CIRCUIT, 'S', SENSOR);
-        registerMachineRecipe(GTFOTileEntities.MOB_EXTRACTOR, "BCE", "PME", "WCW", 'M', HULL, 'E', PISTON, 'P', PUMP, 'C', CIRCUIT, 'W', CABLE, 'B', SAWBLADE);
-        registerMachineRecipe(GTFOTileEntities.FARMER, "BEP", "WMW", "CWC", 'M', HULL, 'E', EMITTER, 'P', PISTON, 'C', CIRCUIT, 'W', CABLE_QUAD, 'B', SENSOR);
+        registerMachineRecipe(GTFOTileEntities.SLICER, "PCA", "SHC", "LOA", 'P', PISTON, 'C', GTFOCraftingComponent.ORGANIC_CIRCUIT, 'A', CABLE, 'S', SAWBLADE, 'H', HULL, 'L', DENSE_PLATE, 'O', CONVEYOR);
+        registerMachineRecipe(GTFOTileEntities.CUISINE_ASSEMBLER, "AOC", "RHR", "AOC", 'C', GTFOCraftingComponent.ORGANIC_CIRCUIT, 'A', CABLE, 'R', ROBOT_ARM, 'H', HULL, 'O', CONVEYOR);
+        registerMachineRecipe(GTFOTileEntities.MICROWAVE, "LAC", "LHE", "LMC", 'H', HULL, 'M', MOTOR, 'E', EMITTER, 'C', GTFOCraftingComponent.ORGANIC_CIRCUIT, 'A', CABLE, 'L', new UnificationEntry(OrePrefix.plate, Materials.Lead));
+        registerMachineRecipe(GTFOTileEntities.MOB_AGE_SORTER, "OWS", "OHW", "OCW", 'O', CONVEYOR, 'W', CABLE, 'H', HULL, 'C', GTFOCraftingComponent.ORGANIC_CIRCUIT, 'S', SENSOR);
+        registerMachineRecipe(GTFOTileEntities.MOB_EXTERMINATOR, "EIE", "WHW", "CSC", 'E', EMITTER, 'W', CABLE, 'I', WIRE_QUAD, 'H', HULL, 'C', GTFOCraftingComponent.ORGANIC_CIRCUIT, 'S', SENSOR);
+        registerMachineRecipe(GTFOTileEntities.MOB_EXTRACTOR, "BCE", "PME", "WCW", 'M', HULL, 'E', PISTON, 'P', PUMP, 'C', GTFOCraftingComponent.ORGANIC_CIRCUIT, 'W', CABLE, 'B', SAWBLADE);
+        registerMachineRecipe(GTFOTileEntities.FARMER, "BEP", "WMW", "CWC", 'M', HULL, 'E', EMITTER, 'P', PISTON, 'C', GTFOCraftingComponent.ORGANIC_CIRCUIT, 'W', CABLE_QUAD, 'B', SENSOR);
 
 
         ModHandler.addShapedRecipe("baking_oven", GTFOTileEntities.BAKING_OVEN.getStackForm(),
@@ -97,7 +100,7 @@ public class GTFOMachineRecipes {
                 "CPC", "IWI", "CAC",
                 'C', GTFOMetaBlocks.GTFO_METAL_CASING.getItemVariant(GTFOMetalCasing.CasingType.BISMUTH_BRONZE_CASING),
                 'P', MetaItems.ELECTRIC_PUMP_MV,
-                'I', new UnificationEntry(circuit, MarkerMaterials.Tier.MV),
+                'I', GTFOMetaItem.ORGANIC_CIRCUIT_2,
                 'W', new UnificationEntry(wireGtQuadruple, Cupronickel),
                 'A', MetaBlocks.WIRE_COIL.getItemVariant(CUPRONICKEL));
 

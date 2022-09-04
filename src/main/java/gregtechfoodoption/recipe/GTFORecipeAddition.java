@@ -4,6 +4,7 @@ import gregtechfoodoption.GTFOConfig;
 import gregtechfoodoption.GTFOValues;
 import gregtechfoodoption.block.GTFOTree;
 import gregtechfoodoption.recipe.chain.*;
+import gregtechfoodoption.utils.GTFOCraftingComponent;
 import net.minecraftforge.fml.common.Loader;
 
 public class GTFORecipeAddition {
@@ -16,6 +17,7 @@ public class GTFORecipeAddition {
         CheeseChain.init();
         BananaProcessingChain.init();
         MicrowaveChain.init();
+        GTFOCraftingComponent.init();
         GTFOMachineRecipes.init();
         KebabChain.init();
         IceCreamChain.init();
