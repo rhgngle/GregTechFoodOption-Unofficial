@@ -766,3 +766,19 @@ material.gtfo_acetaldehyde=Acetaldehyde
 material.gtfo_glyoxylic_acid=Glyoxylic Acid
 
 material.gtfo_melon_extract=Melon Extract
+
+metaitem.circuit.organic.ulv.name=ULV Organic Circuit
+metaitem.circuit.organic.lv.name=LV Organic Circuit
+metaitem.circuit.organic.mv.name=MV Organic Circuit
+metaitem.circuit.organic.hv.name=HV Organic Circuit
+metaitem.circuit.organic.ev.name=EV Organic Circuit
+metaitem.circuit.organic.iv.name=IV Organic Circuit
+metaitem.circuit.organic.luv.name=LuV Organic Circuit
+metaitem.circuit.organic.zpm.name=ZPM Organic Circuit
+metaitem.circuit.organic.uv.name=UV Organic Circuit
+metaitem.circuit.organic.uhv.name=UHV Organic Circuit
+metaitem.circuit.organic.uev.name=UEV Organic Circuit
+metaitem.circuit.organic.uiv.name=UIV Organic Circuit
+metaitem.circuit.organic.uxv.name=UXV Organic Circuit
+metaitem.circuit.organic.opv.name=OpV Organic Circuit
+metaitem.circuit.organic.max.name=MAX Organic Circuit
