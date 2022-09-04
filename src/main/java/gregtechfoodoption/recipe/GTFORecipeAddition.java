@@ -12,16 +12,18 @@ public class GTFORecipeAddition {
     {
         CoreChain.init();
         GTFOTree.TREES.forEach(GTFOTree::initRecipes);
+        GTFOCraftingComponent.init();
         MobExtractionChain.init();
         SeedsChain.init();
         CheeseChain.init();
         BananaProcessingChain.init();
         MicrowaveChain.init();
-        GTFOCraftingComponent.init();
         GTFOMachineRecipes.init();
         KebabChain.init();
         IceCreamChain.init();
         VanillinChain.init();
+        OrganicCircuits.init();
+
         if(GTFOConfig.gtfoChainsConfig.potatoProcessingChain)
             PotatoProcessingChain.init();
         if(GTFOConfig.gtfoChainsConfig.alcoholChain)
