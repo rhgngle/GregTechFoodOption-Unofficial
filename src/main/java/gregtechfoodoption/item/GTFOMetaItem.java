@@ -200,6 +200,7 @@ public class GTFOMetaItem extends StandardMetaItem {
     public static MetaItem<?>.MetaValueItem MORESMORE_DOUBLESMINGOT;
     public static MetaItem<?>.MetaValueItem SMORE_SMINGOT;
     public static MetaItem<?>.MetaValueItem GRAHAM_CRACKER;
+    public static MetaItem<?>.MetaValueItem COCOA_NIBS;
 
     //juice
     public static MetaItem<?>.MetaValueItem ORANGE_JUICE;
@@ -245,6 +246,7 @@ public class GTFOMetaItem extends StandardMetaItem {
 
     //misc items
     public static MetaItem<?>.MetaValueItem GELATIN;
+    public static MetaItem<?>.MetaValueItem ROASTED_COCOA_BEANS;
 
 
     public GTFOMetaItem() {
@@ -586,6 +588,8 @@ public class GTFOMetaItem extends StandardMetaItem {
         FOURSMORE_QUADSMINGOT = addItem(194, "food.foursmore_quadsmingot").addComponents(new GTFOFoodStats(44, 8.61363636364f, false, false, ItemStack.EMPTY));
         MARSHMALLOW = addItem(195, "food.marshmallow").addComponents(new GTFOFoodStats(1, 1f, false, false, ItemStack.EMPTY));
         GELATIN = addItem(196, "gelatin");
+        ROASTED_COCOA_BEANS = addItem(197, "roasted_beans");
+        COCOA_NIBS = addItem(198, "food.cocoa_nibs").addComponents(new GTFOFoodStats(1, 1f, false, false, ItemStack.EMPTY));
 
         if (GTFOConfig.gtfoncConfig.nuclearCompat && GTFOConfig.gtfoncConfig.addSmogus) {
             int heal = 44;
