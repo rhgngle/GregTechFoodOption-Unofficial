@@ -28,6 +28,7 @@ import gregtechfoodoption.item.GTFOFoodStats;
 
 
 public class GTFOMetaItem extends StandardMetaItem {
+    //foods
     public static MetaItem<?>.MetaValueItem POPCORN_BAG;
     public static MetaItem<?>.MetaValueItem PAPER_BAG;
     public static MetaItem<?>.MetaValueItem FLAVORED_POPCORN_FLAKE;
@@ -193,10 +194,19 @@ public class GTFOMetaItem extends StandardMetaItem {
     public static MetaItem<?>.MetaValueItem KEBAB_CARROT_COOKED;
     public static MetaItem<?>.MetaValueItem CARROT_SLICE;
     public static MetaItem<?>.MetaValueItem APPLE_SLICE;
+    public static MetaItem<?>.MetaValueItem MILK_CHOCOLATE;
+    public static MetaItem<?>.MetaValueItem MARSHMALLOW;
+    public static MetaItem<?>.MetaValueItem FOURSMORE_QUADSMINGOT;
+    public static MetaItem<?>.MetaValueItem MORESMORE_DOUBLESMINGOT;
+    public static MetaItem<?>.MetaValueItem SMORE_SMINGOT;
+    public static MetaItem<?>.MetaValueItem GRAHAM_CRACKER;
+    public static MetaItem<?>.MetaValueItem GELATIN;
 
+    //juice
     public static MetaItem<?>.MetaValueItem ORANGE_JUICE;
     public static MetaItem<?>.MetaValueItem APPLE_JUICE;
 
+    //seed
     public static MetaItem<?>.MetaValueItem UNKNOWN_SEED;
     public static MetaItem<?>.MetaValueItem ONION_SEED;
     public static MetaItem<?>.MetaValueItem SOYBEAN;
@@ -205,6 +215,7 @@ public class GTFOMetaItem extends StandardMetaItem {
     public static MetaItem<?>.MetaValueItem GRAPE_SEED;
     public static MetaItem<?>.MetaValueItem CUCUMBER_SEED;
 
+    //ice cream
     public static MetaItem<?>.MetaValueItem ICE_CREAM_PLAIN;
     public static MetaItem<?>.MetaValueItem ICE_CREAM_CHUM;
     public static MetaItem<?>.MetaValueItem ICE_CREAM_VANILLA;
@@ -216,6 +227,7 @@ public class GTFOMetaItem extends StandardMetaItem {
     public static MetaItem<?>.MetaValueItem ICE_CREAM_BEAR;
     public static MetaItem<?>.MetaValueItem ICE_CREAM_CHIP;
 
+    //circuits
     public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_15;
     public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_1;
     public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_2;
@@ -565,6 +577,13 @@ public class GTFOMetaItem extends StandardMetaItem {
         ORGANIC_CIRCUIT_12 = addItem(187, "circuit.organic.uxv").addComponents(new GTFOFoodStats(4096, 7f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.HASTE, 2000, 2, 0)).setEatingDuration(1));
         ORGANIC_CIRCUIT_13 = addItem(188, "circuit.organic.opv").addComponents(new GTFOFoodStats(8192, 7.5f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.HASTE, 2000, 2, 0)).setEatingDuration(1));
         ORGANIC_CIRCUIT_14 = addItem(189, "circuit.organic.max").addComponents(new GTFOFoodStats(16384, 8f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.HASTE, 2000, 2, 0)).setEatingDuration(1));
+        MILK_CHOCOLATE = addItem(190, "food.chocolate").addComponents(new GTFOFoodStats(4, 1.25f, false, false, ItemStack.EMPTY));
+        GRAHAM_CRACKER = addItem(191, "food.graham_cracker").addComponents(new GTFOFoodStats(1, 1f, false, false, ItemStack.EMPTY));
+        SMORE_SMINGOT = addItem(192, "food.smore_smingot").addComponents(new GTFOFoodStats(8, 1.5f, false, false, ItemStack.EMPTY));
+        MORESMORE_DOUBLESMINGOT = addItem(193, "food.moresmore_doublesmingot").addComponents(new GTFOFoodStats(20, 3.8f, false, false, ItemStack.EMPTY));
+        FOURSMORE_QUADSMINGOT = addItem(194, "food.foursmore_quadsmingot").addComponents(new GTFOFoodStats(44, 8.61363636364f, false, false, ItemStack.EMPTY));
+        MARSHMALLOW = addItem(195, "food.marshmallow").addComponents(new GTFOFoodStats(1, 1f, false, false, ItemStack.EMPTY));
+        GELATIN = addItem(196, "gelatin");
 
         if (GTFOConfig.gtfoncConfig.nuclearCompat && GTFOConfig.gtfoncConfig.addSmogus) {
             int heal = 44;
