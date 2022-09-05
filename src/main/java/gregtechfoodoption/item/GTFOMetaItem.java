@@ -201,6 +201,9 @@ public class GTFOMetaItem extends StandardMetaItem {
     public static MetaItem<?>.MetaValueItem SMORE_SMINGOT;
     public static MetaItem<?>.MetaValueItem GRAHAM_CRACKER;
     public static MetaItem<?>.MetaValueItem COCOA_NIBS;
+    public static MetaItem<?>.MetaValueItem COFFEE_CHERRY;
+    public static MetaItem<?>.MetaValueItem ENERGIZING_COFFEE_CUP;
+    public static MetaItem<?>.MetaValueItem COFFEE_CUP;
 
     //juice
     public static MetaItem<?>.MetaValueItem ORANGE_JUICE;
@@ -214,6 +217,7 @@ public class GTFOMetaItem extends StandardMetaItem {
     public static MetaItem<?>.MetaValueItem TOMATO_SEED;
     public static MetaItem<?>.MetaValueItem GRAPE_SEED;
     public static MetaItem<?>.MetaValueItem CUCUMBER_SEED;
+    public static MetaItem<?>.MetaValueItem COFFEE_SEED;
 
     //ice cream
     public static MetaItem<?>.MetaValueItem ICE_CREAM_PLAIN;
@@ -247,6 +251,9 @@ public class GTFOMetaItem extends StandardMetaItem {
     //misc items
     public static MetaItem<?>.MetaValueItem GELATIN;
     public static MetaItem<?>.MetaValueItem ROASTED_COCOA_BEANS;
+    public static MetaItem<?>.MetaValueItem PAPER_CONE;
+    public static MetaItem<?>.MetaValueItem EMPTY_CUP;
+    public static MetaItem<?>.MetaValueItem UNFIRED_CUP;
 
 
     public GTFOMetaItem() {
@@ -590,6 +597,14 @@ public class GTFOMetaItem extends StandardMetaItem {
         GELATIN = addItem(196, "gelatin");
         ROASTED_COCOA_BEANS = addItem(197, "roasted_beans");
         COCOA_NIBS = addItem(198, "food.cocoa_nibs").addComponents(new GTFOFoodStats(1, 1f, false, false, ItemStack.EMPTY));
+        EMPTY_CUP = addItem(199, "empty_cup");
+        PAPER_CONE = addItem(200, "paper_cone");
+        COFFEE_CHERRY = addItem(201, "food.coffee_cherry").addComponents(new GTFOFoodStats(1, 1f, false, false, ItemStack.EMPTY));
+        COFFEE_SEED = addItem(202, "seed.coffee");
+        COFFEE_SEED.addComponents(new GTFOCropSeedBehaviour(GTFOCrops.CROP_COFFEE, COFFEE_SEED.getStackForm(), COFFEE_CHERRY.getStackForm()));
+        COFFEE_CUP = addItem(203, "food.coffee_cup").addComponents(new GTFOFoodStats(8, 5f, true, false, EMPTY_CUP.getStackForm(), new RandomPotionEffect(MobEffects.REGENERATION, 60, 1, 0), new RandomPotionEffect(MobEffects.SPEED, 1800, 2, 0)));
+        ENERGIZING_COFFEE_CUP = addItem(204, "food.e_coffee_cup").addComponents(new GTFOFoodStats(8, 5f, true, false, EMPTY_CUP.getStackForm(), new RandomPotionEffect(MobEffects.REGENERATION, 200, 3, 0), new RandomPotionEffect(MobEffects.STRENGTH, 200, 2, 0), new RandomPotionEffect(MobEffects.RESISTANCE, 200, 2, 0), new RandomPotionEffect(MobEffects.SPEED, 1000, 4, 0)));
+        UNFIRED_CUP = addItem(205, "unfired_cup");
 
         if (GTFOConfig.gtfoncConfig.nuclearCompat && GTFOConfig.gtfoncConfig.addSmogus) {
             int heal = 44;
