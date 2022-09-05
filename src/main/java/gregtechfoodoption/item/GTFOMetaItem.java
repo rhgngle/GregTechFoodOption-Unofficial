@@ -200,7 +200,6 @@ public class GTFOMetaItem extends StandardMetaItem {
     public static MetaItem<?>.MetaValueItem MORESMORE_DOUBLESMINGOT;
     public static MetaItem<?>.MetaValueItem SMORE_SMINGOT;
     public static MetaItem<?>.MetaValueItem GRAHAM_CRACKER;
-    public static MetaItem<?>.MetaValueItem GELATIN;
 
     //juice
     public static MetaItem<?>.MetaValueItem ORANGE_JUICE;
@@ -243,6 +242,9 @@ public class GTFOMetaItem extends StandardMetaItem {
     public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_12;
     public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_13;
     public static MetaItem<?>.MetaValueItem ORGANIC_CIRCUIT_14;
+
+    //misc items
+    public static MetaItem<?>.MetaValueItem GELATIN;
 
 
     public GTFOMetaItem() {
