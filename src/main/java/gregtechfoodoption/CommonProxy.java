@@ -19,6 +19,7 @@ import gregtechfoodoption.recipe.GTFORecipeAddition;
 import gregtechfoodoption.recipe.GTFORecipeHandler;
 import gregtechfoodoption.recipe.GTFORecipeRemoval;
 import gregtechfoodoption.utils.GTFOLog;
+import gregicality.science.api.recipes.GCYSRecipeMaps;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -54,6 +55,8 @@ public class CommonProxy {
             addSlotsToMaps(RecipeMaps.FERMENTING_RECIPES, "maxInputs", 1);
             addSlotsToMaps(RecipeMaps.FERMENTING_RECIPES, "maxOutputs", 1);
             addSlotsToMaps(RecipeMaps.COMPRESSOR_RECIPES, "maxFluidOutputs", 1);
+            addSlotsToMaps(RecipeMaps.EXTRACTOR_RECIPES, "maxFluidInputs", 1);
+            addSlotsToMaps(RecipeMaps.FLUID_SOLIDFICATION_RECIPES, "maxInputs", 2);
         } catch (Exception e) {
 
         }

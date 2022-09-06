@@ -14,6 +14,7 @@ public class GTFOPotions {
         //AddictionPotion ADDICTION = new AddictionPotion();
         //WithdrawalPotion WITHDRAWAL = new WithdrawalPotion();
         StepAssistPotion STEPASSIST = new StepAssistPotion();
+        //CyanidePoisoningPotion CYANIDEPOISONING = new CyanidePoisoningPotion();
     }
 
 
@@ -24,5 +25,6 @@ public class GTFOPotions {
         //event.getRegistry().registerAll(AddictionPotion.instance);
         //event.getRegistry().registerAll(WithdrawalPotion.instance);
         event.getRegistry().registerAll(StepAssistPotion.instance);
+        //event.getRegistry().registerAll(CyanidePoisoningPotion.instance);
     }
 }

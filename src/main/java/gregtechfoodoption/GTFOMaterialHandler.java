@@ -18,6 +18,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.GENERATE_DENSE;
 import static gregtech.api.unification.material.info.MaterialFlags.GENERATE_FRAME;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static gregtech.api.unification.ore.OrePrefix.dustSmall;
 import static gregtechfoodoption.GTFOValues.MODID_GCYS;
 import static gregtechfoodoption.GTFOValues.Organic;
 import static gregtechfoodoption.item.GTFOMetaItems.SHAPED_ITEM;
@@ -243,6 +244,16 @@ public class GTFOMaterialHandler {
             .color(0x695934)
             .build();
 
+    public static final Material HeatedWater = fluidBuilder(21992, "heated_water").fluidTemp(343)
+            .color(0x024B86)
+            .build();
+    public static final Material GelatinSolution = fluidBuilder(21993, "gelatin_solution").fluidTemp(343)
+            .color(0xD3D3D3)
+            .build();
+    public static final Material GelatinSolutionNoBubbles = fluidBuilder(21994, "gelatin_solution_no_bubbs").fluidTemp(343)
+            .color(0xD3D3D3)
+            .build();
+
     public static final GTFOOredictItem.OreDictValueItem COFFEE_GROUNDS = SHAPED_ITEM.addOreDictItem(1017, "coffee_grounds",  0x1a1612, MaterialIconSet.DULL, OrePrefix.dust);
     public static final GTFOOredictItem.OreDictValueItem SMALL_ROASTED_COFFEE = SHAPED_ITEM.addOreDictItem(1018, "roasted_coffee_small", 0x1a1612, MaterialIconSet.GEM_VERTICAL, OrePrefix.gemChipped);
     public static final GTFOOredictItem.OreDictValueItem LARGE_ROASTED_COFFEE = SHAPED_ITEM.addOreDictItem(1019, "roasted_coffee_large", 0x1a1612, MaterialIconSet.GEM_VERTICAL, OrePrefix.gemChipped);
@@ -291,7 +302,6 @@ public class GTFOMaterialHandler {
 
     public static final GTFOOredictItem.OreDictValueItem SodiumPerchlorate = SHAPED_ITEM.addOreDictItem(1121, "sodium_perchlorate", averageRGB(3, Sodium.getMaterialRGB(), Oxygen.getMaterialRGB(), 0xFFFFFF), MaterialIconSet.ROUGH, dust, "NaClO4");
     public static final GTFOProxyItem SodiumChlorate = new GTFOProxyItem(() -> SHAPED_ITEM.addOreDictItem(1122, "sodium_chlorate", averageRGB(2, Sodium.getMaterialRGB(), Oxygen.getMaterialRGB()), MaterialIconSet.ROUGH, dust, "NaClO3"), 1122, MODID_GCYS, () -> OreDictUnifier.get(dust, GCYSMaterials.SodiumChlorate));
-
     public static final MetaOreDictItem.OreDictValueItem VanillylmandelicAcid = SHAPED_ITEM.addOreDictItem(1123, "vanillylmandelic_acid", 0xf2efbd, MaterialIconSet.ROUGH, dust, "C9H10O5");
     public static final MetaOreDictItem.OreDictValueItem VanilglycolicAcid = SHAPED_ITEM.addOreDictItem(1124, "vanilglycolic_acid", 0xebe7a4, MaterialIconSet.DULL, dust, "C9H8O5");
     public static final MetaOreDictItem.OreDictValueItem Vanillin = SHAPED_ITEM.addOreDictItem(1125, "vanillin", 0xfbfbfb, MaterialIconSet.SHINY, OrePrefix.dust, "C8H8O3");

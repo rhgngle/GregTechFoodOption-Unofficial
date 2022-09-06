@@ -6,6 +6,7 @@ import gregtechfoodoption.block.GTFOTree;
 import gregtechfoodoption.recipe.chain.*;
 import gregtechfoodoption.utils.GTFOCraftingComponent;
 import net.minecraftforge.fml.common.Loader;
+import org.apache.logging.log4j.core.pattern.AbstractStyleNameConverter;
 
 public class GTFORecipeAddition {
     public static void init()
@@ -22,7 +23,8 @@ public class GTFORecipeAddition {
         KebabChain.init();
         IceCreamChain.init();
         VanillinChain.init();
-        OrganicCircuits.init();
+        //OrganicCircuits.init();
+        CyanidePillChain.init();
 
         if(GTFOConfig.gtfoChainsConfig.potatoProcessingChain)
             PotatoProcessingChain.init();

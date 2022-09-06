@@ -22,6 +22,7 @@ import gregtech.common.items.MetaItem1;
 import gregicality.science.common.items.GCYSMetaItems;
 
 import static gregtech.api.unification.material.Materials.*;
+import static gregtechfoodoption.GTFOValues.MODID_GCYS;
 import static net.minecraft.potion.Potion.getPotionById;
 import gregtechfoodoption.potion.*;
 import gregtechfoodoption.item.GTFOFoodStats;
@@ -204,6 +205,7 @@ public class GTFOMetaItem extends StandardMetaItem {
     public static MetaItem<?>.MetaValueItem COFFEE_CHERRY;
     public static MetaItem<?>.MetaValueItem ENERGIZING_COFFEE_CUP;
     public static MetaItem<?>.MetaValueItem COFFEE_CUP;
+    public static MetaItem<?>.MetaValueItem CYANIDE_CAPLET;
 
     //juice
     public static MetaItem<?>.MetaValueItem ORANGE_JUICE;
@@ -254,6 +256,9 @@ public class GTFOMetaItem extends StandardMetaItem {
     public static MetaItem<?>.MetaValueItem PAPER_CONE;
     public static MetaItem<?>.MetaValueItem EMPTY_CUP;
     public static MetaItem<?>.MetaValueItem UNFIRED_CUP;
+    public static MetaItem<?>.MetaValueItem CAPLET_CAP;
+    public static MetaItem<?>.MetaValueItem CAPLET_BODY;
+    public static MetaItem<?>.MetaValueItem GEL_CAPLET;
 
 
     public GTFOMetaItem() {
@@ -605,6 +610,10 @@ public class GTFOMetaItem extends StandardMetaItem {
         COFFEE_CUP = addItem(203, "food.coffee_cup").addComponents(new GTFOFoodStats(8, 5f, true, false, EMPTY_CUP.getStackForm(), new RandomPotionEffect(MobEffects.REGENERATION, 60, 1, 0), new RandomPotionEffect(MobEffects.SPEED, 1800, 2, 0)));
         ENERGIZING_COFFEE_CUP = addItem(204, "food.e_coffee_cup").addComponents(new GTFOFoodStats(8, 5f, true, false, EMPTY_CUP.getStackForm(), new RandomPotionEffect(MobEffects.REGENERATION, 200, 3, 0), new RandomPotionEffect(MobEffects.STRENGTH, 200, 2, 0), new RandomPotionEffect(MobEffects.RESISTANCE, 200, 2, 0), new RandomPotionEffect(MobEffects.SPEED, 1000, 4, 0)));
         UNFIRED_CUP = addItem(205, "unfired_cup");
+        CAPLET_CAP = addItem(206, "caplet_cap");
+        CAPLET_BODY = addItem(207, "caplet_body");
+        GEL_CAPLET = addItem(208, "gel_caplet");
+        CYANIDE_CAPLET = addItem(209, "food.cyanide_caplet").addComponents(new GTFOFoodStats(0, 1f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.INSTANT_DAMAGE, 6000, 1, 0)));
 
         if (GTFOConfig.gtfoncConfig.nuclearCompat && GTFOConfig.gtfoncConfig.addSmogus) {
             int heal = 44;
