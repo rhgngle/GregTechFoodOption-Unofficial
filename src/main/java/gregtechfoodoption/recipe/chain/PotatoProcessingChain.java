@@ -52,7 +52,7 @@ public class PotatoProcessingChain {
                 .buildAndRegister();
         CANNER_RECIPES.recipeBuilder().EUt(16).duration(120)
                 .inputs(PARTIALLY_FILLED_CHIP_BAG.getStackForm())
-                .fluidInputs(Nitrogen.getFluid(500))
+                .fluidInputs(Air.getFluid(500))
                 .outputs(SYALS.getStackForm())
                 .buildAndRegister();
         CANNER_RECIPES.recipeBuilder().EUt(16).duration(100)
