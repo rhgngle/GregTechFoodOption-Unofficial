@@ -12,6 +12,10 @@ import gregtechfoodoption.integration.applecore.GTFOAppleCoreCompat;
 import gregtechfoodoption.utils.GTFOUtils;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import gregtechfoodoption.GTFOValues;
+import gregtechfoodoption.integration.jei.JEIGTFOPlugin;
+import gregtechfoodoption.item.GTFOMetaItem;
+import net.minecraftforge.fml.common.Loader;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import gregtechfoodoption.item.GTFOMetaItem;
@@ -31,13 +35,15 @@ public class CoffeeChain {
         if (GTFOConfig.gtfoaaConfig.disableCoffeeMaker)
             ModHandler.removeRecipes(new ItemStack(InitBlocks.blockCoffeeMachine));
 
-        ItemStack basicCoffee = COFFEE_CUP.getStackForm();
-        ItemStack energizedCoffee = ENERGIZING_COFFEE_CUP.getStackForm();
+        if (Loader.isModLoaded(GTFOValues.MODID_AA)) {
+            JEIGTFOPlugin.itemStacksToHide.add(InitItems.itemCoffee.getDefaultInstance());
+            JEIGTFOPlugin.itemStacksToHide.add(InitItems.itemCoffeeSeed.getDefaultInstance());
+            JEIGTFOPlugin.itemStacksToHide.add(InitItems.itemCoffeeBean.getDefaultInstance());
+            JEIGTFOPlugin.itemStacksToHide.add(new ItemStack(InitBlocks.blockCoffeeMachine));
+        }
 
         ItemStack emptyCoffeeCup = GTFOMetaItem.EMPTY_CUP.getStackForm();
         ItemStack coffeeFilter = GTFOMetaItem.PAPER_CONE.getStackForm();
-
-        GTFOAppleCoreCompat.addToSparedItems(InitItems.itemCoffee, 2, (float) 0.5);
 
         FORMING_PRESS_RECIPES.recipeBuilder()
                 .input(Items.CLAY_BALL, 5)
@@ -191,6 +197,16 @@ public class CoffeeChain {
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder()
+                .inputs(COFFEE_SEED.getStackForm(30))
+                .outputs(GTFOMaterialHandler.LARGE_BASIC_COFFEE.getItemStack(9))
+                .chancedOutput(GTFOMaterialHandler.LARGE_BASIC_COFFEE.getItemStack(), 5000, 200)
+                .outputs(GTFOMaterialHandler.SMALL_BASIC_COFFEE.getItemStack(19))
+                .chancedOutput(GTFOMaterialHandler.SMALL_BASIC_COFFEE.getItemStack(), 5000, 200)
+                .EUt(20)
+                .duration(600)
+                .buildAndRegister();
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
                 .inputs(GTFOMaterialHandler.UNSORTED_BASIC_COFFEE.getItemStack(30))
                 .outputs(GTFOMaterialHandler.LARGE_BASIC_COFFEE.getItemStack(9))
                 .chancedOutput(GTFOMaterialHandler.LARGE_BASIC_COFFEE.getItemStack(), 5000, 200)
@@ -202,8 +218,8 @@ public class CoffeeChain {
 
         CUTTER_RECIPES.recipeBuilder()
                 .inputs(GTFOMetaItem.COFFEE_CHERRY.getStackForm())
-                .outputs(GTFOMaterialHandler.UNSORTED_BASIC_COFFEE.getItemStack(9))
-                .chancedOutput(GTFOMaterialHandler.UNSORTED_BASIC_COFFEE.getItemStack(), 5000, 500)
+                .outputs(COFFEE_SEED.getStackForm(9))
+                .chancedOutput(COFFEE_SEED.getStackForm(), 5000, 500)
                 .EUt(60)
                 .duration(20)
                 .buildAndRegister();

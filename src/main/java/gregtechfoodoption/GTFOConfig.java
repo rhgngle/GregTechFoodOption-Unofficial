@@ -97,7 +97,7 @@ public class GTFOConfig {
         public boolean smoreChain = true;
 
         @Config.Comment("Add NuclearCraft S'more extensions?")
-        public boolean addSmogus = true;
+        public boolean addSmogus = false;
 
         public void setAllToFalse() {
             nuclearCompat = false;
@@ -114,7 +114,7 @@ public class GTFOConfig {
         public boolean disableCoffeeMaker = true;
 
         @Config.Comment("Add AA Coffee Chain?")
-        public boolean coffeeChain = true;
+        public boolean coffeeChain = false;
 
         public void setAllToFalse() {
             actuallyCompat = false;
@@ -200,6 +200,9 @@ public class GTFOConfig {
 
         @Config.Comment("Apply effects of Step Assist?")
         public boolean stepAssist = true;
+
+        @Config.Comment("Apply effects of Snow Golem Spawner?")
+        public boolean snowGolemSpawner = true;
     }
 
     public static class GTFOMiscConfig {

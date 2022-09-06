@@ -18,12 +18,14 @@ import gregtechfoodoption.utils.GTFOUtils;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
+import gregtechfoodoption.potion.SnowGolemSpawnerPotion;
 import gregtech.common.items.MetaItem1;
 import gregicality.science.common.items.GCYSMetaItems;
 
 import static gregtech.api.unification.material.Materials.*;
 import static gregtechfoodoption.GTFOValues.MODID_GCYS;
 import static net.minecraft.potion.Potion.getPotionById;
+
 import gregtechfoodoption.potion.*;
 import gregtechfoodoption.item.GTFOFoodStats;
 
@@ -405,8 +407,8 @@ public class GTFOMetaItem extends StandardMetaItem {
                 .setEatingDuration(24));
 
         FRENCH_FRIES = addItem(37, "food.french_fries").addComponents(new GTFOFoodStats(GTFOConfig.gtfoFoodConfig.friesHunger, GTFOConfig.gtfoFoodConfig.friesSaturation, false, false, USED_PAPER_BAG.getStackForm(),
-                new RandomPotionEffect(MobEffects.STRENGTH, 1200, 1, 0))
-                .setEatingDuration(20))
+                        new RandomPotionEffect(MobEffects.STRENGTH, 1200, 1, 0))
+                        .setEatingDuration(20))
                 .addOreDict("foodFries");
         SYALS = addItem(38, "food.syals").addComponents(new GTFOFoodStats(GTFOConfig.gtfoFoodConfig.chipHunger / 2, GTFOConfig.gtfoFoodConfig.chipSaturation / 2, false, false, () -> OreDictUnifier.get(OrePrefix.foil, Tin),
                 new RandomPotionEffect(MobEffects.LEVITATION, 300, 1, 0)));
@@ -419,7 +421,7 @@ public class GTFOMetaItem extends StandardMetaItem {
                 new RandomPotionEffect(MobEffects.HASTE, 1200, 2, 50))
                 .setEatingDuration(20));
         POTATO_ON_A_STICK = addItem(42, "food.potato_on_a_stick").addComponents(new GTFOFoodStats(3, 0.8f, false, false, new ItemStack(Items.STICK))
-                .setEatingDuration(12))
+                        .setEatingDuration(12))
                 .setMaxStackSize(16);
 
         BAGUETTE = addItem(51, "food.baguette").addComponents(new GTFOFoodStats(GTFOConfig.gtfoFoodConfig.baguetteHunger, GTFOConfig.gtfoFoodConfig.baguetteSaturation, false, false, ItemStack.EMPTY,
@@ -488,20 +490,20 @@ public class GTFOMetaItem extends StandardMetaItem {
         CHUM = addItem(119, "food.chum").addComponents(new GTFOFoodStats(3, 0f, false, true, ItemStack.EMPTY,
                 new RandomPotionEffect(MobEffects.NAUSEA, 500, 10, 99)));
         CHUM_ON_A_STICK = addItem(120, "food.chum_on_a_stick").addComponents(new GTFOFoodStats(3, 0f, false, true, new ItemStack(Items.STICK),
-                new RandomPotionEffect(MobEffects.NAUSEA, 500, 10, 99))
-                .setEatingDuration(16))
+                        new RandomPotionEffect(MobEffects.NAUSEA, 500, 10, 99))
+                        .setEatingDuration(16))
                 .setMaxStackSize(16);
         BURGER_CHUM = addItem(121, "food.burger.chum").addComponents(new GTFOFoodStats(4, 1f, false, false, ItemStack.EMPTY,
                 new RandomPotionEffect(MobEffects.NAUSEA, 500, 10, 99)));
 
         BANANA = addItem(122, "food.banana").addComponents(new GTFOFoodStats(2, 1f, false, false, ItemStack.EMPTY)
-                .setEatingDuration(60))
+                        .setEatingDuration(60))
                 .addOreDict("cropBanana").addOreDict("listAllfruit");
         ORANGE = addItem(123, "food.orange").addComponents(new GTFOFoodStats(2, 1f, false, false, ItemStack.EMPTY)
-                .setEatingDuration(50))
+                        .setEatingDuration(50))
                 .addOreDict("cropOrange").addOreDict("listAllfruit");
         GRAPES = addItem(124, "food.grapes").addComponents(new GTFOFoodStats(1, 1f, false, false, ItemStack.EMPTY)
-                .setEatingDuration(20))
+                        .setEatingDuration(20))
                 .addOreDict("cropGrapes").addOreDict("listAllfruit");
         MANGO = addItem(125, "food.mango").addComponents(new GTFOFoodStats(2, 1f, false, false, ItemStack.EMPTY))
                 .addOreDict("cropMango").addOreDict("listAllfruit");
@@ -557,7 +559,8 @@ public class GTFOMetaItem extends StandardMetaItem {
         ICE_CREAM_CHUM = addItem(166, "food.ice_cream.chum").addComponents(new GTFOFoodStats(5, 0.33f, false, true, ItemStack.EMPTY));
         ICE_CREAM_BANANA = addItem(167, "food.ice_cream.banana").addComponents(new GTFOFoodStats(6, 0.33f, false, true, ItemStack.EMPTY));
         ICE_CREAM_BACON = addItem(168, "food.ice_cream.bacon").addComponents(new GTFOFoodStats(6, 0.33f, false, true, ItemStack.EMPTY));
-        ICE_CREAM_VANILLA = addItem(169, "food.ice_cream.vanilla").addComponents(new GTFOFoodStats(9, 0.25f, false, true, ItemStack.EMPTY));
+        ICE_CREAM_VANILLA = addItem(169, "food.ice_cream.vanilla").addComponents(new GTFOFoodStats(9, 0.25f, false, true, ItemStack.EMPTY,
+                new RandomPotionEffect(SnowGolemSpawnerPotion.instance, 300, 0, 100 - 50)));
         ICE_CREAM_BEAR = addItem(170, "food.ice_cream.bear").addComponents(new GTFOFoodStats(7, 0.33f, false, true, ItemStack.EMPTY));
         ICE_CREAM_MELON = addItem(171, "food.ice_cream.melon").addComponents(new GTFOFoodStats(5, 0.33f, false, true, ItemStack.EMPTY));
         ICE_CREAM_CHOCOLATE = addItem(172, "food.ice_cream.chocolate").addComponents(new GTFOFoodStats(9, 0.25f, false, true, ItemStack.EMPTY));
@@ -615,7 +618,7 @@ public class GTFOMetaItem extends StandardMetaItem {
         GEL_CAPLET = addItem(208, "gel_caplet");
         CYANIDE_CAPLET = addItem(209, "food.cyanide_caplet").addComponents(new GTFOFoodStats(0, 1f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.INSTANT_DAMAGE, 6000, 1, 0)));
 
-        if (GTFOConfig.gtfoncConfig.nuclearCompat && GTFOConfig.gtfoncConfig.addSmogus) {
+        {
             int heal = 44;
             double saturation = 8.6;
             int potionDuration = 1200;
