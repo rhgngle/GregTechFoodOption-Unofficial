@@ -23,7 +23,7 @@ public class GTFORecipeAddition {
         KebabChain.init();
         IceCreamChain.init();
         VanillinChain.init();
-        //OrganicCircuits.init();
+        OrganicCircuits.init();
         CyanidePillChain.init();
 
         if(GTFOConfig.gtfoChainsConfig.potatoProcessingChain)
