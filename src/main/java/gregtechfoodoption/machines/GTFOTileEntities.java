@@ -9,6 +9,7 @@ import gregtechfoodoption.client.GTFOClientHandler;
 import gregtechfoodoption.machines.farmer.MetaTileEntityFarmer;
 import gregtechfoodoption.machines.multiblock.MetaTileEntityBakingOven;
 import gregtechfoodoption.machines.multiblock.MetaTileEntityElectricBakingOven;
+import gregtechfoodoption.machines.multiblock.MetaTileEntityGreenhouse;
 import gregtechfoodoption.machines.multiblock.MetaTileEntitySteamBakingOven;
 import gregtechfoodoption.recipe.GTFORecipeMaps;
 import net.minecraft.util.ResourceLocation;
@@ -29,6 +30,7 @@ public class GTFOTileEntities {
     public static MetaTileEntityBakingOven BAKING_OVEN;
     public static MetaTileEntityElectricBakingOven ELECTRIC_BAKING_OVEN;
     public static MetaTileEntitySteamBakingOven STEAM_BAKING_OVEN;
+    public static MetaTileEntityGreenhouse GREENHOUSE;
 
 
     public static void init() {
@@ -40,7 +42,6 @@ public class GTFOTileEntities {
 
         MetaTileEntities.registerSimpleMetaTileEntity(SLICER, 8503, "slicer", GTFORecipeMaps.SLICER_RECIPES, GTFOClientHandler.SLICER_OVERLAY, true, GTFOTileEntities::location, GTUtility.hvCappedTankSizeFunction);
         MetaTileEntities.registerSimpleMetaTileEntity(CUISINE_ASSEMBLER, 8518, "cuisine_assembler", GTFORecipeMaps.CUISINE_ASSEMBLER_RECIPES, GTFOClientHandler.CUISINE_ASSEMBLER_OVERLAY, true, GTFOTileEntities::location, GTUtility.hvCappedTankSizeFunction);
-
         MICROWAVE[1] = registerMetaTileEntity(8531, new MetaTileEntityMicrowave(location("microwave.lv"), GTFORecipeMaps.MICROWAVE_RECIPES, GTFOClientHandler.MICROWAVE_OVERLAY, 1));
         MICROWAVE[2] = registerMetaTileEntity(8532, new MetaTileEntityMicrowave(location("microwave.mv"), GTFORecipeMaps.MICROWAVE_RECIPES, GTFOClientHandler.MICROWAVE_OVERLAY, 2));
         MICROWAVE[3] = registerMetaTileEntity(8533, new MetaTileEntityMicrowave(location("microwave.hv"), GTFORecipeMaps.MICROWAVE_RECIPES, GTFOClientHandler.MICROWAVE_OVERLAY, 3));
@@ -89,6 +90,7 @@ public class GTFOTileEntities {
         FARMER[2] = registerMetaTileEntity(8563, new MetaTileEntityFarmer(location("farmer.hv"), 3, 5));
         FARMER[3] = registerMetaTileEntity(8564, new MetaTileEntityFarmer(location("farmer.ev"), 4, 2));
 
+        GREENHOUSE = registerMetaTileEntity(8565, new MetaTileEntityGreenhouse(location("greenhouse")));
 
     }
 

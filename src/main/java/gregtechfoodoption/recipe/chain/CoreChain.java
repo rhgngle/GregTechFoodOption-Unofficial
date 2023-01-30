@@ -375,13 +375,13 @@ public class CoreChain {
 
 
     public static void airRecipes() {
-        MIXER_RECIPES.recipeBuilder().duration(60).EUt(32)
+        MIXER_RECIPES.recipeBuilder().duration(60).EUt(8)
                 .fluidInputs(Air.getFluid(900))
                 .fluidInputs(Steam.getFluid(10))
                 .fluidOutputs(GTFOMaterialHandler.MoistAir.getFluid(1000))
                 .buildAndRegister();
 
-        VACUUM_RECIPES.recipeBuilder().duration(110).EUt(32)
+        VACUUM_RECIPES.recipeBuilder().duration(110).EUt(8)
                 .fluidInputs(GTFOMaterialHandler.MoistAir.getFluid(4000))
                 .fluidOutputs(GTFOMaterialHandler.ColdMoistAir.getFluid(4000))
                 .buildAndRegister();
@@ -482,7 +482,7 @@ public class CoreChain {
                     .fluidInputs(Methanol.getFluid(4000), Chloroform.getFluid(4000))
                     .output(dust, Meat, 40)
                     .output(dust, Bone, 16)
-                    .fluidOutputs(Stearin.getFluid(32000), Sludge.getFluid(12000), Chlorine.getFluid(12000))
+                    .fluidOutputs(Stearin.getFluid(3200), Sludge.getFluid(12000), Chlorine.getFluid(12000))
                     .buildAndRegister();
         });
 
@@ -491,7 +491,7 @@ public class CoreChain {
                 .fluidInputs(Methanol.getFluid(4000), Chloroform.getFluid(4000))
                 .output(dust, Meat, 32)
                 .output(dust, Bone, 20)
-                .fluidOutputs(Stearin.getFluid(35000), Sludge.getFluid(16000), Chlorine.getFluid(12000))
+                .fluidOutputs(Stearin.getFluid(3500), Sludge.getFluid(16000), Chlorine.getFluid(12000))
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder().EUt(20).duration(400)
@@ -504,14 +504,14 @@ public class CoreChain {
 
         CENTRIFUGE_RECIPES.recipeBuilder().EUt(30).duration(300)
                 .input(dust, Meat, 3)
-                .fluidOutputs(Biomass.getFluid(200), Stearin.getFluid(100))
+                .fluidOutputs(Biomass.getFluid(200), Stearin.getFluid(10))
                 .buildAndRegister();
 
         FERMENTING_RECIPES.recipeBuilder().EUt(32).duration(1200)
                 .input(SCRAP_MEAT, 1)
                 .fluidInputs(Chloroform.getFluid(100))
                 .output(dust, Meat, 1)
-                .fluidOutputs(Stearin.getFluid(400))
+                .fluidOutputs(Stearin.getFluid(40))
                 .buildAndRegister();
 
         GTFOUtils.getOrganicOils().forEach(f -> {
@@ -519,7 +519,7 @@ public class CoreChain {
             CHEMICAL_RECIPES.recipeBuilder().EUt(30).duration(300)
                     .input(dustTiny, SodaAsh)
                     .fluidInputs(new FluidStack(f, 1000), Hydrogen.getFluid(1000))
-                    .fluidOutputs(Stearin.getFluid(1000))
+                    .fluidOutputs(Stearin.getFluid(100))
                     .notConsumable(new IntCircuitIngredient(1))
                     .buildAndRegister();
         });
@@ -527,12 +527,12 @@ public class CoreChain {
         Arrays.asList(Methanol, Ethanol).forEach(f -> {
             CHEMICAL_RECIPES.recipeBuilder().EUt(30).duration(600)
                     .input(dustTiny, SodiumHydroxide)
-                    .fluidInputs(Stearin.getFluid(6000), f.getFluid(1000))
+                    .fluidInputs(Stearin.getFluid(3000), f.getFluid(1000))
                     .fluidOutputs(Glycerol.getFluid(1000), BioDiesel.getFluid(6000))
                     .buildAndRegister();
             LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(30).duration(5400)
                     .input(dust, SodiumHydroxide)
-                    .fluidInputs(Stearin.getFluid(54000), f.getFluid(9000))
+                    .fluidInputs(Stearin.getFluid(27000), f.getFluid(9000))
                     .fluidOutputs(Glycerol.getFluid(9000), BioDiesel.getFluid(54000))
                     .buildAndRegister();
         });
@@ -629,6 +629,30 @@ public class CoreChain {
         MACERATOR_RECIPES.recipeBuilder().EUt(4).duration(40)
                 .inputs(SCRAP_MEAT.getStackForm())
                 .output(dust, Meat)
+                .buildAndRegister();
+
+        GTFOUtils.addBakingOvenRecipes(OreDictUnifier.get(dust, Meat), CookedMinceMeat.getItemStack(), 200, 400, 1);
+
+        ASSEMBLER_RECIPES.recipeBuilder().EUt(30).duration(60)
+                .inputs(PAPER_BAG.getStackForm())
+                .inputs(FLAVORED_POPCORN_FLAKE.getStackForm(32))
+                .outputs(POPCORN_BAG.getStackForm())
+                .buildAndRegister();
+        ASSEMBLER_RECIPES.recipeBuilder().EUt(80).duration(30)
+                .circuitMeta(0)
+                .input(plate, Paper, 3)
+                .outputs(PAPER_BAG.getStackForm())
+                .buildAndRegister();
+
+        MIXER_RECIPES.recipeBuilder().EUt(16).duration(100)
+                .inputs(MetaItems.FERTILIZER.getStackForm())
+                .fluidInputs(Water.getFluid(10000))
+                .fluidOutputs(FertilizerSolution.getFluid(10000));
+
+        MIXER_RECIPES.recipeBuilder().EUt(16).duration(100)
+                .inputs(new ItemStack(Items.DYE, 1, 15))
+                .fluidInputs(Water.getFluid(5000))
+                .fluidOutputs(FertilizerSolution.getFluid(5000))
                 .buildAndRegister();
     }
 }

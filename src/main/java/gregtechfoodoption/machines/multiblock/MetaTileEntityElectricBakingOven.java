@@ -9,6 +9,7 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.api.metatileentity.multiblock.ParallelLogicType;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
@@ -48,6 +49,8 @@ public class MetaTileEntityElectricBakingOven extends RecipeMapMultiblockControl
     private boolean canAchieveTargetTemp;
     private boolean hasEnoughEnergy;
     public int size;
+    public boolean adaptable = true;
+    private boolean canRunRecipe = false;
 
     public MetaTileEntityElectricBakingOven(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTFORecipeMaps.ELECTRIC_BAKING_OVEN_RECIPES);
@@ -70,8 +73,11 @@ public class MetaTileEntityElectricBakingOven extends RecipeMapMultiblockControl
 
         super.updateFormedValid();
 
-        if (temp > 300)
+        if (temp > 300) {
             hasEnoughEnergy = drainEnergy();
+            if (adaptable && !canRunRecipe)
+                targetTemp = 300;
+        }
         else
             hasEnoughEnergy = true;
 
@@ -81,11 +87,13 @@ public class MetaTileEntityElectricBakingOven extends RecipeMapMultiblockControl
             canAchieveTargetTemp = true;
         }
 
+        if (isActive())
+            canRunRecipe = false;
     }
 
     private void stepTowardsTargetTemp() {
         canAchieveTargetTemp = true;
-        if (temp > 300 && (!this.recipeMapWorkable.isWorkingEnabled() || targetTemp < temp)) {
+        if (temp > 300 && (!this.recipeMapWorkable.isWorking() || targetTemp < temp)) {
             setTemp(temp - 5);
             if (temp == 300)
                 markDirty();
@@ -151,12 +159,18 @@ public class MetaTileEntityElectricBakingOven extends RecipeMapMultiblockControl
             textList.add(new TextComponentTranslation("gregtechfoodoption.multiblock.electric_baking_oven.tooltip.1", temp));
             textList.add(new TextComponentTranslation("gregtechfoodoption.multiblock.electric_baking_oven.tooltip.4", temperatureEnergyCost(temp, size)));
 
-            ITextComponent buttonText = new TextComponentTranslation("gregtechfoodoption.multiblock.electric_baking_oven.tooltip.3");
-            buttonText.appendText(" ");
-            buttonText.appendSibling(withButton(new TextComponentString("[-]"), "sub"));
-            buttonText.appendText(" ");
-            buttonText.appendSibling(withButton(new TextComponentString("[+]"), "add"));
-            textList.add(buttonText);
+            ITextComponent toggleText = new TextComponentTranslation("gregtechfoodoption.multiblock.electric_baking_oven.tooltip.6");
+            toggleText.appendSibling(withButton(new TextComponentString(" [T]"), "toggle"));
+            textList.add(toggleText);
+
+            if (!adaptable) {
+                ITextComponent buttonText = new TextComponentTranslation("gregtechfoodoption.multiblock.electric_baking_oven.tooltip.3");
+                buttonText.appendText(" ");
+                buttonText.appendSibling(withButton(new TextComponentString("[-]"), "sub"));
+                buttonText.appendText(" ");
+                buttonText.appendSibling(withButton(new TextComponentString("[+]"), "add"));
+                textList.add(buttonText);
+            }
 
             textList.add(new TextComponentTranslation("gregtechfoodoption.multiblock.electric_baking_oven.tooltip.5", targetTemp));
 
@@ -174,10 +188,13 @@ public class MetaTileEntityElectricBakingOven extends RecipeMapMultiblockControl
     @Override
     protected void handleDisplayClick(String componentData, Widget.ClickData clickData) {
         super.handleDisplayClick(componentData, clickData);
-        int modifier = componentData.equals("add") ? 1 : -1;
-        targetTemp += 5 * modifier;
-        if (targetTemp < 300)
-            targetTemp = 300;
+        if (componentData.equals("add")) {
+            targetTemp += 5;
+        } else if (componentData.equals("sub")) {
+            targetTemp -= 5;
+        } else {
+            adaptable = !adaptable;
+        }
     }
 
     protected IBlockState getCasingState() {
@@ -262,6 +279,7 @@ public class MetaTileEntityElectricBakingOven extends RecipeMapMultiblockControl
         data.setInteger("targetTemp", this.targetTemp);
         data.setBoolean("canAchieveTargetTemp", this.canAchieveTargetTemp);
         data.setBoolean("hasEnoughEnergy", this.hasEnoughEnergy);
+        data.setBoolean("adaptable", this.adaptable);
         return data;
     }
 
@@ -290,6 +308,7 @@ public class MetaTileEntityElectricBakingOven extends RecipeMapMultiblockControl
         this.size = data.getInteger("size");
         this.canAchieveTargetTemp = data.getBoolean("canAchieveTargetTemp");
         this.hasEnoughEnergy = data.getBoolean("hasEnoughEnergy");
+        this.adaptable = data.getBoolean("adaptable");
     }
 
     @Override
@@ -300,6 +319,7 @@ public class MetaTileEntityElectricBakingOven extends RecipeMapMultiblockControl
         buf.writeInt(this.size);
         buf.writeBoolean(this.canAchieveTargetTemp);
         buf.writeBoolean(this.hasEnoughEnergy);
+        buf.writeBoolean(this.adaptable);
     }
 
     @Override
@@ -310,17 +330,23 @@ public class MetaTileEntityElectricBakingOven extends RecipeMapMultiblockControl
         this.size = buf.readInt();
         this.canAchieveTargetTemp = buf.readBoolean();
         this.hasEnoughEnergy = buf.readBoolean();
+        this.adaptable = buf.readBoolean();
     }
 
 
     @Override
     public boolean checkRecipe(Recipe recipe, boolean consumeIfSuccess) {
-        return recipe.getProperty(ElectricBakingOvenRecipeBuilder.TemperatureProperty.getInstance(), 0) == temp;
+        int recipeTemp = recipe.getProperty(ElectricBakingOvenRecipeBuilder.TemperatureProperty.getInstance(), 300);
+        if (adaptable) {
+            targetTemp = recipeTemp;
+            canRunRecipe = true;
+        }
+        return recipeTemp == temp;
     }
 
     @Override
-    public int getLightValueForPart(IMultiblockPart sourcePart) {
-        return sourcePart == null && temp > 300 ? 15 : 0;
+    public int getActualLightValue() {
+        return temp > 305 ? 15 : 0;
     }
 
     private class ElectricBakingOvenLogic extends MultiblockRecipeLogic {
@@ -346,6 +372,17 @@ public class MetaTileEntityElectricBakingOven extends RecipeMapMultiblockControl
         @Override
         public boolean isWorking() {
             return temp > 300 && !this.hasNotEnoughEnergy && this.workingEnabled;
+        }
+
+        @Override
+        public Enum<ParallelLogicType> getParallelLogicType() {
+            return ParallelLogicType.APPEND_ITEMS;
+        }
+
+        @Override
+        protected void updateRecipeProgress() {
+            super.updateRecipeProgress();
+            canRunRecipe = true;
         }
     }
 

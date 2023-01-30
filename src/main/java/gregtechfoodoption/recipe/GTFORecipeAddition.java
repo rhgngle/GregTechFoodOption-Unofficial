@@ -5,14 +5,15 @@ import gregtechfoodoption.GTFOValues;
 import gregtechfoodoption.block.GTFOTree;
 import gregtechfoodoption.recipe.chain.*;
 import gregtechfoodoption.utils.GTFOCraftingComponent;
+import gregtechfoodoption.tools.GTFOToolItems;
 import net.minecraftforge.fml.common.Loader;
-import org.apache.logging.log4j.core.pattern.AbstractStyleNameConverter;
 
 public class GTFORecipeAddition {
     public static void init()
     {
         CoreChain.init();
         GTFOTree.TREES.forEach(GTFOTree::initRecipes);
+        GreenhouseChain.init();
         GTFOCraftingComponent.init();
         MobExtractionChain.init();
         SeedsChain.init();
@@ -20,23 +21,23 @@ public class GTFORecipeAddition {
         BananaProcessingChain.init();
         MicrowaveChain.init();
         GTFOMachineRecipes.init();
+        GTFOToolItems.registerCustomRecipes();
         KebabChain.init();
         IceCreamChain.init();
         VanillinChain.init();
         OrganicCircuits.init();
-        CyanidePillChain.init();
+        CapletChain.init();
+        DyeChain.init();
+        BritishChain.init();
+        PotatoProcessingChain.init();
+        AlcoholChain.init();
+        PurpleDrinkChain.init();
+        JointChain.init();
 
-        if(GTFOConfig.gtfoChainsConfig.potatoProcessingChain)
-            PotatoProcessingChain.init();
-        if(GTFOConfig.gtfoChainsConfig.alcoholChain)
-            AlcoholChain.init();
         if (Loader.isModLoaded(GTFOValues.MODID_GCYS)) {
-            if(GTFOConfig.gtfoChainsConfig.popcornChain)
-                PopcornChain.init();
-            if(GTFOConfig.gtfoChainsConfig.mineralWaterChain)
-                MineralWaterChain.init();
-            if(GTFOConfig.gtfoChainsConfig.purpleDrinkChain)
-                PurpleDrinkChain.init();
+            PopcornChain.init();
+            MineralWaterChain.init();
+            PurpleDrinkChain.init();
         }
     }
 
@@ -44,17 +45,10 @@ public class GTFORecipeAddition {
     }
 
     public static void compatInit() {
-        if(GTFOConfig.gtfoChainsConfig.breadsChain)
-            BreadsChain.init();
-        if(GTFOConfig.gtfoVanillaOverridesConfig.vanillaOverrideChain)
+        BreadsChain.init();
+        if (GTFOConfig.gtfoVanillaOverridesConfig.vanillaOverrideChain)
             VanillaOverrideChain.init();
-
-        if(GTFOConfig.gtfoncConfig.nuclearCompat) {
-            if (GTFOConfig.gtfoncConfig.smoreChain)
-                SmogusChain.init();
-        }
-        if(GTFOConfig.gtfoaaConfig.actuallyCompat)
-            if(GTFOConfig.gtfoaaConfig.coffeeChain)
-                CoffeeChain.init();
+        CoffeeChain.init();
+        SmogusChain.init();
     }
 }

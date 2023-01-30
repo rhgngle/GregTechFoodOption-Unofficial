@@ -5,6 +5,8 @@ import gregtech.api.GTValues;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
+import gregtech.api.unification.stack.ItemMaterialInfo;
+import gregtech.api.unification.stack.MaterialStack;
 import gregtechfoodoption.block.tree.GTFOBlockLeaves;
 import gregtechfoodoption.block.tree.GTFOBlockLog;
 import gregtechfoodoption.block.tree.GTFOBlockPlanks;
@@ -28,6 +30,7 @@ import java.util.stream.Collectors;
 public class GTFOMetaBlocks {
     public static GTFOBlockCasing GTFO_CASING;
     public static GTFOMetalCasing GTFO_METAL_CASING;
+    public static GTFOGlassCasing GTFO_GLASS_CASING;
 
     public static List<GTFOBlockLeaves> GTFO_LEAVES = new ArrayList<>();
     public static List<GTFOBlockLog> GTFO_LOGS = new ArrayList<>();
@@ -40,6 +43,9 @@ public class GTFOMetaBlocks {
 
         GTFO_METAL_CASING = new GTFOMetalCasing();
         GTFO_METAL_CASING.setRegistryName("gtfo_metal_casing");
+
+        GTFO_GLASS_CASING = new GTFOGlassCasing();
+        GTFO_GLASS_CASING.setRegistryName("gtfo_glass_casing");
 
         GTFOTrees.init();
         for (int i = 0; i <= (GTFOTree.TREES.size() - 1) / 4; i++) {
@@ -67,6 +73,7 @@ public class GTFOMetaBlocks {
     public static void registerItemModels() {
         registerItemModel(GTFO_CASING);
         registerItemModel(GTFO_METAL_CASING);
+        registerItemModel(GTFO_GLASS_CASING);
         GTFO_LEAVES.forEach(GTFOMetaBlocks::registerItemModel);
         GTFO_SAPLINGS.forEach(GTFOMetaBlocks::registerItemModel);
         for (GTFOBlockSapling sapling : GTFO_SAPLINGS) {
@@ -118,6 +125,7 @@ public class GTFOMetaBlocks {
         });
         GTFO_PLANKS.forEach(planks -> {
             OreDictUnifier.registerOre(new ItemStack(planks, 1, GTValues.W), OrePrefix.plank, Materials.Wood);
+            OreDictUnifier.registerOre(new ItemStack(planks, 1, GTValues.W), new ItemMaterialInfo(new MaterialStack(Materials.Wood, GTValues.M)));
         });
     }
 

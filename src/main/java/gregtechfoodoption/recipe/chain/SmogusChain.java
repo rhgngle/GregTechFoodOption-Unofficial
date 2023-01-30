@@ -1,67 +1,35 @@
 package gregtechfoodoption.recipe.chain;
 
-import gregtech.api.recipes.ModHandler;
+import gregtech.api.GTValues;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.items.MetaItems;
 import gregtechfoodoption.GTFOConfig;
 import gregtechfoodoption.GTFOMaterialHandler;
-import gregtechfoodoption.integration.applecore.GTFOAppleCoreCompat;
+import gregtechfoodoption.GTFOValues;
+import gregtechfoodoption.integration.nc.GTFONCRecipeHandler;
 import gregtechfoodoption.utils.GTFOUtils;
-import nc.init.NCItems;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import gregtechfoodoption.integration.nc.GTFONCRecipeHandler;
+import net.minecraftforge.fml.common.Loader;
+
 
 import static gregtech.api.recipes.GTRecipeHandler.removeRecipesByInputs;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtechfoodoption.GTFOMaterialHandler.CaneSyrup;
 import static gregtechfoodoption.item.GTFOMetaItem.*;
-
-import gregtechfoodoption.GTFOValues;
-import gregtechfoodoption.integration.jei.JEIGTFOPlugin;
-import net.minecraftforge.fluids.FluidRegistry;
-import net.minecraftforge.fml.common.Loader;
+import static gregtechfoodoption.recipe.GTFORecipeMaps.MICROWAVE_RECIPES;
 
 
 public class SmogusChain {
     public static void init() {
-
         if (Loader.isModLoaded(GTFOValues.MODID_NC)) {
             GTFONCRecipeHandler.initSmingotRemoval();
-            ModHandler.removeFurnaceSmelting(new ItemStack(Items.DYE, 1, 3));
-            ModHandler.removeRecipeByName(new ResourceLocation("nuclearcraft:smore"));
-            ModHandler.removeRecipeByName(new ResourceLocation("nuclearcraft:moresmore"));
-            ModHandler.removeRecipeByName(new ResourceLocation("nuclearcraft:foursmore"));
-            removeRecipesByInputs(MACERATOR_RECIPES, new ItemStack(Items.DYE, 1, 3));
-
-            JEIGTFOPlugin.itemStacksToHide.add(NCItems.flour.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(NCItems.smore.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(NCItems.moresmore.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(NCItems.foursmore.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(NCItems.gelatin.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(NCItems.ground_cocoa_nibs.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(NCItems.graham_cracker.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(NCItems.cocoa_solids.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(NCItems.cocoa_butter.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(NCItems.dark_chocolate.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(NCItems.milk_chocolate.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(NCItems.unsweetened_chocolate.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(NCItems.marshmallow.getDefaultInstance());
-
-            JEIGTFOPlugin.fluidsToHide.add(FluidRegistry.getFluid("chocolate_liquor"));
-            JEIGTFOPlugin.fluidsToHide.add(FluidRegistry.getFluid("cocoa_butter"));
-            JEIGTFOPlugin.fluidsToHide.add(FluidRegistry.getFluid("unsweetened_chocolate"));
-            JEIGTFOPlugin.fluidsToHide.add(FluidRegistry.getFluid("dark_chocolate"));
-            JEIGTFOPlugin.fluidsToHide.add(FluidRegistry.getFluid("milk_chocolate"));
-            JEIGTFOPlugin.fluidsToHide.add(FluidRegistry.getFluid("gelatin"));
-            JEIGTFOPlugin.fluidsToHide.add(FluidRegistry.getFluid("hydrated_gelatin"));
-            JEIGTFOPlugin.fluidsToHide.add(FluidRegistry.getFluid("marshmallow"));
         }
+        removeRecipesByInputs(MACERATOR_RECIPES, new ItemStack(Items.DYE, 1, 3));
 
         ItemStack[] smoresout = {
                 SMORE_SMINGOT.getStackForm(),
@@ -110,9 +78,20 @@ public class SmogusChain {
                         .duration(ticks)
                         .buildAndRegister();
             }
-            euPerTick *= 4;
+            if (euPerTick < GTValues.VA[GTValues.UV] || GTValues.HT) {
+                euPerTick *= 4;
+            } else {
+                ticks *= 2;
+            }
             ticks *= 2;
         }
+
+        MICROWAVE_RECIPES.recipeBuilder()
+                .inputs(MILK_CHOCOLATE.getStackForm())
+                .outputs(GTFOMaterialHandler.HOT_MILK_CHOCOLATE.getItemStack())
+                .EUt(120)
+                .duration(100)
+                .buildAndRegister();
 
 
         BLAST_RECIPES.recipeBuilder()
@@ -324,7 +303,7 @@ public class SmogusChain {
 
         MIXER_RECIPES.recipeBuilder()
                 .fluidInputs(Water.getFluid(1000))
-                .input(OrePrefix.dust, SodaAsh, 4)
+                .input(OrePrefix.dust, SodaAsh)
                 .fluidOutputs(GTFOMaterialHandler.SodiumCarbonateSolution.getFluid(1000))
                 .EUt(30)
                 .duration(40)

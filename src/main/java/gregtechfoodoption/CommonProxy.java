@@ -3,7 +3,6 @@ package gregtechfoodoption;
 import crazypants.enderio.api.farm.IFarmerJoe;
 import crazypants.enderio.base.farming.farmers.CustomSeedFarmer;
 import gregtech.api.block.VariantItemBlock;
-import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.RecipeMaps;
 import gregtechfoodoption.block.GTFOCrop;
 import gregtechfoodoption.block.GTFOCrops;
@@ -14,12 +13,8 @@ import gregtechfoodoption.item.GTFOMetaItem;
 import gregtechfoodoption.item.GTFOMetaItems;
 import gregtechfoodoption.item.GTFOSpecialVariantItemBlock;
 import gregtechfoodoption.potion.GTFOPotions;
-import gregtechfoodoption.recipe.GTFOOreDictRegistration;
-import gregtechfoodoption.recipe.GTFORecipeAddition;
-import gregtechfoodoption.recipe.GTFORecipeHandler;
-import gregtechfoodoption.recipe.GTFORecipeRemoval;
+import gregtechfoodoption.recipe.*;
 import gregtechfoodoption.utils.GTFOLog;
-import gregicality.science.api.recipes.GCYSRecipeMaps;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -34,7 +29,7 @@ import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
-
+import gregtechfoodoption.machines.multiblock.MetaTileEntityGreenhouse;
 import javax.annotation.Nonnull;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
@@ -52,11 +47,16 @@ public class CommonProxy {
 
         GTFORecipeHandler.register();
         try {
-            addSlotsToMaps(RecipeMaps.FERMENTING_RECIPES, "maxInputs", 1);
-            addSlotsToMaps(RecipeMaps.FERMENTING_RECIPES, "maxOutputs", 1);
-            addSlotsToMaps(RecipeMaps.COMPRESSOR_RECIPES, "maxFluidOutputs", 1);
-            addSlotsToMaps(RecipeMaps.EXTRACTOR_RECIPES, "maxFluidInputs", 1);
-            addSlotsToMaps(RecipeMaps.FLUID_SOLIDFICATION_RECIPES, "maxInputs", 2);
+            ((IExpandableRecipeMap)RecipeMaps.FERMENTING_RECIPES).setMaxInputs(1);
+            ((IExpandableRecipeMap)RecipeMaps.FERMENTING_RECIPES).setMaxOutputs(1);
+            ((IExpandableRecipeMap)RecipeMaps.EXTRACTOR_RECIPES).setMaxInputs(2);
+            ((IExpandableRecipeMap)RecipeMaps.BREWING_RECIPES).setMaxOutputs(1);
+            ((IExpandableRecipeMap)RecipeMaps.BREWING_RECIPES).setMinFluidOutputs(0);
+            ((IExpandableRecipeMap)RecipeMaps.FLUID_SOLIDFICATION_RECIPES).setMaxInputs(2);
+            ((IExpandableRecipeMap)RecipeMaps.COMPRESSOR_RECIPES).setMaxFluidOutputs(1);
+            ((IExpandableRecipeMap)RecipeMaps.EXTRACTOR_RECIPES).setMaxFluidInputs(1);
+            ((IExpandableRecipeMap)RecipeMaps.DISTILLATION_RECIPES).setMaxOutputs(2);
+            ((IExpandableRecipeMap)RecipeMaps.DISTILLATION_RECIPES).setMinFluidOutputs(0);
         } catch (Exception e) {
 
         }
@@ -82,6 +82,7 @@ public class CommonProxy {
         IForgeRegistry<Block> registry = event.getRegistry();
         registry.register(GTFOMetaBlocks.GTFO_CASING);
         registry.register(GTFOMetaBlocks.GTFO_METAL_CASING);
+        registry.register(GTFOMetaBlocks.GTFO_GLASS_CASING);
 
         CROP_BLOCKS.forEach(registry::register);
         GTFOMetaBlocks.GTFO_LEAVES.forEach(registry::register);
@@ -89,6 +90,7 @@ public class CommonProxy {
         GTFOMetaBlocks.GTFO_PLANKS.forEach(registry::register);
         GTFOMetaBlocks.GTFO_SAPLINGS.forEach(registry::register);
 
+        MetaTileEntityGreenhouse.addGrasses();
     }
 
     @SubscribeEvent
@@ -98,6 +100,7 @@ public class CommonProxy {
 
         registry.register(createItemBlock(GTFOMetaBlocks.GTFO_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTFOMetaBlocks.GTFO_METAL_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GTFOMetaBlocks.GTFO_GLASS_CASING, VariantItemBlock::new));
         GTFOMetaBlocks.GTFO_LEAVES.forEach(leaves -> registry.register(createItemBlock(leaves, GTFOSpecialVariantItemBlock::new)));
         GTFOMetaBlocks.GTFO_LOGS.forEach(log -> registry.register(createItemBlock(log, GTFOSpecialVariantItemBlock::new)));
         GTFOMetaBlocks.GTFO_SAPLINGS.forEach(sapling -> registry.register(createItemBlock(sapling, GTFOSpecialVariantItemBlock::new)));
@@ -123,7 +126,7 @@ public class CommonProxy {
         GTFOLog.logger.info("Registering ore prefix...");
         GTFOOreDictRegistration.init();
 
-        GTFOMetaItems.registerOreDict();
+        //GTFOMetaItems.registerOreDict();
         GTFOMetaBlocks.registerOreDict();
 
         //OrePrefix.runMaterialHandlers();
@@ -154,24 +157,7 @@ public class CommonProxy {
         }
     }
 
-    public static void addSlotsToMaps(
-            final RecipeMap<?> map,
-            final String slotType,
-            final int value)
-            throws Exception {
 
-        // set public
-        Field field = RecipeMap.class.getDeclaredField(slotType);
-        field.setAccessible(true);
-
-        // set non-final
-        Field modifiersField = Field.class.getDeclaredField("modifiers");
-        modifiersField.setAccessible(true);
-        modifiersField.setInt(field, field.getModifiers() & ~Modifier.FINAL);
-
-        // set the value of the parameter
-        field.setInt(map, value);
-    }
 
 
     // These recipes are generated at the beginning of the init() phase with the proper config set.

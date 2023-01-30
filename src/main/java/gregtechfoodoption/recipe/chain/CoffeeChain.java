@@ -2,33 +2,25 @@ package gregtechfoodoption.recipe.chain;
 
 import de.ellpeck.actuallyadditions.mod.blocks.InitBlocks;
 import de.ellpeck.actuallyadditions.mod.items.InitItems;
-import de.ellpeck.actuallyadditions.mod.misc.apiimpl.MethodHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.Materials;
 import gregtech.common.items.MetaItems;
 import gregtechfoodoption.GTFOConfig;
 import gregtechfoodoption.GTFOMaterialHandler;
-import gregtechfoodoption.integration.applecore.GTFOAppleCoreCompat;
-import gregtechfoodoption.utils.GTFOUtils;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 import gregtechfoodoption.GTFOValues;
 import gregtechfoodoption.integration.jei.JEIGTFOPlugin;
 import gregtechfoodoption.item.GTFOMetaItem;
+import gregtechfoodoption.utils.GTFOUtils;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Loader;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
-import gregtechfoodoption.item.GTFOMetaItem;
 
-
-import java.util.Objects;
 
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.Paper;
 import static gregtech.api.unification.material.Materials.Water;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtechfoodoption.item.GTFOMetaItem.*;
-import static net.minecraft.item.Item.getItemById;
 
 public class CoffeeChain {
     public static void init() {
@@ -36,9 +28,9 @@ public class CoffeeChain {
             ModHandler.removeRecipes(new ItemStack(InitBlocks.blockCoffeeMachine));
 
         if (Loader.isModLoaded(GTFOValues.MODID_AA)) {
-            JEIGTFOPlugin.itemStacksToHide.add(InitItems.itemCoffee.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(InitItems.itemCoffeeSeed.getDefaultInstance());
-            JEIGTFOPlugin.itemStacksToHide.add(InitItems.itemCoffeeBean.getDefaultInstance());
+            JEIGTFOPlugin.itemStacksToHide.add(new ItemStack(InitItems.itemCoffee));
+            JEIGTFOPlugin.itemStacksToHide.add(new ItemStack(InitItems.itemCoffeeSeed));
+            JEIGTFOPlugin.itemStacksToHide.add(new ItemStack(InitItems.itemCoffeeBean));
             JEIGTFOPlugin.itemStacksToHide.add(new ItemStack(InitBlocks.blockCoffeeMachine));
         }
 
@@ -208,6 +200,15 @@ public class CoffeeChain {
 
         CENTRIFUGE_RECIPES.recipeBuilder()
                 .inputs(GTFOMaterialHandler.UNSORTED_BASIC_COFFEE.getItemStack(30))
+                .outputs(GTFOMaterialHandler.LARGE_BASIC_COFFEE.getItemStack(9))
+                .chancedOutput(GTFOMaterialHandler.LARGE_BASIC_COFFEE.getItemStack(), 5000, 200)
+                .outputs(GTFOMaterialHandler.SMALL_BASIC_COFFEE.getItemStack(19))
+                .chancedOutput(GTFOMaterialHandler.SMALL_BASIC_COFFEE.getItemStack(), 5000, 200)
+                .EUt(20)
+                .duration(600)
+                .buildAndRegister();
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
                 .outputs(GTFOMaterialHandler.LARGE_BASIC_COFFEE.getItemStack(9))
                 .chancedOutput(GTFOMaterialHandler.LARGE_BASIC_COFFEE.getItemStack(), 5000, 200)
                 .outputs(GTFOMaterialHandler.SMALL_BASIC_COFFEE.getItemStack(19))

@@ -1,15 +1,17 @@
 package gregtechfoodoption;
 
 import gregtech.api.GTValues;
+import gregtech.api.GregTechAPI;
 import gregtechfoodoption.block.GTFOMetaBlocks;
 import gregtechfoodoption.client.GTFOClientHandler;
+import gregtechfoodoption.covers.GTFOCoverBehaviors;
 import gregtechfoodoption.entity.GTFOEntities;
 import gregtechfoodoption.integration.applecore.GTFOAppleCoreCompat;
 import gregtechfoodoption.integration.tfc.GTFOTFCCompatibility;
 import gregtechfoodoption.integration.top.GTFOTOPCompatibility;
 import gregtechfoodoption.machines.GTFOTileEntities;
 import gregtechfoodoption.machines.farmer.FarmerModeRegistry;
-import gregtechfoodoption.network.GTFONetworkHandler;
+import gregtechfoodoption.network.PacketAppleCoreFoodDivisorUpdate;
 import gregtechfoodoption.utils.GTFOConfigOverrider;
 import gregtechfoodoption.worldgen.GTFOWorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
@@ -44,7 +46,7 @@ public class GregTechFoodOption {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        GTFONetworkHandler.init();
+        GregTechAPI.networkHandler.registerPacket(PacketAppleCoreFoodDivisorUpdate.class);
         proxy.preLoad();
 
         MinecraftForge.EVENT_BUS.register(new GTFODropsEventHandler());
@@ -75,7 +77,9 @@ public class GregTechFoodOption {
         if (Loader.isModLoaded(GTFOValues.MODID_GF) && Loader.isModLoaded(GTFOValues.MODID_TFC)) {
             GTFOTFCCompatibility.init();
         }
+        GTFOCoverBehaviors.init();
         GameRegistry.registerWorldGenerator(GTFOWorldGenerator.INSTANCE, 1);
+        GTFOMaterialHandler.registerFertilizerTooltips();
     }
 
     @Mod.EventHandler

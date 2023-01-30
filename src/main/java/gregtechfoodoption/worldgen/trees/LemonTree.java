@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-import static gregtechfoodoption.item.GTFOMetaItem.ORANGE;
+import static gregtechfoodoption.item.GTFOMetaItem.LEMON;
 
 public class LemonTree extends GTFOTree {
     public static int LEAVES_COLOR = 0x87A92C;
@@ -54,13 +54,17 @@ public class LemonTree extends GTFOTree {
     }
 
     @Override
-    public ItemStack getApple(int chance) {
+    public ItemStack getAppleDrop(int chance) {
         if (GTFOValues.rand.nextInt(chance / 10) == 0) {
-            return ORANGE.getStackForm(GTFOValues.rand.nextInt(2) + 1);
+            return LEMON.getStackForm(GTFOValues.rand.nextInt(2) + 1);
         }
         return ItemStack.EMPTY;
     }
 
+    @Override
+    public ItemStack getApple() {
+        return LEMON.getStackForm();
+    }
     @Override
     public int getMinTrunkHeight(Random random) {
         return 6 + random.nextInt(3);

@@ -1,7 +1,7 @@
 package gregtechfoodoption.block.tree;
 
 import com.google.common.collect.Lists;
-import gregtech.GregTechMod;
+import gregtech.core.CoreModule;
 import gregtechfoodoption.GTFOValues;
 import gregtechfoodoption.block.GTFOMetaBlocks;
 import gregtechfoodoption.block.GTFOTree;
@@ -148,12 +148,12 @@ public class GTFOBlockLeaves extends BlockLeaves implements IVariantNamed {
     }
 
     private boolean fancyLeaves() {
-        return GregTechMod.proxy.isFancyGraphics();
+        return CoreModule.proxy.isFancyGraphics();
     }
 
     @Override
     protected void dropApple(World worldIn, BlockPos pos, IBlockState state, int chance) {
-        spawnAsEntity(worldIn, pos, ((GTFOBlockLeaves)state.getBlock()).getTreeFromState(state).getApple(chance));
+        spawnAsEntity(worldIn, pos, ((GTFOBlockLeaves)state.getBlock()).getTreeFromState(state).getAppleDrop(chance));
     }
 
     // Primarily for getting the correct sapling type.

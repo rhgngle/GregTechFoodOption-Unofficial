@@ -2,15 +2,17 @@ package gregtechfoodoption.recipe.chain;
 
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
+import gregtech.common.items.MetaItems;
 import gregtechfoodoption.GTFOConfig;
-import gregtechfoodoption.GTFOMaterialHandler;
 import gregtechfoodoption.item.GTFOMetaItem;
 import net.minecraft.item.ItemStack;
 
 import static gregtech.api.unification.material.Materials.*;
 import static gregtechfoodoption.GTFOMaterialHandler.*;
+import static gregtechfoodoption.item.GTFOMetaItem.*;
 
 public class SeedsChain {
     public static void init() {
@@ -20,29 +22,43 @@ public class SeedsChain {
                 .chancedOutput(GTFOMaterialHandler.PopcornKernel.getItemStack(), 2000, 250)
                 .buildAndRegister();*/
 
-        if(GTFOConfig.gtfoMiscConfig.centrifugeSeeds) {
-            ItemStack[] seeds = new ItemStack[]{
-                    GTFOMetaItem.LEMON.getStackForm(),
-                    GTFOMetaItem.LIME.getStackForm(),
-                    GTFOMetaItem.TOMATO.getStackForm(),
-                    GTFOMetaItem.CUCUMBER.getStackForm(),
-                    GTFOMetaItem.OLIVE.getStackForm(),
-                    GTFOMetaItem.ONION.getStackForm(),
-                    GTFOMetaItem.BANANA.getStackForm(),
-                    GTFOMetaItem.ORANGE.getStackForm(),
-                    GTFOMetaItem.GRAPES.getStackForm(),
-                    GTFOMetaItem.MANGO.getStackForm(),
-                    GTFOMetaItem.APRICOT.getStackForm(),
-                    GTFOMaterialHandler.PopcornKernel.getItemStack()
-            };
-            for (ItemStack seed : seeds) {
+        ItemStack[] seeds = new ItemStack[]{
+                LEMON.getStackForm(),
+                LIME.getStackForm(),
+                TOMATO.getStackForm(),
+                CUCUMBER.getStackForm(),
+                OLIVE.getStackForm(),
+                ONION.getStackForm(),
+                BANANA.getStackForm(),
+                ORANGE.getStackForm(),
+                GRAPES.getStackForm(),
+                MANGO.getStackForm(),
+                APRICOT.getStackForm(),
+                PEA_POD.getStackForm(),
+                SOYBEAN.getStackForm(),
+                BEANS.getStackForm(),
+                COFFEE_CHERRY.getStackForm(),
+        };
+
+        for (ItemStack seed : seeds) {
+            if(GTFOConfig.gtfoMiscConfig.centrifugeSeeds) {
                 RecipeMaps.CENTRIFUGE_RECIPES.recipeBuilder().EUt(5).duration(144)
                         .inputs(seed)
                         .fluidOutputs(Materials.Methane.getFluid(34))
                         .buildAndRegister();
             }
+            RecipeMaps.BREWING_RECIPES.recipeBuilder().EUt(3).duration(800)
+                    .inputs(seed)
+                    .fluidInputs(Water.getFluid(100))
+                    .fluidOutputs(Biomass.getFluid(100))
+                    .buildAndRegister();
+            ItemStack eight = seed.copy();
+            eight.setCount(8);
+            RecipeMaps.COMPRESSOR_RECIPES.recipeBuilder().EUt(2).duration(300)
+                    .inputs(eight)
+                    .outputs(MetaItems.PLANT_BALL.getStackForm())
+                    .buildAndRegister();
         }
-
         ModHandler.addShapedRecipe("gtfo_seed_soy_ungenerify", GTFOMetaItem.SOYBEAN_SEED.getStackForm(),
                 "S  ", "   ", "   ",
                 'S', GTFOMetaItem.UNKNOWN_SEED);
@@ -61,6 +77,13 @@ public class SeedsChain {
         ModHandler.addShapedRecipe("gtfo_seed_coffee_ungenerify", GTFOMetaItem.COFFEE_SEED.getStackForm(),
                 "   ", "   ", "S  ",
                 'S', GTFOMetaItem.UNKNOWN_SEED);
+        ModHandler.addShapedRecipe("gtfo_seed_pea_ungenerify", GTFOMetaItem.PEAS.getStackForm(),
+                "   ", "  S", "   ",
+                'S', GTFOMetaItem.UNKNOWN_SEED);
+        ModHandler.addShapedRecipe("gtfo_seed_bean_ungenerify", GTFOMetaItem.BEANS.getStackForm(),
+                "   ", "   ", " S ",
+                'S', GTFOMetaItem.UNKNOWN_SEED);
+
 
         ModHandler.addShapelessRecipe("gtfo_seed_soy_extraction", GTFOMetaItem.SOYBEAN_SEED.getStackForm(),
                 GTFOMetaItem.SOYBEAN);
@@ -75,11 +98,13 @@ public class SeedsChain {
 
         RecipeMaps.EXTRACTOR_RECIPES.recipeBuilder().EUt(2).duration(64)
                 .input(GTFOMetaItem.SOYBEAN_SEED)
+                .notConsumable(IntCircuitIngredient.getIntegratedCircuit(1))
                 .fluidOutputs(RawSoybeanOil.getFluid(15))
                 .buildAndRegister();
 
-        RecipeMaps.COMPRESSOR_RECIPES.recipeBuilder().EUt(64).duration(64)
+        RecipeMaps.EXTRACTOR_RECIPES.recipeBuilder().EUt(64).duration(64)
                 .input(GTFOMetaItem.SOYBEAN_SEED)
+                .notConsumable(IntCircuitIngredient.getIntegratedCircuit(2))
                 .output(OrePrefix.dustSmall, Wood)
                 .fluidOutputs(RawSoybeanOil.getFluid(28))
                 .buildAndRegister();
@@ -95,10 +120,23 @@ public class SeedsChain {
 
         RecipeMaps.DISTILLATION_RECIPES.recipeBuilder().EUt(24).duration(40)
                 .fluidInputs(RawSoybeanOil.getFluid(1000))
-                .fluidOutputs(SeedOil.getFluid(600));
+                .fluidOutputs(SeedOil.getFluid(600))
+                .buildAndRegister();
         RecipeMaps.DISTILLATION_RECIPES.recipeBuilder().EUt(24).duration(40)
                 .fluidInputs(SoybeanOil.getFluid(1000))
-                .fluidOutputs(SeedOil.getFluid(1000));
+                .fluidOutputs(SeedOil.getFluid(1000))
+                .buildAndRegister();
+        RecipeMaps.DISTILLATION_RECIPES.recipeBuilder().EUt(24).duration(40)
+                .fluidInputs(OliveOil.getFluid(1000))
+                .fluidOutputs(SeedOil.getFluid(500))
+                .buildAndRegister();
+
+        ModHandler.addShapelessRecipe("gtfo_seed_pea_extraction", PEAS.getStackForm(),
+                PEA_POD);
+        RecipeMaps.CANNER_RECIPES.recipeBuilder().EUt(8).duration(20)
+                .inputs(PEA_POD.getStackForm())
+                .outputs(PEAS.getStackForm(8))
+                .buildAndRegister();
 
 
 /*
@@ -108,7 +146,6 @@ public class SeedsChain {
         RecipeUtils.addGreenHouseRecipes(CUCUMBER.getStackForm(), CUCUMBER);
         RecipeUtils.addGreenHouseRecipes(ONION.getStackForm(), ONION);
         RecipeUtils.addGreenHouseRecipes(GRAPES.getStackForm(), GRAPES);
-
         RecipeUtils.addGreenHouseRecipes(PopcornKernel.getItemStack(), POPCORN_EAR);
 */
 
