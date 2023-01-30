@@ -1,6 +1,6 @@
 # GregTech Food Option - Unofficial
 
-![MCVersion](http://cf.way2muchnoise.eu/versions/gregtech-food-option.svg) <a title="Join us on Discord!" href="https://discord.gg/TFZdCSAypV"><img src="https://img.shields.io/discord/701354865217110096?label=GTFO:CE%20Discord&amp;logo=Discord&amp;style=?flat" alt="Discord"/></a>
+![MCVersion](http://cf.way2muchnoise.eu/versions/gregtech-food-option.svg) <a title="Join us on Discord!" href="https://discord.gg/TFZdCSAypV"><img src="https://img.shields.io/discord/1069465203617574922?label=GTFO:CE%20Discord&amp;logo=Discord&amp;style=?flat" alt="Discord"/></a>
 
 This particular mod is an addon to Gregtech that adds several realistic chains for food items.
 
