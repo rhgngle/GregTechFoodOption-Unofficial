@@ -33,6 +33,7 @@ public class GTFORecipeAddition {
         AlcoholChain.init();
         PurpleDrinkChain.init();
         JointChain.init();
+        IngestionMediumChain.init();
         IVBagChain.init();
 
         if (Loader.isModLoaded(GTFOValues.MODID_GCYS)) {
