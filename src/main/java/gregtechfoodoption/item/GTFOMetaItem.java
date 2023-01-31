@@ -298,6 +298,7 @@ public class GTFOMetaItem extends StandardMetaItem implements IEdible {
     public static MetaItem<?>.MetaValueItem PLUTONIUM_241_CAPLET;
     public static MetaItem<?>.MetaValueItem IV_BAG;
     public static MetaItem<?>.MetaValueItem SYRINGE;
+    public static MetaItem<?>.MetaValueItem DIRTY_SYRINGE;
 
 
     public GTFOMetaItem() {
@@ -696,6 +697,7 @@ public class GTFOMetaItem extends StandardMetaItem implements IEdible {
         PLUTONIUM_241_CAPLET = addItem(16010, "plutonium_241_caplet").addComponents(new GTFOFoodStats(0, 1f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.POISON, 7000, 0, 0)).setEatingDuration(1));
         IV_BAG = addItem(16011, "iv_bag");
         SYRINGE = addItem(16012, "syringe");
+        DIRTY_SYRINGE = addItem(16013, "dirty_syringe");
 
         SPRINKLER_COVER = addItem(224, "cover.sprinkler");
 

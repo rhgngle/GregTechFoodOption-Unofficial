@@ -34,6 +34,12 @@ public class IngestionMediumChain {
                 .outputs(SYRINGE.getStackForm(1))
                 .buildAndRegister();
 
+        CHEMICAL_BATH_RECIPES.recipeBuilder().EUt(30).duration(100)
+                .fluidInputs(Ethanol.getFluid(100))
+                .inputs(DIRTY_SYRINGE.getStackForm(1))
+                .outputs(SYRINGE.getStackForm(1))
+                .buildAndRegister();
+
         //Rolling Papers
         BENDER_RECIPES.recipeBuilder().EUt(120).duration(15)
                 .input(OrePrefix.dust, Wood)

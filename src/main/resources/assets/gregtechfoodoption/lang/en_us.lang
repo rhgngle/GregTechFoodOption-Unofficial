@@ -893,6 +893,7 @@ metaitem.ivnitrophenol_dust.name=4-Nitrophenol
 metaitem.plutonium_241_caplet.name=Plutonium-241 Caplet
 metaitem.iv_bag.name=IV Bag
 metaitem.syringe.name=Syringe
+metaitem.dirty_syringe.name=Dirty Syringe
 
 material.gtfo_acetic_anhydride=Acetic Anhydride
 material.gtfo_heated_water=Heated Water
