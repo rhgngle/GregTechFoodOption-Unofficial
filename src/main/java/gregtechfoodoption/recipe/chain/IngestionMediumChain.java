@@ -40,6 +40,11 @@ public class IngestionMediumChain {
                 .outputs(SYRINGE.getStackForm(1))
                 .buildAndRegister();
 
+        WIREMILL_RECIPES.recipeBuilder().EUt(120).duration(200)
+                .input(OrePrefix.plate, Glass)
+                .output(OrePrefix.wireFine, Glass)
+                .buildAndRegister();
+
         //Rolling Papers
         BENDER_RECIPES.recipeBuilder().EUt(120).duration(15)
                 .input(OrePrefix.dust, Wood)
