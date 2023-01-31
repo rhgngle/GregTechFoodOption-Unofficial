@@ -388,6 +388,58 @@ public class GTFOMaterialHandler {
     public static final Material FormicAcid = fluidBuilder(25011, "formic_acid").fluidTemp(343)
             .color(0x676525)
             .build();
+    public static final Material Phenylethylamine = fluidBuilder(25012, "phenylethylamine").fluidTemp(343) // start here for localizaqtion
+            .color(0x71FA0E)
+            .build();
+    public static final Material Chlorotrimethylsilane = fluidBuilder(25013, "chlorotrimethylsilane").fluidTemp(343)
+            .color(0xE738FF)
+            .build();
+    public static final Material Allyltrimethylsilane = fluidBuilder(25014, "allyltrimethylsilane").fluidTemp(343)
+            .color(0xDDAA68)
+            .build();
+    public static final Material Formaldehyde = fluidBuilder(25015, "formaldehyde").fluidTemp(343)
+            .color(0x18773D)
+            .build();
+    public static final Material Dimethylsilane = fluidBuilder(25016, "dimethylsilane").fluidTemp(343)
+            .color(0x13EF5B)
+            .build();
+    public static final Material OxalylChloride = fluidBuilder(25017, "oxalyl_chloride").fluidTemp(343)
+            .color(0x4BEA00)
+            .build();
+    public static final Material DimethylSulfoxide = fluidBuilder(25018, "dimethyl_sulfoxide").fluidTemp(343)
+            .color(0x676525)
+            .build();
+    public static final Material HydrogenChloride = fluidBuilder(25019, "hydrogen_chloride").fluidTemp(343)
+            .color(0x8CCA53)
+            .build();
+    public static final Material DimethylSulfide = fluidBuilder(25020, "dimethyl_sulfide").fluidTemp(343)
+            .color(0xFB01AB)
+            .build();
+    public static final Material PropionicAcid = fluidBuilder(25021, "propionic_acid").fluidTemp(343)
+            .color(0xED49EA)
+            .build();
+    public static final Material PropionicAnhydride = fluidBuilder(25022, "propionic_anhydride").fluidTemp(343)
+            .color(0xC8F8A7)
+            .build();
+    public static final Material GreganylCitrateSolution = fluidBuilder(25023, "greganyl_citrate_solution").fluidTemp(343)
+            .color(0xB50DEB)
+            .build();
+    public static final Material Dimethylformamide = fluidBuilder(25024, "dimethylformamide").fluidTemp(343)
+            .color(0x42BDFF)
+            .build();
+    public static final Material SodiumFormate = fluidBuilder(25025, "sodium_formate").fluidTemp(343)
+            .color(0xFFAAAA)
+            .build();
+    public static final Material OxalicAcid = fluidBuilder(25026, "oxalic_acid").fluidTemp(343)
+            .color(0x4AAAE2)
+            .build();
+    public static final Material VanadiumWasteSolution = fluidBuilder(25027, "vanadium_waste_solution").fluidTemp(343)
+            .color(0x54EA7C)
+            .build();
+    public static final Material PhosphorylChloride = fluidBuilder(25028, "phosphoryl_chloride").fluidTemp(343)
+            .color(0x7CA6CD)
+            .build();
+
 
 
     public static final GTFOOredictItem.OreDictValueItem COFFEE_GROUNDS = SHAPED_ITEM.addOreDictItem(1017, "coffee_grounds", 0x1a1612, MaterialIconSet.DULL, OrePrefix.dust);
@@ -499,6 +551,18 @@ public class GTFOMaterialHandler {
     public static final MetaOreDictItem.OreDictValueItem NFormylImpostramine = SHAPED_ITEM.addOreDictItem(3011, "n_formyl_impostramine", 0x2E616A, MaterialIconSet.SAND, dust);
     public static final MetaOreDictItem.OreDictValueItem ImpostramineHydrochloride = SHAPED_ITEM.addOreDictItem(3012, "impostramine_hydrochloride", 0x6BCBEB, MaterialIconSet.SHINY, dust);
     public static final MetaOreDictItem.OreDictValueItem ImpostramineHydrochlorideSmall = SHAPED_ITEM.addOreDictItem(3013, "impostramine_hydrochloride", 0x6BCBEB, MaterialIconSet.SHINY, dustSmall);
+    public static final MetaOreDictItem.OreDictValueItem IVHydroxyIIIPhenylethylPiperidine = SHAPED_ITEM.addOreDictItem(3014, "iv_hydroxy_i_ii_phenylethyl_piperidine", 0xD673F0, MaterialIconSet.SAND, dust);
+    public static final MetaOreDictItem.OreDictValueItem IIIPhenylethylIVPiperidone = SHAPED_ITEM.addOreDictItem(3015, "ii_i_phenylethyl_iv_piperidone", 0xA46B8C, MaterialIconSet.SAND, dust);
+    public static final MetaOreDictItem.OreDictValueItem IVAnilinoIIIPhenylethylPiperidine = SHAPED_ITEM.addOreDictItem(3016, "iv_anilino_i_ii_phenylethyl_piperidine", 0xE8D6FC, MaterialIconSet.SAND, dust);
+    public static final MetaOreDictItem.OreDictValueItem Greganyl = SHAPED_ITEM.addOreDictItem(3017, "greganyl", 0xB50DEB, MaterialIconSet.SHINY, dust);
+    public static final MetaOreDictItem.OreDictValueItem VanadiumOxide = SHAPED_ITEM.addOreDictItem(3018, "vanadium_oxide", 0xF2EF1B, MaterialIconSet.FINE, dust);
+    public static final MetaOreDictItem.OreDictValueItem Glucose = SHAPED_ITEM.addOreDictItem(3019, "glucose", 0xFFFFE0, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem Fructose = SHAPED_ITEM.addOreDictItem(3020, "fructose", 0x90EE90, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem AmmoniumVanadate = SHAPED_ITEM.addOreDictItem(3021, "ammonium_vanadate", 0xF2FF1C, MaterialIconSet.FINE, dust);
+    public static final MetaOreDictItem.OreDictValueItem SodiumVanadate = SHAPED_ITEM.addOreDictItem(3022, "sodium_vanadate", 0xF2DF1D, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem VanadiumSlag = SHAPED_ITEM.addOreDictItem(3023, "vanadium_slag", 0x5C3366, MaterialIconSet.DULL, dust);
+    public static final MetaOreDictItem.OreDictValueItem VanadiumSlagDust = SHAPED_ITEM.addOreDictItem(3024, "vanadium_slag_dust", 0xF2EF1B, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem PhosphorousPentachloride = SHAPED_ITEM.addOreDictItem(3025, "phosphorous_pentachloride", 0x093457, MaterialIconSet.ROUGH, dust);
 
     public static void onMaterialsInit() {
         Materials.Iron.addFlags(GENERATE_FRAME);
