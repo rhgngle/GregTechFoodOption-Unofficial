@@ -370,6 +370,24 @@ public class GTFOMaterialHandler {
     public static final Material Nitrophenols = fluidBuilder(25005, "nitrophenols").fluidTemp(343)
             .color(0xFFFFFF)
             .build();
+    public static final Material BenzylChloride = fluidBuilder(25006, "benzyl_chloride").fluidTemp(343)
+            .color(0xD84954)
+            .build();
+    public static final Material BenzylCyanide = fluidBuilder(25007, "benzyl_cyanide").fluidTemp(343)
+            .color(0x765984)
+            .build();
+    public static final Material MethylFormate = fluidBuilder(25008, "methyl_formate").fluidTemp(343)
+            .color(0x435698)
+            .build();
+    public static final Material Methylamine = fluidBuilder(25009, "methylamine").fluidTemp(343)
+            .color(0x546128)
+            .build();
+    public static final Material NMethylformamide = fluidBuilder(25010, "nmethylformamide").fluidTemp(343)
+            .color(0x748525)
+            .build();
+    public static final Material FormicAcid = fluidBuilder(25011, "formic_acid").fluidTemp(343)
+            .color(0x676525)
+            .build();
 
 
     public static final GTFOOredictItem.OreDictValueItem COFFEE_GROUNDS = SHAPED_ITEM.addOreDictItem(1017, "coffee_grounds", 0x1a1612, MaterialIconSet.DULL, OrePrefix.dust);
@@ -474,6 +492,13 @@ public class GTFOMaterialHandler {
     public static final MetaOreDictItem.OreDictValueItem Aminophenol = SHAPED_ITEM.addOreDictItem(3004, "aminophenol", 0xFFFFFF, MaterialIconSet.GEM_VERTICAL, gemFlawed);
     public static final MetaOreDictItem.OreDictValueItem IVNitrophenol = SHAPED_ITEM.addOreDictItem(3005, "ivnitrophenol", 0xFFFFE0, MaterialIconSet.SHINY, dust);
     public static final MetaOreDictItem.OreDictValueItem IINitrophenol = SHAPED_ITEM.addOreDictItem(3006, "iinitrophenol", 0xFFFF00, MaterialIconSet.SHINY, dust);
+    public static final MetaOreDictItem.OreDictValueItem PhenylaceticAcid = SHAPED_ITEM.addOreDictItem(3007, "phenylacetic_acid", 0x645256, MaterialIconSet.SAND, dust);
+    public static final MetaOreDictItem.OreDictValueItem ThoriumDioxide = SHAPED_ITEM.addOreDictItem(3008, "thorium_dioxide", 0x417F87, MaterialIconSet.METALLIC, dust);
+    public static final MetaOreDictItem.OreDictValueItem Phenylacetone = SHAPED_ITEM.addOreDictItem(3009, "phenylacetone", 0xB5C79A, MaterialIconSet.SAND, dust);
+    public static final MetaOreDictItem.OreDictValueItem SodiumMethoxide = SHAPED_ITEM.addOreDictItem(3010, "sodium_methoxide", 0x448FCA, MaterialIconSet.SAND, dust);
+    public static final MetaOreDictItem.OreDictValueItem NFormylImpostramine = SHAPED_ITEM.addOreDictItem(3011, "n_formyl_impostramine", 0x2E616A, MaterialIconSet.SAND, dust);
+    public static final MetaOreDictItem.OreDictValueItem ImpostramineHydrochloride = SHAPED_ITEM.addOreDictItem(3012, "impostramine_hydrochloride", 0x6BCBEB, MaterialIconSet.SHINY, dust);
+    public static final MetaOreDictItem.OreDictValueItem ImpostramineHydrochlorideSmall = SHAPED_ITEM.addOreDictItem(3013, "impostramine_hydrochloride", 0x6BCBEB, MaterialIconSet.SHINY, dustSmall);
 
     public static void onMaterialsInit() {
         Materials.Iron.addFlags(GENERATE_FRAME);

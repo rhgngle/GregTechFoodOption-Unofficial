@@ -87,5 +87,96 @@ public class CapletChain {
                 .outputs(PLUTONIUM_241_CAPLET.getStackForm())
                 .buildAndRegister();
 
+        //N-methyl-1-phenylpropan-2-amine
+        CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .fluidInputs(Toluene.getFluid(1000))
+                .fluidInputs(Chlorine.getFluid(2000))
+                .fluidOutputs(BenzylChloride.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .buildAndRegister();
+        CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .inputs(SodiumCyanide.get(3))
+                .fluidInputs(BenzylChloride.getFluid(1000))
+                .output(dust, Salt, 2)
+                .fluidOutputs(BenzylCyanide.getFluid(1000))
+                .buildAndRegister();
+        CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .fluidInputs(BenzylCyanide.getFluid(1000))
+                .fluidInputs(HydrochloricAcid.getFluid(1000))
+                .fluidInputs(Water.getFluid(2000))
+                .outputs(PhenylaceticAcid.getItemStack(18))
+                .output(dust, AmmoniumChloride, 2)
+                .buildAndRegister();
+        BLAST_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .input(dust, Thorium)
+                .fluidInputs(Oxygen.getFluid(2000))
+                .outputs(ThoriumDioxide.getItemStack(3))
+                .blastFurnaceTemp(1200)
+                .buildAndRegister();
+        CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .inputs(PhenylaceticAcid.getItemStack(18))
+                .notConsumable(ThoriumDioxide.getItemStack())
+                .fluidInputs(AceticAcid.getFluid(1000))
+                .outputs(Phenylacetone.getItemStack(20))
+                .fluidOutputs(CarbonDioxide.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .buildAndRegister();
+        CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .input(dust, Sodium)
+                .fluidInputs(Methanol.getFluid(1000))
+                .outputs(SodiumMethoxide.getItemStack(6))
+                .fluidOutputs(Hydrogen.getFluid(1000))
+                .buildAndRegister();
+        CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .fluidInputs(Methanol.getFluid(1000))
+                .fluidInputs(CarbonMonoxide.getFluid(1000))
+                .notConsumable(SodiumMethoxide.getItemStack())
+                .fluidOutputs(MethylFormate.getFluid(1000))
+                .buildAndRegister();
+        CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .fluidInputs(Ammonia.getFluid(1000))
+                .fluidInputs(Methanol.getFluid(1000))
+                .notConsumable(IntCircuitIngredient.getIntegratedCircuit(1))
+                .fluidOutputs(Methylamine.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .buildAndRegister();
+        CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .fluidInputs(MethylFormate.getFluid(1000))
+                .fluidInputs(Methylamine.getFluid(1000))
+                .fluidOutputs(NMethylformamide.getFluid(1000))
+                .buildAndRegister();
+        CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .inputs(Phenylacetone.getItemStack(20))
+                .fluidInputs(NMethylformamide.getFluid(2000))
+                .outputs(NFormylImpostramine.getItemStack(28))
+                .fluidOutputs(Methylamine.getFluid(1000))
+                .fluidOutputs(CarbonDioxide.getFluid(1000))
+                .buildAndRegister();
+        CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .inputs(NFormylImpostramine.getItemStack())
+                .fluidInputs(Water.getFluid(1000))
+                .fluidInputs(HydrochloricAcid.getFluid(1000))
+                .outputs(ImpostramineHydrochloride.getItemStack(2))
+                .fluidOutputs(FormicAcid.getFluid(1000))
+                .buildAndRegister();
+        CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .fluidInputs(FormicAcid.getFluid(1000))
+                .fluidInputs(Methanol.getFluid(1000))
+                .notConsumable(SulfuricAcid.getFluid(10))
+                .fluidOutputs(MethylFormate.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .buildAndRegister();
+        FORMING_PRESS_RECIPES.recipeBuilder().EUt(30).duration(20)
+                .inputs(CAPLET_BODY.getStackForm())
+                .inputs(ImpostramineHydrochlorideSmall.getItemStack())
+                .inputs(CAPLET_CAP.getStackForm())
+                .outputs(IMPOSTRAMINE_CAPLET.getStackForm())
+                .buildAndRegister();
+
+        ModHandler.addShapelessRecipe("impostramine_hydrochloride_small", ImpostramineHydrochlorideSmall.getItemStack(4), ImpostramineHydrochloride.getItemStack());
+        ModHandler.addShapelessRecipe("impostramine_hydrochloride", ImpostramineHydrochloride.getItemStack(), ImpostramineHydrochlorideSmall.getItemStack(4));
+
+
+
     }
 }

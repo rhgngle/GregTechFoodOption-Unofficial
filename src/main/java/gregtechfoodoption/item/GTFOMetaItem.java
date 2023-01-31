@@ -299,6 +299,7 @@ public class GTFOMetaItem extends StandardMetaItem implements IEdible {
     public static MetaItem<?>.MetaValueItem IV_BAG;
     public static MetaItem<?>.MetaValueItem SYRINGE;
     public static MetaItem<?>.MetaValueItem DIRTY_SYRINGE;
+    public static MetaItem<?>.MetaValueItem IMPOSTRAMINE_CAPLET;
 
 
     public GTFOMetaItem() {
@@ -692,12 +693,14 @@ public class GTFOMetaItem extends StandardMetaItem implements IEdible {
         ASBESTOS_JOINT = addItem(16005, "food.asbestos_joint").addComponents(new GTFOFoodStats(0, 1f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.WITHER, 2147483647, 0, 50)).setEatingDuration(60));
         FLATTENED_WOOD_PULP = addItem(16006, "flattened_wood_pulp");
         BLEACHED_FLATTENED_PULP = addItem(16007, "bleached_flattened_pulp");
-        PARACETAMOL_CAPLET = addItem(16008, "food.paracetamol_caplet").addComponents(new GTFOFoodStats(0, 1f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.REGENERATION, 400, 0, 0)).setEatingDuration(1));
+        PARACETAMOL_CAPLET = addItem(16008, "food.paracetamol_caplet").addComponents(new GTFOFoodStats(0, 1f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.REGENERATION, 400, 1, 0)).setEatingDuration(1));
         HANDFUL_PARACETAMOL = addItem(16009, "food.handful_paracetamol").addComponents(new GTFOFoodStats(0, 1f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.INSTANT_DAMAGE, 400, 0, 0)).setEatingDuration(1));
         PLUTONIUM_241_CAPLET = addItem(16010, "plutonium_241_caplet").addComponents(new GTFOFoodStats(0, 1f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.POISON, 7000, 0, 0)).setEatingDuration(1));
         IV_BAG = addItem(16011, "iv_bag");
         SYRINGE = addItem(16012, "syringe");
         DIRTY_SYRINGE = addItem(16013, "dirty_syringe");
+        IMPOSTRAMINE_CAPLET = addItem(16014, "impostramine_caplet").addComponents(new GTFOFoodStats(1, 100f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.SPEED, 14400, 1, 0), new RandomPotionEffect(MobEffects.STRENGTH, 14400, 1, 0), new RandomPotionEffect(MobEffects.BLINDNESS, 14400, 0, 0)).setEatingDuration(1));
+
 
         SPRINKLER_COVER = addItem(224, "cover.sprinkler");
 

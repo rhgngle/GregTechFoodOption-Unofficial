@@ -884,7 +884,7 @@ metaitem.bleached_flattened_pulp.name=Bleached Flattened Pulp
 metaitem.paracetamol_dust.name=Paracetamol
 metaitem.paracetamol_dust_small.name=Small Pile of Paracetamol
 metaitem.food.paracetamol_caplet.name=Paracetamol Caplet
-metaitem.food.handful_paracetamol.name=Handful of Paracetamol Caplets
+metaitem.food.handful_paracetamol.name=§4Handful of Paracetamol Caplets
 metaitem.sodium_cyanide_dust.name=Sodium Cyanide
 metaitem.sodium_cyanide_dust_small.name=Small Pile of Sodium Cyanide
 metaitem.aminophenol_gem_flawed.name=p-Aminophenol
@@ -894,6 +894,14 @@ metaitem.plutonium_241_caplet.name=Plutonium-241 Caplet
 metaitem.iv_bag.name=IV Bag
 metaitem.syringe.name=Syringe
 metaitem.dirty_syringe.name=Dirty Syringe
+metaitem.impostramine_caplet.name=§4Impostramine Caplet
+metaitem.phenylacetic_acid_dust.name=Phenylacetic Acid
+metaitem.thorium_dioxide_dust.name=Thorium Dioxide
+metaitem.phenylacetone_dust.name=Phenylacetone
+metaitem.sodium_methoxide_dust.name=Sodium Methoxide
+metaitem.n_formyl_impostramine_dust.name=N-Formyl Impostramine
+metaitem.impostramine_hydrochloride_dust.name=Impostramine Hydrochloride
+metaitem.impostramine_hydrochloride_dust_small.name=Small Pile of Impostramine Hydrochloride
 
 material.gtfo_acetic_anhydride=Acetic Anhydride
 material.gtfo_heated_water=Heated Water
@@ -901,5 +909,11 @@ material.gtfo_gelatin_solution=Gelatin Solution
 material.gtfo_gelatin_solution_no_bubbles=Gelatin Solution (Airless)
 material.gtfo_sodium_hypochlorite=Sodium Hypochlorite
 material.gtfo_nitrophenols=Nitrophenols
+material.gtfo_benzyl_chloride=Benzyl Chloride
+material.gtfo_benzyl_cyanide=Benzyl Cyanide
+material.gtfo_methyl_formate=Methyl Formate
+material.gtfo_methylamine=Methylamine
+material.gtfo_nmethylformamide=N-Methylformamide
+material.gtfo_formic_acid=Formic Acid
 
 
