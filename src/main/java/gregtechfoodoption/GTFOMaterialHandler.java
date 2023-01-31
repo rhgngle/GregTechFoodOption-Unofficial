@@ -479,7 +479,7 @@ public class GTFOMaterialHandler {
         Materials.Iron.addFlags(GENERATE_FRAME);
         Materials.BismuthBronze.addFlags(GENERATE_FRAME);
         Materials.Aluminium.addFlags(GENERATE_DENSE);
-        Materials.StainlessSteel.addFlags(GENERATE_DENSE);
+        Materials.StainlessSteel.addFlags(GENERATE_DENSE, GENERATE_SPRING_SMALL);
         Materials.Titanium.addFlags(GENERATE_DENSE);
         Materials.Aluminium.addFlags(GENERATE_DENSE);
 

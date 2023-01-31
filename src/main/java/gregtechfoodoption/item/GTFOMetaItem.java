@@ -295,6 +295,8 @@ public class GTFOMetaItem extends StandardMetaItem implements IEdible {
     public static MetaItem<?>.MetaValueItem NILK;
 
     public static MetaItem<?>.MetaValueItem SPRINKLER_COVER;
+    public static MetaItem<?>.MetaValueItem PLUTONIUM_241_CAPLET;
+    public static MetaItem<?>.MetaValueItem IV_BAG;
 
 
     public GTFOMetaItem() {
@@ -690,6 +692,8 @@ public class GTFOMetaItem extends StandardMetaItem implements IEdible {
         BLEACHED_FLATTENED_PULP = addItem(16007, "bleached_flattened_pulp");
         PARACETAMOL_CAPLET = addItem(16008, "food.paracetamol_caplet").addComponents(new GTFOFoodStats(0, 1f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.REGENERATION, 400, 0, 0)).setEatingDuration(1));
         HANDFUL_PARACETAMOL = addItem(16009, "food.handful_paracetamol").addComponents(new GTFOFoodStats(0, 1f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.INSTANT_DAMAGE, 400, 0, 0)).setEatingDuration(1));
+        PLUTONIUM_241_CAPLET = addItem(16010, "plutonium_241_caplet").addComponents(new GTFOFoodStats(0, 1f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.POISON, 7000, 0, 0)).setEatingDuration(1));
+        IV_BAG = addItem(16011, "iv_bag");
 
         SPRINKLER_COVER = addItem(224, "cover.sprinkler");
 
