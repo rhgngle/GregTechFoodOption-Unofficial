@@ -301,6 +301,7 @@ public class GTFOMetaItem extends StandardMetaItem implements IEdible {
     public static MetaItem<?>.MetaValueItem DIRTY_SYRINGE;
     public static MetaItem<?>.MetaValueItem IMPOSTRAMINE_CAPLET;
     public static MetaItem<?>.MetaValueItem GREGANYL_CITRATE_IV_INJECTION;
+    public static MetaItem<?>.MetaValueItem HYDROXYCOBALAMIN_IV_INJECTION;
 
 
     public GTFOMetaItem() {
@@ -702,6 +703,7 @@ public class GTFOMetaItem extends StandardMetaItem implements IEdible {
         DIRTY_SYRINGE = addItem(16013, "dirty_syringe");
         IMPOSTRAMINE_CAPLET = addItem(16014, "impostramine_caplet").addComponents(new GTFOFoodStats(1, 100f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.SPEED, 14400, 1, 0), new RandomPotionEffect(MobEffects.STRENGTH, 14400, 1, 0), new RandomPotionEffect(MobEffects.BLINDNESS, 14400, 0, 0)).setEatingDuration(1));
         GREGANYL_CITRATE_IV_INJECTION = addItem(16015, "greganyl_citrate_iv_injection").addComponents(new GTFOFoodStats(0, 1f, true, true, ItemStack.EMPTY));
+        HYDROXYCOBALAMIN_IV_INJECTION = addItem(16016, "hydroxycobalamin_iv_injection").addComponents(new GTFOFoodStats(0, 1f, true, true, ItemStack.EMPTY));
 
 
         SPRINKLER_COVER = addItem(224, "cover.sprinkler");

@@ -22,6 +22,7 @@ public class GTFOTileEntities {
     public static SimpleMachineMetaTileEntity[] SLICER = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
     public static SimpleMachineMetaTileEntity[] CUISINE_ASSEMBLER = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
     public static MetaTileEntityMicrowave[] MICROWAVE = new MetaTileEntityMicrowave[GTValues.V.length - 1];
+    public static MetaTileEntityIncubator[] INCUBATOR = new MetaTileEntityIncubator[GTValues.V.length - 1];
 
     public static final MetaTileEntityMobAgeSorter[] MOB_AGE_SORTER = new MetaTileEntityMobAgeSorter[4];
     public static final MetaTileEntityMobExterminator[] MOB_EXTERMINATOR = new MetaTileEntityMobExterminator[4];
@@ -91,6 +92,12 @@ public class GTFOTileEntities {
         FARMER[3] = registerMetaTileEntity(8564, new MetaTileEntityFarmer(location("farmer.ev"), 4, 2));
 
         GREENHOUSE = registerMetaTileEntity(8565, new MetaTileEntityGreenhouse(location("greenhouse")));
+
+        // Incubator, IDs 8566-8569
+        INCUBATOR[0] = registerMetaTileEntity(8600, new MetaTileEntityIncubator(location("incubator.lv"), GTFORecipeMaps.INCUBATOR_RECIPES, GTFOClientHandler.INCUBATOR_OVERLAY, 1));
+        INCUBATOR[1] = registerMetaTileEntity(8601, new MetaTileEntityIncubator(location("incubator.mv"), GTFORecipeMaps.INCUBATOR_RECIPES, GTFOClientHandler.INCUBATOR_OVERLAY, 2));
+        INCUBATOR[2] = registerMetaTileEntity(8602, new MetaTileEntityIncubator(location("incubator.hv"), GTFORecipeMaps.INCUBATOR_RECIPES, GTFOClientHandler.INCUBATOR_OVERLAY, 3));
+        INCUBATOR[3] = registerMetaTileEntity(8603, new MetaTileEntityIncubator(location("incubator.ev"), GTFORecipeMaps.INCUBATOR_RECIPES, GTFOClientHandler.INCUBATOR_OVERLAY, 4));
 
     }
 

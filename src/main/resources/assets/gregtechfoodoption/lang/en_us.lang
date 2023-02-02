@@ -915,6 +915,38 @@ metaitem.phosphorous_pentachloride_dust.name=Phosphorous Pentachloride
 metaitem.glucose_dust.name=Glucose
 metaitem.fructose_dust.name=Fructose
 metaitem.vanadium_oxide_dust.name=Vanadium Oxide
+metaitem.cobalamin_mixture_dust.name=Cobalamin Mixture
+metaitem.potassium_cyanide_dust.name=Potassium Cyanide
+metaitem.sodium_nitrite_dust.name=Sodium Nitrite
+metaitem.cyanocobalamin_dust.name=Cyanocobalamin
+metaitem.cobalamin_dust.name=Cobalamin
+metaitem.zinc_sulfate_dust.name=Zinc Sulfate
+metaitem.hydroxycobalamin_dust.name=Hydroxycobalamin
+metaitem.hydroxycobalamin_iv_injection.name=Hydroxycobalamin IV Injection
+metaitem.coacab_catalyst_dust.name=CoAcAB Catalyst
+metaitem.sodium_nitrate_dust.name=Sodium Nitrate
+metaitem.calcium_carbide_dust.name=Calcium Carbide
+metaitem.calcium_hydroxide_dust.name=Calcium Hydroxide
+metaitem.levulinic_acid_dust.name=Levulinic Acid
+metaitem.methyl_levulinate_dust.name=Methyl Levulinate
+metaitem.cupric_chloride_dust.name=Cupric Chloride
+metaitem.methyl_v_chlorolevulinate_dust.name=Methyl 5-Chlorolevulinate
+metaitem.phthalic_anhydride_dust.name=Phthalic Anhydride
+metaitem.phthalimide_dust.name=Phthalimide
+metaitem.potassium_phthalimide_dust.name=Potassium Phthalimide
+metaitem.v_aminolevulinic_acid_dust.name=5-Aminolevulinic Acid (ALA)
+metaitem.iv_v_dinitro_i_ii_dimethylbenzene_dust.name=4,5-Dinitro-1,2-dimethylbenzene
+metaitem.iv_v_dimethyl_i_ii_phenylenediamine_dust.name=4,5-Dimethyl-1,2-phenylenediamine
+metaitem.iv_v_dimethylbenzimidazole_dust.name=4,5-Dimethylbenzimidazole (DMB)
+metaitem.bacillus_megabacterium_dust.name=Bacillus Megabacterium Culture
+metaitem.cobalt_chloride_dust.name=Cobalt Chloride
+
+gregtechfoodoption.machine.incubator.lv.name=Basic Incubator
+gregtechfoodoption.machine.incubator.mv.name=Advanced Incubator
+gregtechfoodoption.machine.incubator.hv.name=Elite Incubator
+gregtechfoodoption.machine.incubator.ev.name=Ultimate Incubator
+
+recipemap.incubator.name=Incubator
 
 material.gtfo_acetic_anhydride=Acetic Anhydride
 material.gtfo_heated_water=Heated Water
@@ -946,5 +978,11 @@ material.gtfo_sodium_formate=Sodium Formate
 material.gtfo_oxalic_acid=Oxalic Acid
 material.gtfo_vanadium_waste_solution=Vanadium Waste Solution
 material.gtfo_phosphoryl_chloride=Phosphoryl Chloride
+material.gtfo_potassium_hydroxide=Potassium Hydroxide
+material.gtfo_sodium_nitrate_solution=Sodium Nitrate Solution
+material.gtfo_acetylene=Acetylene
+material.gtfo_raw_cobalamin_selective_growth_medium=Raw Cobalamin Selective Growth Medium
+material.gtfo_sterile_cobalamin_selective_growth_medium=Sterile Cobalamin Selective Growth Medium
+
 
 

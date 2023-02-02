@@ -388,7 +388,7 @@ public class GTFOMaterialHandler {
     public static final Material FormicAcid = fluidBuilder(25011, "formic_acid").fluidTemp(343)
             .color(0x676525)
             .build();
-    public static final Material Phenylethylamine = fluidBuilder(25012, "phenylethylamine").fluidTemp(343) // start here for localizaqtion
+    public static final Material Phenylethylamine = fluidBuilder(25012, "phenylethylamine").fluidTemp(343)
             .color(0x71FA0E)
             .build();
     public static final Material Chlorotrimethylsilane = fluidBuilder(25013, "chlorotrimethylsilane").fluidTemp(343)
@@ -438,6 +438,21 @@ public class GTFOMaterialHandler {
             .build();
     public static final Material PhosphorylChloride = fluidBuilder(25028, "phosphoryl_chloride").fluidTemp(343)
             .color(0x7CA6CD)
+            .build();
+    public static final Material PotassiumHydroxide = fluidBuilder(25029, "potassium_hydroxide").fluidTemp(343)
+            .color(0xfe6a7f)
+            .build();
+    public static final Material SodiumNitrateSolution = fluidBuilder(25030, "sodium_nitrate_solution").fluidTemp(343)
+            .color(0x09ed05)
+            .build();
+    public static final Material Acetylene = fluidBuilder(25031, "acetylene").fluidTemp(343)
+            .color(0x1d599a)
+            .build();
+    public static final Material RawCobalaminSelectiveGrowthMedium = fluidBuilder(25032, "raw_cobalamin_selective_growth_medium").fluidTemp(343)
+            .color(0x5b9216)
+            .build();
+    public static final Material SterileCobalaminSelectiveGrowthMedium = fluidBuilder(25033, "sterile_cobalamin_selective_growth_medium").fluidTemp(343)
+            .color(0xbaa952)
             .build();
 
 
@@ -563,6 +578,30 @@ public class GTFOMaterialHandler {
     public static final MetaOreDictItem.OreDictValueItem VanadiumSlag = SHAPED_ITEM.addOreDictItem(3023, "vanadium_slag", 0x5C3366, MaterialIconSet.DULL, dust);
     public static final MetaOreDictItem.OreDictValueItem VanadiumSlagDust = SHAPED_ITEM.addOreDictItem(3024, "vanadium_slag_dust", 0xF2EF1B, MaterialIconSet.ROUGH, dust);
     public static final MetaOreDictItem.OreDictValueItem PhosphorousPentachloride = SHAPED_ITEM.addOreDictItem(3025, "phosphorous_pentachloride", 0x093457, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem CobalaminMixture = SHAPED_ITEM.addOreDictItem(3026, "cobalamin_mixture", 0x6c404e, MaterialIconSet.SAND, dust);
+    public static final MetaOreDictItem.OreDictValueItem PotassiumCyanide = SHAPED_ITEM.addOreDictItem(3027, "potassium_cyanide", 0x913e3a, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem SodiumNitrite = SHAPED_ITEM.addOreDictItem(3028, "sodium_nitrite", 0x878a68, MaterialIconSet.SAND, dust);
+    public static final MetaOreDictItem.OreDictValueItem Cyanocobalamin = SHAPED_ITEM.addOreDictItem(3029, "cyanocobalamin", 0x64ff61, MaterialIconSet.SAND, dust);
+    public static final MetaOreDictItem.OreDictValueItem Cobalamin = SHAPED_ITEM.addOreDictItem(3030, "cobalamin", 0x9c5276, MaterialIconSet.SAND, dust);
+    public static final MetaOreDictItem.OreDictValueItem ZincSulfate = SHAPED_ITEM.addOreDictItem(3031, "zinc_sulfate", 0x9b37d7, MaterialIconSet.SAND, dust);
+    public static final MetaOreDictItem.OreDictValueItem Hydroxycobalamin = SHAPED_ITEM.addOreDictItem(3032, "hydroxycobalamin", 0x2f0909, MaterialIconSet.SHINY, dust);
+    public static final MetaOreDictItem.OreDictValueItem CoAcABCatalyst = SHAPED_ITEM.addOreDictItem(3033, "coacab_catalyst", 0x3032ff, MaterialIconSet.SAND, dust);
+    public static final MetaOreDictItem.OreDictValueItem SodiumNitrate = SHAPED_ITEM.addOreDictItem(3034, "sodium_nitrate", 0xff3db2, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem CalciumCarbide = SHAPED_ITEM.addOreDictItem(3035, "calcium_carbide", 0xc28d77, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem CalciumHydroxide = SHAPED_ITEM.addOreDictItem(3036, "calcium_hydroxide", 0xbcb46b, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem LevulinicAcid = SHAPED_ITEM.addOreDictItem(3037, "levulinic_acid", 0x9db5d6, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem MethylLevulinate = SHAPED_ITEM.addOreDictItem(3038, "methyl_levulinate", 0xb96dec, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem CupricChloride = SHAPED_ITEM.addOreDictItem(3039, "cupric_chloride", 0x0b924a, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem MethylVChlorolevulinate = SHAPED_ITEM.addOreDictItem(3040, "methyl_v_chlorolevulinate", 0x7250b7, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem PhthalicAnhydride = SHAPED_ITEM.addOreDictItem(3041, "phthalic_anhydride", 0x507ef7, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem Phthalimide = SHAPED_ITEM.addOreDictItem(3042, "phthalimide", 0xad1f89, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem PotassiumPhthalimide = SHAPED_ITEM.addOreDictItem(3043, "potassium_phthalimide", 0x699a63, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem VAminolevulinicAcid = SHAPED_ITEM.addOreDictItem(3044, "v_aminolevulinic_acid", 0xcd4c6a, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem IVVDinitroIIIdimethylbenzene = SHAPED_ITEM.addOreDictItem(3045, "iv_v_dinitro_i_ii_dimethylbenzene", 0x4115f2, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem IVVDimethylIIIphenylenediamine = SHAPED_ITEM.addOreDictItem(3046, "iv_v_dimethyl_i_ii_phenylenediamine", 0x75ca5b, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem IVVDimethylbenzimidazole = SHAPED_ITEM.addOreDictItem(3047, "iv_v_dimethylbenzimidazole", 0x7c58c2, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem BacillusMegabacterium = SHAPED_ITEM.addOreDictItem(3048, "bacillus_megabacterium", 0xce1b94, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem CobaltChloride = SHAPED_ITEM.addOreDictItem(3049, "cobalt_chloride", 0x97cc78, MaterialIconSet.ROUGH, dust);
 
     public static void onMaterialsInit() {
         Materials.Iron.addFlags(GENERATE_FRAME);

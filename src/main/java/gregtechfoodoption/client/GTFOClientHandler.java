@@ -19,6 +19,7 @@ public class GTFOClientHandler {
     public static final OrientedOverlayRenderer MOB_EXTRACTOR_OVERLAY = new OrientedOverlayRenderer("machines/mob_extractor", FRONT, TOP);
     public static final OrientedOverlayRenderer FARMER_OVERLAY = new OrientedOverlayRenderer("machines/farmer", FRONT);
     public static final OrientedOverlayRenderer SPRINKLER_OVERLAY = new OrientedOverlayRenderer("machines/sprinkler", FRONT);
+    public static final OrientedOverlayRenderer INCUBATOR_OVERLAY = new OrientedOverlayRenderer("machines/incubator", FRONT);
 
 
     public static SimpleOverlayRenderer ADOBE_BRICKS = new SimpleOverlayRenderer("casings/solid/adobe_bricks");

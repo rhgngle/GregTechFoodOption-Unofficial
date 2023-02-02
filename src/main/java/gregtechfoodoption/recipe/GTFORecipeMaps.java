@@ -73,4 +73,10 @@ public class GTFORecipeMaps {
     @ZenProperty
     public static final RecipeMap<IntCircuitRecipeBuilder> GREENHOUSE_RECIPES = new RecipeMap<>("greenhouse", 2, 4, 1, 4, 0, 1, 0, 1, new IntCircuitRecipeBuilder(), false)
             .setSound(GTSoundEvents.COOLING);
+
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> INCUBATOR_RECIPES = new RecipeMap<>("incubator",
+            0, 1, 0, 1, 0, 1, 0, 0, new SimpleRecipeBuilder(), false)
+            .setSound(GTSoundEvents.BATH)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_BATH, ProgressWidget.MoveType.HORIZONTAL);
 }
