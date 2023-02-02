@@ -23,6 +23,11 @@ public class IngestionMediumChain {
                 .input(OrePrefix.bolt, StainlessSteel)
                 .outputs(IV_BAG.getStackForm(1))
                 .buildAndRegister();
+        CHEMICAL_BATH_RECIPES.recipeBuilder().EUt(30).duration(100)
+                .fluidInputs(Ethanol.getFluid(100))
+                .inputs(DIRTY_IV_BAG.getStackForm(1))
+                .outputs(IV_BAG.getStackForm(1))
+                .buildAndRegister();
 
         //Syringe
         ASSEMBLER_RECIPES.recipeBuilder().EUt(30).duration(100)

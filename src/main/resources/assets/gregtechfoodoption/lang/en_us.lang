@@ -895,6 +895,7 @@ metaitem.iinitrophenol_dust.name=2-Nitrophenol
 metaitem.ivnitrophenol_dust.name=4-Nitrophenol
 metaitem.plutonium_241_caplet.name=§4Plutonium-241 Caplet
 metaitem.iv_bag.name=IV Bag
+metaitem.dirty_iv_bag.name=Dirty IV Bag
 metaitem.syringe.name=Syringe
 metaitem.dirty_syringe.name=Dirty Syringe
 metaitem.impostramine_caplet.name=§4Impostramine Caplet
