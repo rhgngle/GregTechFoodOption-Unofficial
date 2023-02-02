@@ -5,7 +5,7 @@ import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderSnowMan;
-import gregtech.api.GTValues;
+import gregtechfoodoption.GTFOValues;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -28,8 +28,8 @@ public class GTFOEntities {
                 .spawn(EnumCreatureType.CREATURE, 2, 1, 3, EntityItalianBuffalo.POSSIBLE_BIOME_SPAWNS)
                 .egg(0x3d352f, 0xf0ded1).build());
 
-        EntityRegistry.registerModEntity(new ResourceLocation(GTValues.MODID, "strong_snowman"), EntityStrongSnowman.class, "Snowman", 1, GregTechFoodOption.instance, 64, 5, true);
-        EntityRegistry.registerModEntity(new ResourceLocation(GTValues.MODID, "strong_snowball"), EntityStrongSnowball.class, "Snowball", 2, GregTechFoodOption.instance, 64, 5, true);
+        EntityRegistry.registerModEntity(new ResourceLocation(GTFOValues.MODID, "strong_snowman"), EntityStrongSnowman.class, "Snowman", 1, GregTechFoodOption.instance, 64, 5, true);
+        EntityRegistry.registerModEntity(new ResourceLocation(GTFOValues.MODID, "strong_snowball"), EntityStrongSnowball.class, "Snowball", 2, GregTechFoodOption.instance, 64, 5, true);
     }
     @SideOnly(Side.CLIENT)
     public static void registerRenders() {
