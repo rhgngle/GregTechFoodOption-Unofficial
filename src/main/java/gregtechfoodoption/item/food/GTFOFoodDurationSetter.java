@@ -1,7 +1,8 @@
-package gregtechfoodoption.item;
+package gregtechfoodoption.item.food;
 
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.items.metaitem.stats.IItemComponent;
+import gregtechfoodoption.item.GTFOMetaItems;
 import net.minecraft.item.ItemStack;
 
 public class GTFOFoodDurationSetter {

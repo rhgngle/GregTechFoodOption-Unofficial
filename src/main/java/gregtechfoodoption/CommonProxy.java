@@ -46,7 +46,6 @@ public class CommonProxy {
         GTFOMetaItems.init();
 
         GTFORecipeHandler.register();
-        try {
             ((IExpandableRecipeMap)RecipeMaps.FERMENTING_RECIPES).setMaxInputs(1);
             ((IExpandableRecipeMap)RecipeMaps.FERMENTING_RECIPES).setMaxOutputs(1);
             ((IExpandableRecipeMap)RecipeMaps.EXTRACTOR_RECIPES).setMaxInputs(2);
@@ -58,9 +57,6 @@ public class CommonProxy {
             ((IExpandableRecipeMap)RecipeMaps.DISTILLATION_RECIPES).setMaxOutputs(2);
             ((IExpandableRecipeMap)RecipeMaps.DISTILLATION_RECIPES).setMinFluidOutputs(0);
             ((IExpandableRecipeMap)RecipeMaps.BLAST_RECIPES).setMinInputs(0);
-        } catch (Exception e) {
-
-        }
     }
 
     public void onLoad() {
