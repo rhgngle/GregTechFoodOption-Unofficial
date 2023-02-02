@@ -12,9 +12,9 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'org.spongepowered.mixin'
 
-version = "1.12.2-0.3a"
+version = "1.12.2-0.4a"
 group = "BestMod"
-archivesBaseName = "GregTech Food Option"
+archivesBaseName = "GregTech Food Option Unofficial"
 
 sourceCompatibility = targetCompatibility = '1.8'
 compileJava {
