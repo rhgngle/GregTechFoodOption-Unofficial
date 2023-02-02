@@ -1,17 +1,11 @@
 package gregtechfoodoption.recipe.chain;
 
-import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
-import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.Materials;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
-import gregtech.api.unification.ore.OrePrefix;
-import gregtechfoodoption.recipe.GTFORecipeMaps.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
@@ -39,25 +33,25 @@ public class IVBagChain {
                 .fluidInputs(Phenylethylamine.getFluid(1000))
                 .fluidInputs(Allyltrimethylsilane.getFluid(1000))
                 .fluidInputs(Formaldehyde.getFluid(1000))
-                .outputs(IVHydroxyIIIPhenylethylPiperidine.getItemStack(34))
+                .outputs(Hydroxyphenylethylpiperidine.getItemStack(34))
                 .fluidOutputs(Dimethylsilane.getFluid(1000))
                 .buildAndRegister();
         LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
-                .inputs(IVHydroxyIIIPhenylethylPiperidine.getItemStack(34))
+                .inputs(Hydroxyphenylethylpiperidine.getItemStack(34))
                 .fluidInputs(OxalylChloride.getFluid(1000))
                 .fluidInputs(DimethylSulfoxide.getFluid(1000))
-                .outputs(IIIPhenylethylIVPiperidone.getItemStack(32))
-                .fluidOutputs(HydrogenChloride.getFluid(2000))
+                .outputs(Phenylethylpiperidone.getItemStack(32))
+                .fluidOutputs(HydrochloricAcid.getFluid(2000))
                 .fluidOutputs(DimethylSulfide.getFluid(1000))
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .fluidOutputs(CarbonMonoxide.getFluid(1000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
-                .inputs(IIIPhenylethylIVPiperidone.getItemStack(32))
+                .inputs(Phenylethylpiperidone.getItemStack(32))
                 .fluidInputs(Aniline.getFluid(1000))
                 .fluidInputs(Hydrogen.getFluid(2000))
                 .notConsumable(dust, Platinum)
-                .outputs(IVAnilinoIIIPhenylethylPiperidine.getItemStack(45))
+                .outputs(Anilinophenylethylpiperidine.getItemStack(45))
                 .fluidOutputs(Water.getFluid(1000))
                 .buildAndRegister();
         DISTILLATION_RECIPES.recipeBuilder().EUt(480).duration(5)
@@ -66,7 +60,7 @@ public class IVBagChain {
                 .fluidOutputs(Water.getFluid(10))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
-                .inputs(IVAnilinoIIIPhenylethylPiperidine.getItemStack(45))
+                .inputs(Anilinophenylethylpiperidine.getItemStack(45))
                 .fluidInputs(PropionicAnhydride.getFluid(1000))
                 .outputs(Greganyl.getItemStack(53))
                 .fluidOutputs(PropionicAcid.getFluid(1000))
@@ -106,7 +100,7 @@ public class IVBagChain {
                 .fluidOutputs(Methanol.getFluid(1000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(30).duration(60)
-                .fluidInputs(SodiumFormate.getFluid(1000))
+                .inputs(SodiumFormate.getItemStack(5))
                 .fluidInputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(FormicAcid.getFluid(1000))
                 .output(dust, SodiumBisulfate, 7)
@@ -115,19 +109,19 @@ public class IVBagChain {
                 .fluidInputs(CarbonMonoxide.getFluid(1000))
                 .input(dust, SodiumHydroxide, 3)
                 .notConsumable(new IntCircuitIngredient(0))
-                .fluidOutputs(SodiumFormate.getFluid(1000))
+                .outputs(SodiumFormate.getItemStack(5))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .fluidInputs(DimethylSulfide.getFluid(1000))
                 .fluidInputs(Oxygen.getFluid(1000))
                 .fluidOutputs(DimethylSulfoxide.getFluid(2000))
                 .buildAndRegister();
-        CHEMICAL_RECIPES.recipeBuilder().duration(120).EUt(480)
-                .notConsumable(VanadiumOxide.getItemStack())
-                .fluidInputs(Oxygen.getFluid(9000))
-                .inputs(Glucose.getItemStack(24))
-                .fluidOutputs(Water.getFluid(3000))
-                .fluidOutputs(OxalicAcid.getFluid(3000))
+        CHEMICAL_RECIPES.recipeBuilder().duration(400).EUt(480)
+                .inputs(SodiumFormate.getItemStack(10))
+                .fluidInputs(Water.getFluid(2000))
+                .outputs(OxalicAcid.getItemStack(8))
+                .output(dust, SodiumHydroxide, 6)
+                .fluidOutputs(Hydrogen.getFluid(2000))
                 .buildAndRegister();
         CHEMICAL_BATH_RECIPES.recipeBuilder().duration(300).EUt(480)
                 .input(dust, Sugar, 2)
@@ -135,47 +129,8 @@ public class IVBagChain {
                 .outputs(Glucose.getItemStack(24))
                 .outputs(Fructose.getItemStack(24))
                 .buildAndRegister();
-        BLAST_RECIPES.recipeBuilder().duration(240).EUt(120)
-                .inputs(AmmoniumVanadate.getItemStack(18))
-                .outputs(VanadiumOxide.getItemStack(7))
-                .fluidOutputs(Ammonia.getFluid(2000))
-                .blastFurnaceTemp(1200)
-                .buildAndRegister();
-        CHEMICAL_RECIPES.recipeBuilder().duration(120).EUt(120)
-                .fluidInputs(SulfuricAcid.getFluid(1000))
-                .inputs(SodiumVanadate.getItemStack(8))
-                .input(dust, AmmoniumChloride, 3)
-                .outputs(AmmoniumVanadate.getItemStack(9))
-                .fluidOutputs(VanadiumWasteSolution.getFluid(1000))
-                .buildAndRegister();
-        BLAST_RECIPES.recipeBuilder().duration(150).EUt(120).blastFurnaceTemp(700)
-                .inputs(VanadiumSlagDust.getItemStack(4))
-                .input(dust, SodaAsh, 18)
-                .outputs(SodiumVanadate.getItemStack(16))
-                .fluidOutputs(CarbonMonoxide.getFluid(3000))
-                .buildAndRegister();
-        MACERATOR_RECIPES.recipeBuilder().duration(80).EUt(24)
-                .inputs(VanadiumSlag.getItemStack(5))
-                .output(dust, DarkAsh)
-                .output(dustSmall, Rutile)
-                .outputs(VanadiumSlagDust.getItemStack(2))
-                .buildAndRegister();
-        BLAST_RECIPES.recipeBuilder().duration(220).EUt(120).blastFurnaceTemp(1500)
-                .input(dust, VanadiumMagnetite, 4)
-                .input(dust, Carbon)
-                .output(ingot, Iron, 3)
-                .outputs(VanadiumSlag.getItemStack(5))
-                .fluidOutputs(CarbonMonoxide.getFluid(1000))
-                .buildAndRegister();
-        BLAST_RECIPES.recipeBuilder().duration(120).EUt(30)
-                .fluidInputs(VanadiumWasteSolution.getFluid(4000))
-                .output(dust, Salt, 2)
-                .output(dust, SodiumSulfate, 7)
-                .chancedOutput(OreDictUnifier.get(dust, SiliconDioxide, 3), 5000, 1200)
-                .blastFurnaceTemp(1200)
-                .buildAndRegister();
         LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
-                .fluidInputs(OxalicAcid.getFluid(1000))
+                .inputs(OxalicAcid.getItemStack(8))
                 .inputs(PhosphorousPentachloride.getItemStack(7))
                 .fluidOutputs(OxalylChloride.getFluid(1000))
                 .fluidOutputs(PhosphorylChloride.getFluid(1000))
@@ -188,31 +143,13 @@ public class IVBagChain {
                 .buildAndRegister();
 
         //Hydroxycobalamin
-        CHEMICAL_RECIPES.recipeBuilder()
-                .fluidInputs(HydrogenCyanide.getFluid(1000))
-                .fluidInputs(PotassiumHydroxide.getFluid(1000))
-                .notConsumable(new IntCircuitIngredient(0))
-                .outputs(PotassiumCyanide.getItemStack(3))
-                .fluidOutputs(Water.getFluid(1000))
-                .EUt(1920)
-                .duration(200)
-                .buildAndRegister();
-        CHEMICAL_RECIPES.recipeBuilder()
+        ELECTROLYZER_RECIPES.recipeBuilder()
                 .fluidInputs(SodiumNitrateSolution.getFluid(1000))
-                .notConsumable(CoAcABCatalyst.getItemStack())
                 .outputs(SodiumNitrite.getItemStack(4))
                 .fluidOutputs(Oxygen.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(30)
                 .duration(300)
-                .buildAndRegister();
-        CHEMICAL_RECIPES.recipeBuilder()
-                .input(dust, RockSalt, 2)
-                .fluidInputs(Water.getFluid(1000))
-                .fluidOutputs(PotassiumHydroxide.getFluid(1000))
-                .fluidOutputs(HydrochloricAcid.getFluid(1000))
-                .EUt(480)
-                .duration(270)
                 .buildAndRegister();
         MIXER_RECIPES.recipeBuilder()
                 .fluidInputs(Water.getFluid(1000))
@@ -222,43 +159,12 @@ public class IVBagChain {
                 .duration(80)
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder()
-                .input(dust, Sodium, 2)
-                .fluidInputs(NitricAcid.getFluid(2000))
-                .fluidInputs(Oxygen.getFluid(1000))
-                .outputs(SodiumNitrate.getItemStack(10))
+                .input(dust, SodiumHydroxide, 3)
+                .fluidInputs(NitricAcid.getFluid(1000))
+                .outputs(SodiumNitrate.getItemStack(5))
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(60)
                 .duration(8)
-                .buildAndRegister();
-        LARGE_CHEMICAL_RECIPES.recipeBuilder()
-                .input(dust, Cobalt)
-                .input(dust, Charcoal, 2)
-                .input(plate, Polybenzimidazole)
-                .fluidInputs(Acetylene.getFluid(1000))
-                .fluidInputs(Steam.getFluid(1000))
-                .fluidOutputs(Hydrogen.getFluid(4000))
-                .fluidOutputs(CarbonMonoxide.getFluid(1000))
-                .outputs(CoAcABCatalyst.getItemStack())
-                .EUt(32000)
-                .duration(10)
-                .buildAndRegister();
-        BLAST_RECIPES.recipeBuilder()
-                .inputs(CalciumCarbide.getItemStack(3))
-                .fluidInputs(Steam.getFluid(2000))
-                .outputs(CalciumHydroxide.getItemStack(5))
-                .fluidOutputs(Acetylene.getFluid(1000))
-                .blastFurnaceTemp(2300)
-                .EUt(120)
-                .duration(200)
-                .buildAndRegister();
-        BLAST_RECIPES.recipeBuilder()
-                .input(dust, Quicklime, 4)
-                .input(dust, Carbon, 5)
-                .fluidOutputs(CarbonMonoxide.getFluid(1000))
-                .outputs(CalciumCarbide.getItemStack(6))
-                .blastFurnaceTemp(2500)
-                .EUt(120)
-                .duration(300)
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(Fructose.getItemStack(24))
@@ -282,7 +188,7 @@ public class IVBagChain {
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(MethylLevulinate.getItemStack(19))
                 .inputs(CupricChloride.getItemStack(3))
-                .outputs(MethylVChlorolevulinate.getItemStack(19))
+                .outputs(MethylChlorolevulinate.getItemStack(19))
                 .output(dust, Copper)
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
                 .buildAndRegister();
@@ -304,24 +210,25 @@ public class IVBagChain {
                 .fluidOutputs(Hydrogen.getFluid(1000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
-                .inputs(MethylVChlorolevulinate.getItemStack(19))
+                .inputs(MethylChlorolevulinate.getItemStack(19))
                 .inputs(PotassiumPhthalimide.getItemStack(16))
                 .fluidInputs(Water.getFluid(3000))
                 .notConsumable(HydrochloricAcid.getFluid(10))
-                .outputs(VAminolevulinicAcid.getItemStack(1))
+                .outputs(AminolevulinicAcid.getItemStack(1))
                 .fluidOutputs(PhthalicAcid.getFluid(1000))
                 .fluidOutputs(Methanol.getFluid(1000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .fluidInputs(Dimethylbenzene.getFluid(1000))
                 .fluidInputs(NitrationMixture.getFluid(4000))
-                .outputs(IVVDinitroIIIdimethylbenzene.getItemStack(22))
+                .outputs(Dinitrodimethylbenzene.getItemStack(22))
                 .fluidOutputs(DilutedSulfuricAcid.getFluid(2000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
-                .inputs(IVVDinitroIIIdimethylbenzene.getItemStack(22))
+                .inputs(Dinitrodimethylbenzene.getItemStack(22))
                 .fluidInputs(Hydrogen.getFluid(12000))
-                .outputs(IVVDimethylIIIphenylenediamine.getItemStack(22))
+                .notConsumable(dust, Nickel)
+                .outputs(Dimethylphenylenediamine.getItemStack(22))
                 .fluidOutputs(Water.getFluid(4000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
@@ -332,9 +239,9 @@ public class IVBagChain {
                 .fluidOutputs(Methanol.getFluid(1000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
-                .inputs(IVVDimethylIIIphenylenediamine.getItemStack(22))
+                .inputs(Dimethylphenylenediamine.getItemStack(22))
                 .fluidInputs(FormicAcid.getFluid(1000))
-                .outputs(IVVDimethylbenzimidazole.getItemStack(1))
+                .outputs(Dimethylbenzimidazole.getItemStack(1))
                 .fluidOutputs(Water.getFluid(1000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
@@ -345,8 +252,8 @@ public class IVBagChain {
                 .buildAndRegister();
         MIXER_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(CobaltChloride.getItemStack(1))
-                .inputs(IVVDimethylbenzimidazole.getItemStack(1))
-                .inputs(VAminolevulinicAcid.getItemStack(1))
+                .inputs(Dimethylbenzimidazole.getItemStack(1))
+                .inputs(AminolevulinicAcid.getItemStack(1))
                 .fluidInputs(RawGrowthMedium.getFluid(4000))
                 .fluidOutputs(RawCobalaminSelectiveGrowthMedium.getFluid(4000))
                 .cleanroom(CleanroomType.STERILE_CLEANROOM)
@@ -378,7 +285,7 @@ public class IVBagChain {
                 .buildAndRegister();
         LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(CobalaminMixture.getItemStack(16))
-                .inputs(PotassiumCyanide.getItemStack(3))
+                .inputs(SodiumCyanide.get(3))
                 .fluidInputs(DistilledWater.getFluid(100))
                 .notConsumable(SodiumNitrite.getItemStack(1))
                 .outputs(Cyanocobalamin.getItemStack(16))
