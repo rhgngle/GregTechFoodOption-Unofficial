@@ -51,6 +51,7 @@ public class CommonProxy {
             ((IExpandableRecipeMap)RecipeMaps.EXTRACTOR_RECIPES).setMaxInputs(2);
             ((IExpandableRecipeMap)RecipeMaps.BREWING_RECIPES).setMaxOutputs(1);
             ((IExpandableRecipeMap)RecipeMaps.BREWING_RECIPES).setMinFluidOutputs(0);
+            ((IExpandableRecipeMap)RecipeMaps.MACERATOR_RECIPES).setMaxInputs(2);
             ((IExpandableRecipeMap)RecipeMaps.FLUID_SOLIDFICATION_RECIPES).setMaxInputs(2);
             ((IExpandableRecipeMap)RecipeMaps.COMPRESSOR_RECIPES).setMaxFluidOutputs(1);
             ((IExpandableRecipeMap)RecipeMaps.EXTRACTOR_RECIPES).setMaxFluidInputs(1);
