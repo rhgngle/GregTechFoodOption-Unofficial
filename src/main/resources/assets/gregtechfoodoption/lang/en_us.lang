@@ -860,6 +860,10 @@ metaitem.unfired_cup.name=Unfired Cup
 gregtechfoodoption.tooltip.food.lacing=§2May be laced with Fun Chemicals
 gregtechfoodoption.fluid.lacing=§2Can be used to lace items with 100 mB in the Canner
 
+gregtechfoodoption.cyanide.1=§cYou feel really nauseous...
+gregtechfoodoption.cyanide.2=§cYou can't breathe anymore...
+gregtechfoodoption.cyanide.3=§cget fucked idiot
+
 metaitem.circuit.organic.ulv.name=ULV Organic Circuit
 metaitem.circuit.organic.lv.name=LV Organic Circuit
 metaitem.circuit.organic.mv.name=MV Organic Circuit

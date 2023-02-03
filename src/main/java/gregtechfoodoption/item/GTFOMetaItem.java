@@ -438,7 +438,7 @@ public class GTFOMetaItem extends StandardMetaItem implements IEdible {
         POPCORN_BAG = addItem(0, "food.popcorn_bag").addComponents(new GTFOFoodStats(GTFOConfig.gtfoFoodConfig.popcornHunger, GTFOConfig.gtfoFoodConfig.popcornSaturation, false, true, PAPER_BAG.getStackForm(1),
                 new RandomPotionEffect(getPotionById(10), 300, 1, 0)));
         MINERAL_WATER = addItem(12, "food.mineral_water").addComponents(new GTFOFoodStats(GTFOConfig.gtfoFoodConfig.mineralWaterHunger, GTFOConfig.gtfoFoodConfig.mineralWaterSaturation, true, true, USED_THERMOS.getStackForm(1),
-                new RandomPotionEffect(CreativityPotion.instance, 5000, 0, 0)));
+                new RandomPotionEffect(CreativityPotion.INSTANCE, 5000, 0, 0)));
         APPLE_HARD_CANDY = addItem(14, "food.apple_hard_candy").addComponents(new GTFOFoodStats(GTFOConfig.gtfoFoodConfig.hardCandyHunger, GTFOConfig.gtfoFoodConfig.hardCandySaturation, true, false, ItemStack.EMPTY,
                 new RandomPotionEffect(MobEffects.REGENERATION, 1200, 1, 50))
                 .setEatingDuration(24));
@@ -494,7 +494,7 @@ public class GTFOMetaItem extends StandardMetaItem implements IEdible {
                 new RandomPotionEffect(MobEffects.HASTE, 2000, 2, 0))
                 .setEatingDuration(50));
         PIZZA_VEGGIE = addItem(63, "food.pizza.veggie").addComponents(new GTFOFoodStats(5, 0.7f, false, false, ItemStack.EMPTY,
-                new RandomPotionEffect(StepAssistPotion.instance, 2000, 1, 0))
+                new RandomPotionEffect(StepAssistPotion.INSTANCE, 2000, 1, 0))
                 .setEatingDuration(50));
         PIZZA_MINCE_MEAT = addItem(64, "food.pizza.mince_meat").addComponents(new GTFOFoodStats(6, 0.8f, false, false, ItemStack.EMPTY,
                 new RandomPotionEffect(MobEffects.STRENGTH, 2000, 2, 0))
@@ -514,7 +514,7 @@ public class GTFOMetaItem extends StandardMetaItem implements IEdible {
         SANDWICH_LARGE_CHEESE = addItem(70, "food.sandwich.cheese.large").addComponents(new GTFOFoodStats(11, 0.6f)
                 .setEatingDuration(60));
         SANDWICH_LARGE_BACON = addItem(71, "food.sandwich.bacon.large").addComponents(new GTFOFoodStats(10, 0.7f, false, false, ItemStack.EMPTY,
-                new RandomPotionEffect(StepAssistPotion.instance, 600, 0, 0))
+                new RandomPotionEffect(StepAssistPotion.INSTANCE, 600, 0, 0))
                 .setEatingDuration(60));
         SANDWICH_LARGE_STEAK = addItem(72, "food.sandwich.steak.large").addComponents(new GTFOFoodStats(13, 0.7f)
                 .setEatingDuration(60));
@@ -612,7 +612,7 @@ public class GTFOMetaItem extends StandardMetaItem implements IEdible {
         ICE_CREAM_BANANA = addItem(167, "food.ice_cream.banana").addComponents(new GTFOFoodStats(6, 0.33f, false, true));
         ICE_CREAM_BACON = addItem(168, "food.ice_cream.bacon").addComponents(new GTFOFoodStats(6, 0.33f, false, true));
         ICE_CREAM_VANILLA = addItem(169, "food.ice_cream.vanilla").addComponents(new GTFOFoodStats(9, 0.25f, false, true, ItemStack.EMPTY,
-                new RandomPotionEffect(SnowGolemSpawnerPotion.instance, 300, 0, 100 - 50)));
+                new RandomPotionEffect(SnowGolemSpawnerPotion.INSTANCE, 300, 0, 100 - 50)));
         ICE_CREAM_BEAR = addItem(170, "food.ice_cream.bear").addComponents(new GTFOFoodStats(7, 0.33f, false, true));
         ICE_CREAM_MELON = addItem(171, "food.ice_cream.melon").addComponents(new GTFOFoodStats(5, 0.33f, false, true));
         ICE_CREAM_CHOCOLATE = addItem(172, "food.ice_cream.chocolate").addComponents(new GTFOFoodStats(9, 0.25f, false, true));
@@ -674,14 +674,14 @@ public class GTFOMetaItem extends StandardMetaItem implements IEdible {
         BEANS.addComponents(new GTFOCropSeedBehaviour(GTFOCrops.CROP_BEAN, BEANS.getStackForm(), BEANS.getStackForm()));
 
 
-        ORGANIC_CIRCUIT_15 = addItem(175, "circuit.organic.ulv").addComponents(new GTFOFoodStats(1, 1f, false, true, ItemStack.EMPTY, new RandomPotionEffect(StepAssistPotion.instance, 20000000, 1, 0), new RandomPotionEffect(MobEffects.NIGHT_VISION, 2000, 1, 0)).setEatingDuration(1));
+        ORGANIC_CIRCUIT_15 = addItem(175, "circuit.organic.ulv").addComponents(new GTFOFoodStats(1, 1f, false, true, ItemStack.EMPTY, new RandomPotionEffect(StepAssistPotion.INSTANCE, 20000000, 1, 0), new RandomPotionEffect(MobEffects.NIGHT_VISION, 2000, 1, 0)).setEatingDuration(1));
         ORGANIC_CIRCUIT_1 = addItem(176, "circuit.organic.lv").addComponents(new GTFOFoodStats(2, 1.5f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.REGENERATION, 200, 1, 0), new RandomPotionEffect(MobEffects.SPEED, 400, 1, 0)).setEatingDuration(1));
         ORGANIC_CIRCUIT_2 = addItem(177, "circuit.organic.mv").addComponents(new GTFOFoodStats(4, 2f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.HASTE, 6000, 2, 0), new RandomPotionEffect(MobEffects.SPEED, 6000, 2, 0)).setEatingDuration(1));
         ORGANIC_CIRCUIT_3 = addItem(178, "circuit.organic.hv").addComponents(new GTFOFoodStats(8, 2.5f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.STRENGTH, 200, 2, 0), new RandomPotionEffect(MobEffects.REGENERATION, 200, 2, 0)).setEatingDuration(1));
-        ORGANIC_CIRCUIT_4 = addItem(179, "circuit.organic.ev").addComponents(new GTFOFoodStats(16, 3f, false, true, ItemStack.EMPTY, new RandomPotionEffect(CreativityPotion.instance, 6000, 1, 0), new RandomPotionEffect(MobEffects.REGENERATION, 200, 3, 0)).setEatingDuration(1));
-        ORGANIC_CIRCUIT_5 = addItem(180, "circuit.organic.iv").addComponents(new GTFOFoodStats(32, 3.5f, false, true, ItemStack.EMPTY, new RandomPotionEffect(CreativityPotion.instance, 8000, 1, 10), new RandomPotionEffect(MobEffects.FIRE_RESISTANCE, 8000, 1, 0)).setEatingDuration(1));
-        ORGANIC_CIRCUIT_6 = addItem(181, "circuit.organic.luv").addComponents(new GTFOFoodStats(64, 4f, false, true, ItemStack.EMPTY, new RandomPotionEffect(CreativityPotion.instance, 10000, 1, 20), new RandomPotionEffect(MobEffects.FIRE_RESISTANCE, 10000, 1, 0), new RandomPotionEffect(MobEffects.INSTANT_HEALTH, 20, 2, 70)).setEatingDuration(1));
-        ORGANIC_CIRCUIT_7 = addItem(182, "circuit.organic.zpm").addComponents(new GTFOFoodStats(128, 4.5f, false, true, MetaItems.CRYSTAL_CENTRAL_PROCESSING_UNIT.getStackForm(), new RandomPotionEffect(CreativityPotion.instance, 12000, 1, 30), new RandomPotionEffect(MobEffects.FIRE_RESISTANCE, 12000, 1, 0), new RandomPotionEffect(MobEffects.INSTANT_HEALTH, 40, 3, 60)).setEatingDuration(1));
+        ORGANIC_CIRCUIT_4 = addItem(179, "circuit.organic.ev").addComponents(new GTFOFoodStats(16, 3f, false, true, ItemStack.EMPTY, new RandomPotionEffect(CreativityPotion.INSTANCE, 6000, 1, 0), new RandomPotionEffect(MobEffects.REGENERATION, 200, 3, 0)).setEatingDuration(1));
+        ORGANIC_CIRCUIT_5 = addItem(180, "circuit.organic.iv").addComponents(new GTFOFoodStats(32, 3.5f, false, true, ItemStack.EMPTY, new RandomPotionEffect(CreativityPotion.INSTANCE, 8000, 1, 10), new RandomPotionEffect(MobEffects.FIRE_RESISTANCE, 8000, 1, 0)).setEatingDuration(1));
+        ORGANIC_CIRCUIT_6 = addItem(181, "circuit.organic.luv").addComponents(new GTFOFoodStats(64, 4f, false, true, ItemStack.EMPTY, new RandomPotionEffect(CreativityPotion.INSTANCE, 10000, 1, 20), new RandomPotionEffect(MobEffects.FIRE_RESISTANCE, 10000, 1, 0), new RandomPotionEffect(MobEffects.INSTANT_HEALTH, 20, 2, 70)).setEatingDuration(1));
+        ORGANIC_CIRCUIT_7 = addItem(182, "circuit.organic.zpm").addComponents(new GTFOFoodStats(128, 4.5f, false, true, MetaItems.CRYSTAL_CENTRAL_PROCESSING_UNIT.getStackForm(), new RandomPotionEffect(CreativityPotion.INSTANCE, 12000, 1, 30), new RandomPotionEffect(MobEffects.FIRE_RESISTANCE, 12000, 1, 0), new RandomPotionEffect(MobEffects.INSTANT_HEALTH, 40, 3, 60)).setEatingDuration(1));
         ORGANIC_CIRCUIT_8 = addItem(183, "circuit.organic.uv").addComponents(new GTFOFoodStats(256, 5f, false, true, MetaItems.CRYSTAL_CENTRAL_PROCESSING_UNIT.getStackForm(), new RandomPotionEffect(MobEffects.HASTE, 6000, 5, 0), new RandomPotionEffect(MobEffects.RESISTANCE, 6000, 3, 0), new RandomPotionEffect(MobEffects.SPEED, 6000, 5, 0)).setEatingDuration(1));
         ORGANIC_CIRCUIT_9 = addItem(184, "circuit.organic.uhv").addComponents(new GTFOFoodStats(512, 5.5f, false, true, MetaItems.CRYSTAL_CENTRAL_PROCESSING_UNIT.getStackForm(), new RandomPotionEffect(MobEffects.HASTE, 2000, 2, 0)).setEatingDuration(1));
         ORGANIC_CIRCUIT_10 = addItem(185, "circuit.organic.uev").addComponents(new GTFOFoodStats(1024, 6f, false, true, ItemStack.EMPTY, new RandomPotionEffect(MobEffects.HASTE, 2000, 2, 0)).setEatingDuration(1));

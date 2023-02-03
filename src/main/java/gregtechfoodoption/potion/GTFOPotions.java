@@ -22,11 +22,11 @@ public class GTFOPotions {
     @SubscribeEvent
     public static void registerPotionEffects(RegistryEvent.Register<Potion> event)
     {
-        event.getRegistry().registerAll(CreativityPotion.instance);
+        event.getRegistry().registerAll(CreativityPotion.INSTANCE);
         //event.getRegistry().registerAll(AddictionPotion.instance);
         //event.getRegistry().registerAll(WithdrawalPotion.instance);
-        event.getRegistry().registerAll(StepAssistPotion.instance);
-        event.getRegistry().registerAll(SnowGolemSpawnerPotion.instance);
-        //event.getRegistry().registerAll(CyanidePoisoningPotion.instance);
+        event.getRegistry().registerAll(StepAssistPotion.INSTANCE);
+        event.getRegistry().registerAll(SnowGolemSpawnerPotion.INSTANCE);
+        event.getRegistry().registerAll(CyanidePoisoningPotion.INSTANCE);
     }
 }

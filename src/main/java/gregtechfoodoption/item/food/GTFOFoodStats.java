@@ -5,6 +5,7 @@ import gregtech.api.items.metaitem.stats.IItemBehaviour;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.RandomPotionEffect;
 import gregtechfoodoption.GTFOValues;
+import gregtechfoodoption.potion.CyanidePoisoningPotion;
 import net.minecraft.init.MobEffects;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
@@ -79,9 +80,7 @@ public class GTFOFoodStats implements IFoodBehavior, IItemBehaviour { // These n
         NBTTagCompound nbtStats = itemStack.getSubCompound("gtfoStats");
         if (nbtStats != null) {
             if (nbtStats.getBoolean("5dkcap/2/4/")) { // Cyanide
-                player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 500, 9));
-                player.addPotionEffect(new PotionEffect(MobEffects.WITHER, 500, 4));
-                player.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 500, 0));
+                player.addPotionEffect(new PotionEffect(CyanidePoisoningPotion.INSTANCE, 500, 0));
             }
         }
         if (Loader.isModLoaded(GTFOValues.MODID_AP)) {

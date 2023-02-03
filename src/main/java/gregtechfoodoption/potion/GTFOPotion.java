@@ -56,9 +56,23 @@ public abstract class GTFOPotion extends Potion {
         render(x + 3, y + 3, alpha);
     }
 
+    @Override
+    public boolean shouldRender(PotionEffect effect) {
+        return this.canRender();
+    }
+
+    @Override
+    public boolean shouldRenderInvText(PotionEffect effect) {
+        return this.canRender();
+    }
+
+    @Override
+    public boolean shouldRenderHUD(PotionEffect effect) {
+        return this.canRender();
+    }
     @SideOnly(Side.CLIENT)
     private void render(int x, int y, float alpha) {
-        if(this.canRender()) {
+        if (this.canRender()) {
             Minecraft.getMinecraft().renderEngine.bindTexture(resource);
             Tessellator tessellator = Tessellator.getInstance();
             BufferBuilder buf = tessellator.getBuffer();
