@@ -11,10 +11,13 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.material.info.MaterialIconSet;
 import gregtech.api.unification.material.properties.PropertyKey;
+import gregtech.api.util.FluidTooltipUtil;
+import gregtech.api.util.LocalizationUtils;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtechfoodoption.item.GTFOOredictItem;
 import gregtechfoodoption.item.GTFOProxyItem;
 import gregtechfoodoption.materials.FertilizerProperty;
+import gregtechfoodoption.materials.LacingProperty;
 
 
 import static gregtech.api.unification.material.Materials.*;
@@ -26,6 +29,7 @@ import static gregtechfoodoption.utils.GTFOUtils.averageRGB;
 
 public class GTFOMaterialHandler {
     public static final PropertyKey<FertilizerProperty> FERTILIZER = new PropertyKey<>("gtfo_fertilizer", FertilizerProperty.class);
+    public static final PropertyKey<LacingProperty> LACING = new PropertyKey<>("gtfo_lacing", LacingProperty.class);
 
     // 21500 - 21969
 
@@ -587,6 +591,7 @@ public class GTFOMaterialHandler {
         Water.setProperty(FERTILIZER, new FertilizerProperty(5));
         Blood.setProperty(FERTILIZER, new FertilizerProperty(30));
         FertilizerSolution.setProperty(FERTILIZER, new FertilizerProperty(15));
+        HydrogenCyanide.setProperty(LACING, new LacingProperty());
     }
 
     public static Material.Builder fluidBuilder(int id, String name) {
@@ -598,10 +603,12 @@ public class GTFOMaterialHandler {
     public static void registerFertilizerTooltips() {
         for (Material material : GregTechAPI.MATERIAL_REGISTRY) {
             FertilizerProperty fertilizerProperty = material.getProperty(FERTILIZER);
-            /*
+
             if (fertilizerProperty != null)
                 FluidTooltipUtil.registerTooltip(material.getFluid(), LocalizationUtils.format("gregtechfoodoption.fluid.fertilizer", fertilizerProperty.getBoostPercentage()));
-            */
+            LacingProperty lacingProperty = material.getProperty(LACING);
+            if (lacingProperty != null)
+                FluidTooltipUtil.registerTooltip(material.getFluid(), LocalizationUtils.format("gregtechfoodoption.fluid.lacing"));
         }
     }
     public static Material.Builder fluidBuilder(int id, String name, FluidType type) {
