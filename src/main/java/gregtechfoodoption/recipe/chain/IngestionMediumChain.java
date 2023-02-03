@@ -32,7 +32,7 @@ public class IngestionMediumChain {
         //Syringe
         ASSEMBLER_RECIPES.recipeBuilder().EUt(30).duration(100)
                 .input(MetaItems.GLASS_TUBE)
-                .input(OrePrefix.wireFine, Glass)
+                .input(OrePrefix.bolt, StainlessSteel)
                 .input(OrePrefix.plate, StainlessSteel)
                 .input(OrePrefix.springSmall, StainlessSteel)
                 .fluidInputs(SiliconeRubber.getFluid(144))

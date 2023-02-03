@@ -1,6 +1,5 @@
 package gregtechfoodoption.recipe.chain;
 
-import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
@@ -42,9 +41,10 @@ public class CapletChain {
 
         // Paracetamol
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(500)
-                .fluidInputs(NitricAcid.getFluid(1000))
+                .fluidInputs(NitrationMixture.getFluid(2000))
                 .fluidInputs(Phenol.getFluid(5000))
                 .fluidOutputs(Nitrophenols.getFluid(6000))
+                .fluidOutputs(DilutedSulfuricAcid.getFluid(1000))
                 .buildAndRegister();
         DISTILLATION_RECIPES.recipeBuilder().EUt(480).duration(10)
                 .fluidInputs(Nitrophenols.getFluid(100))
@@ -53,8 +53,9 @@ public class CapletChain {
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(80)
                 .inputs(IVNitrophenol.getItemStack(10))
-                .input(OrePrefix.springSmall, Materials.Iron)
-                .fluidInputs(HydrochloricAcid.getFluid(1000))
+                .fluidInputs(Hydrogen.getFluid(6000))
+                .notConsumable(dust, Nickel)
+                .fluidOutputs(Water.getFluid(2000))
                 .outputs(Aminophenol.getItemStack(9))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(500)
@@ -143,17 +144,17 @@ public class CapletChain {
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .fluidInputs(MethylFormate.getFluid(1000))
                 .fluidInputs(Methylamine.getFluid(1000))
-                .fluidOutputs(NMethylformamide.getFluid(1000))
+                .fluidOutputs(Methylformamide.getFluid(1000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(Phenylacetone.getItemStack(20))
-                .fluidInputs(NMethylformamide.getFluid(2000))
-                .outputs(NFormylImpostramine.getItemStack(28))
+                .fluidInputs(Methylformamide.getFluid(2000))
+                .outputs(FormylImpostramine.getItemStack(28))
                 .fluidOutputs(Methylamine.getFluid(1000))
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
-                .inputs(NFormylImpostramine.getItemStack())
+                .inputs(FormylImpostramine.getItemStack())
                 .fluidInputs(Water.getFluid(1000))
                 .fluidInputs(HydrochloricAcid.getFluid(1000))
                 .outputs(ImpostramineHydrochloride.getItemStack(2))
