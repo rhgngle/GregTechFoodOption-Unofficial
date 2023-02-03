@@ -154,7 +154,7 @@ public class CapletChain {
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
-                .inputs(FormylImpostramine.getItemStack())
+                .inputs(FormylImpostramine.getItemStack(28))
                 .fluidInputs(Water.getFluid(1000))
                 .fluidInputs(HydrochloricAcid.getFluid(1000))
                 .outputs(ImpostramineHydrochloride.getItemStack(2))

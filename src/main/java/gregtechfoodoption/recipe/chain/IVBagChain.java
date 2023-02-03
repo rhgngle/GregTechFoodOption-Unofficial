@@ -36,6 +36,18 @@ public class IVBagChain {
                 .outputs(Hydroxyphenylethylpiperidine.getItemStack(34))
                 .fluidOutputs(Dimethylsilane.getFluid(1000))
                 .buildAndRegister();
+        ELECTROLYZER_RECIPES.recipeBuilder().EUt(30).duration(200)
+                .fluidInputs(Dimethylsilane.getFluid(1000))
+                .output(dust, Silicon)
+                .output(dust, Carbon, 2)
+                .fluidOutputs(Hydrogen.getFluid(8000))
+                .buildAndRegister();
+        CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .fluidInputs(Methanol.getFluid(2000))
+                .fluidInputs(HydrogenSulfide.getFluid(1000))
+                .fluidOutputs(DimethylSulfide.getFluid(1000))
+                .fluidOutputs(Water.getFluid(2000))
+                .buildAndRegister();
         LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(Hydroxyphenylethylpiperidine.getItemStack(34))
                 .fluidInputs(OxalylChloride.getFluid(1000))
@@ -298,12 +310,18 @@ public class IVBagChain {
                 .outputs(ZincSulfate.getItemStack(6))
                 .fluidOutputs(HydrogenCyanide.getFluid(1000))
                 .buildAndRegister();
+        ELECTROLYZER_RECIPES.recipeBuilder().EUt(30).duration(60)
+                .inputs(ZincSulfate.getItemStack(6))
+                .output(dust, Zinc)
+                .output(dust, Sulfur)
+                .fluidOutputs(Oxygen.getFluid(4000))
+                .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(Cobalamin.getItemStack(16))
                 .fluidInputs(Oxygen.getFluid(1000))
                 .outputs(Hydroxycobalamin.getItemStack(2))
                 .buildAndRegister();
-        ASSEMBLER_RECIPES.recipeBuilder().EUt(480).duration(400)
+        CANNER_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(Hydroxycobalamin.getItemStack(1))
                 .inputs(IV_BAG.getStackForm(1))
                 .fluidInputs(DistilledWater.getFluid(250))
