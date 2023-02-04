@@ -360,10 +360,10 @@ public class GTFOMaterialHandler {
     public static final Material GelatinSolution = fluidBuilder(25001, "gelatin_solution").fluidTemp(343)
             .color(0xD3D3D3)
             .build();
-    public static final Material GelatinSolutionNoBubbles = fluidBuilder(25002, "gelatin_solution_no_bubbles").fluidTemp(343)
+    public static final Material GelatinSolutionNoBubbles = fluidBuilder(24002, "gelatin_solution_no_bubbles").fluidTemp(343)
             .color(0xD3D3D3)
             .build();
-    public static final Material SodiumHypochlorite = fluidBuilder(25003, "sodium_hypochlorite").fluidTemp(343)
+    public static final Material SodiumHypochlorite = fluidBuilder(24003, "sodium_hypochlorite").fluidTemp(343)
             .color(0xFFFFFF)
             .build()
             .setFormula("NaClO", true);
@@ -559,8 +559,8 @@ public class GTFOMaterialHandler {
     public static final GTFOOredictItem.OreDictValueItem CHOCOLATE_LIQUOR_DUTCHED_PRESSED = SHAPED_ITEM.addOreDictItem(1051, "chocolate_liquor_dutched_pressed", 0xab7550, GTFOValues.Organic, OrePrefix.crushed);
 
     //cursed edition
-    public static final GTFOProxyItem SodiumCyanide = new GTFOProxyItem(() -> SHAPED_ITEM.addOreDictItem(3000, "sodium_cyanide", averageRGB(1, Sodium.getMaterialRGB(), Carbon.getMaterialRGB(), Nitrogen.getMaterialRGB()), MaterialIconSet.SAND, dust, "NaCN"), 3000, "sodium_cyanide", () -> OreDictUnifier.get(dust, GregTechAPI.MaterialRegistry.get("sodium_cyanide")));
-    public static final GTFOProxyItem SodiumCyanideSmall = new GTFOProxyItem(() -> SHAPED_ITEM.addOreDictItem(3001, "sodium_cyanide", averageRGB(1, Sodium.getMaterialRGB(), Carbon.getMaterialRGB(), Nitrogen.getMaterialRGB()), MaterialIconSet.SAND, dustSmall, "NaCN"), 3001, "sodium_cyanide_small", () -> OreDictUnifier.get(dustSmall, GregTechAPI.MaterialRegistry.get("sodium_cyanide")));
+    public static final MetaOreDictItem.OreDictValueItem SodiumCyanide = SHAPED_ITEM.addOreDictItem(3000, "sodium_cyanide", 0x688199, MaterialIconSet.SHINY, dust, "NaCN");
+    public static final MetaOreDictItem.OreDictValueItem SodiumCyanideSmall = SHAPED_ITEM.addOreDictItem(3001, "sodium_cyanide", 0x688199, MaterialIconSet.SHINY, dustSmall, "NaCN");
     public static final MetaOreDictItem.OreDictValueItem Paracetamol = SHAPED_ITEM.addOreDictItem(3002, "paracetamol", 0xFFFFFF, MaterialIconSet.SAND, dust, "C8H9NO2");
     public static final MetaOreDictItem.OreDictValueItem ParacetamolSmall = SHAPED_ITEM.addOreDictItem(3003, "paracetamol", 0xFFFFFF, MaterialIconSet.SAND, dustSmall, "C8H9NO2");
     public static final MetaOreDictItem.OreDictValueItem Aminophenol = SHAPED_ITEM.addOreDictItem(3004, "aminophenol", 0xFFFFFF, MaterialIconSet.SHINY, dust, "C6H7NO");
@@ -579,7 +579,7 @@ public class GTFOMaterialHandler {
     public static final MetaOreDictItem.OreDictValueItem Greganyl = SHAPED_ITEM.addOreDictItem(3017, "greganyl", 0xB50DEB, MaterialIconSet.SHINY, dust, "C22H28N2O");
     public static final MetaOreDictItem.OreDictValueItem Glucose = SHAPED_ITEM.addOreDictItem(3018, "glucose", 0xFFFFE0, MaterialIconSet.ROUGH, dust, "C6H12O6");
     public static final MetaOreDictItem.OreDictValueItem Fructose = SHAPED_ITEM.addOreDictItem(3019, "fructose", 0x90EE90, MaterialIconSet.ROUGH, dust, "C6H12O6");
-    public static final MetaOreDictItem.OreDictValueItem PhosphorousPentachloride = SHAPED_ITEM.addOreDictItem(3020, "phosphorous_pentachloride", 0x093457, MaterialIconSet.ROUGH, dust, "PCl5");
+    public static final MetaOreDictItem.OreDictValueItem PhosphorusPentachloride = SHAPED_ITEM.addOreDictItem(3020, "phosphorus_pentachloride", 0x093457, MaterialIconSet.ROUGH, dust, "PCl5");
     public static final MetaOreDictItem.OreDictValueItem CobalaminMixture = SHAPED_ITEM.addOreDictItem(3021, "cobalamin_mixture", 0x6c404e, MaterialIconSet.SAND, dust);
     public static final MetaOreDictItem.OreDictValueItem SodiumNitrite = SHAPED_ITEM.addOreDictItem(3022, "sodium_nitrite", 0x878a68, MaterialIconSet.SAND, dust, "NaNO2");
     public static final MetaOreDictItem.OreDictValueItem Cyanocobalamin = SHAPED_ITEM.addOreDictItem(3023, "cyanocobalamin", 0x64ff61, MaterialIconSet.SAND, dust, "C63H88CoN14O14P");

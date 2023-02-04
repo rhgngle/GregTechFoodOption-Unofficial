@@ -1,7 +1,6 @@
 package gregtechfoodoption.recipe.chain;
 
 import gregtech.api.metatileentity.multiblock.CleanroomType;
-import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -143,7 +142,7 @@ public class IVBagChain {
                 .buildAndRegister();
         LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(OxalicAcid.getItemStack(8))
-                .inputs(PhosphorousPentachloride.getItemStack(7))
+                .inputs(PhosphorusPentachloride.getItemStack(7))
                 .fluidOutputs(OxalylChloride.getFluid(1000))
                 .fluidOutputs(PhosphorylChloride.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
@@ -151,7 +150,7 @@ public class IVBagChain {
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .input(dust, Phosphorus, 2)
                 .fluidInputs(Chlorine.getFluid(5000))
-                .outputs(PhosphorousPentachloride.getItemStack(7))
+                .outputs(PhosphorusPentachloride.getItemStack(7))
                 .buildAndRegister();
 
         //Hydroxycobalamin
@@ -297,7 +296,7 @@ public class IVBagChain {
                 .buildAndRegister();
         LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(CobalaminMixture.getItemStack(16))
-                .inputs(SodiumCyanide.get(3))
+                .inputs(SodiumCyanide.getItemStack(3))
                 .fluidInputs(DistilledWater.getFluid(100))
                 .notConsumable(SodiumNitrite.getItemStack(1))
                 .outputs(Cyanocobalamin.getItemStack(16))
