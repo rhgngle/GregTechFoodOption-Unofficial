@@ -1,7 +1,6 @@
 package gregtechfoodoption.recipe.chain;
 
 import gregtech.api.metatileentity.multiblock.CleanroomType;
-import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -35,6 +34,18 @@ public class IVBagChain {
                 .fluidInputs(Formaldehyde.getFluid(1000))
                 .outputs(Hydroxyphenylethylpiperidine.getItemStack(34))
                 .fluidOutputs(Dimethylsilane.getFluid(1000))
+                .buildAndRegister();
+        ELECTROLYZER_RECIPES.recipeBuilder().EUt(30).duration(200)
+                .fluidInputs(Dimethylsilane.getFluid(1000))
+                .output(dust, Silicon)
+                .output(dust, Carbon, 2)
+                .fluidOutputs(Hydrogen.getFluid(8000))
+                .buildAndRegister();
+        CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
+                .fluidInputs(Methanol.getFluid(2000))
+                .fluidInputs(HydrogenSulfide.getFluid(1000))
+                .fluidOutputs(DimethylSulfide.getFluid(1000))
+                .fluidOutputs(Water.getFluid(2000))
                 .buildAndRegister();
         LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(Hydroxyphenylethylpiperidine.getItemStack(34))
@@ -131,7 +142,7 @@ public class IVBagChain {
                 .buildAndRegister();
         LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(OxalicAcid.getItemStack(8))
-                .inputs(PhosphorousPentachloride.getItemStack(7))
+                .inputs(PhosphorusPentachloride.getItemStack(7))
                 .fluidOutputs(OxalylChloride.getFluid(1000))
                 .fluidOutputs(PhosphorylChloride.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
@@ -139,7 +150,7 @@ public class IVBagChain {
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .input(dust, Phosphorus, 2)
                 .fluidInputs(Chlorine.getFluid(5000))
-                .outputs(PhosphorousPentachloride.getItemStack(7))
+                .outputs(PhosphorusPentachloride.getItemStack(7))
                 .buildAndRegister();
 
         //Hydroxycobalamin
@@ -285,7 +296,7 @@ public class IVBagChain {
                 .buildAndRegister();
         LARGE_CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(CobalaminMixture.getItemStack(16))
-                .inputs(SodiumCyanide.get(3))
+                .inputs(SodiumCyanide.getItemStack(3))
                 .fluidInputs(DistilledWater.getFluid(100))
                 .notConsumable(SodiumNitrite.getItemStack(1))
                 .outputs(Cyanocobalamin.getItemStack(16))
@@ -298,12 +309,18 @@ public class IVBagChain {
                 .outputs(ZincSulfate.getItemStack(6))
                 .fluidOutputs(HydrogenCyanide.getFluid(1000))
                 .buildAndRegister();
+        ELECTROLYZER_RECIPES.recipeBuilder().EUt(30).duration(60)
+                .inputs(ZincSulfate.getItemStack(6))
+                .output(dust, Zinc)
+                .output(dust, Sulfur)
+                .fluidOutputs(Oxygen.getFluid(4000))
+                .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(Cobalamin.getItemStack(16))
                 .fluidInputs(Oxygen.getFluid(1000))
                 .outputs(Hydroxycobalamin.getItemStack(2))
                 .buildAndRegister();
-        ASSEMBLER_RECIPES.recipeBuilder().EUt(480).duration(400)
+        CANNER_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(Hydroxycobalamin.getItemStack(1))
                 .inputs(IV_BAG.getStackForm(1))
                 .fluidInputs(DistilledWater.getFluid(250))

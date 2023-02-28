@@ -344,8 +344,7 @@ public class GTFOMaterialHandler {
             .color(0x4c911d)
             .components(Carbon, 6, Hydrogen, 7, Nitrogen, 2)
             .flags(DISABLE_DECOMPOSITION)
-            .build()
-            .setFormula("C6H5NH2");
+            .build();
     public static final Material Coffee = fluidBuilder(21990, "coffee")
             .color(0x36312e)
             .build();
@@ -356,82 +355,106 @@ public class GTFOMaterialHandler {
     // cursed edition
     public static final Material HeatedWater = fluidBuilder(25000, "heated_water").fluidTemp(343)
             .color(0x024B86)
-            .build();
+            .build()
+            .setFormula("H2O", true);
     public static final Material GelatinSolution = fluidBuilder(25001, "gelatin_solution").fluidTemp(343)
             .color(0xD3D3D3)
             .build();
-    public static final Material GelatinSolutionNoBubbles = fluidBuilder(25002, "gelatin_solution_no_bubbles").fluidTemp(343)
+    public static final Material GelatinSolutionNoBubbles = fluidBuilder(24002, "gelatin_solution_no_bubbles").fluidTemp(343)
             .color(0xD3D3D3)
             .build();
-    public static final Material SodiumHypochlorite = fluidBuilder(25003, "sodium_hypochlorite").fluidTemp(343)
+    public static final Material SodiumHypochlorite = fluidBuilder(24003, "sodium_hypochlorite").fluidTemp(343)
             .color(0xFFFFFF)
-            .build();
+            .build()
+            .setFormula("NaClO", true);
     public static final Material AceticAnhydride = fluidBuilder(25004, "acetic_anhydride").fluidTemp(343)
             .color(0xFFFFFF)
-            .build();
+            .build()
+            .setFormula("C4H6O3", true);
     public static final Material Nitrophenols = fluidBuilder(25005, "nitrophenols").fluidTemp(343)
             .color(0xFFFFFF)
-            .build();
+            .build()
+            .setFormula("C6H5NO2", true);
     public static final Material BenzylChloride = fluidBuilder(25006, "benzyl_chloride").fluidTemp(343)
             .color(0xD84954)
-            .build();
+            .build()
+            .setFormula("C7H7Cl", true);
     public static final Material BenzylCyanide = fluidBuilder(25007, "benzyl_cyanide").fluidTemp(343)
             .color(0x765984)
-            .build();
+            .build()
+            .setFormula("C8H7N", true);
     public static final Material MethylFormate = fluidBuilder(25008, "methyl_formate").fluidTemp(343)
             .color(0x435698)
-            .build();
+            .build()
+            .setFormula("C2H4O2", true);
     public static final Material Methylamine = fluidBuilder(25009, "methylamine").fluidTemp(343)
             .color(0x546128)
-            .build();
+            .build()
+            .setFormula("CH5N", true);
     public static final Material Methylformamide = fluidBuilder(25010, "methylformamide").fluidTemp(343)
             .color(0x748525)
-            .build();
+            .build()
+            .setFormula("C2H5NO", true);
     public static final Material FormicAcid = fluidBuilder(25011, "formic_acid").fluidTemp(343)
             .color(0x676525)
-            .build();
+            .build()
+            .setFormula("CH2O2", true);
     public static final Material Phenylethylamine = fluidBuilder(25012, "phenylethylamine").fluidTemp(343)
             .color(0x71FA0E)
-            .build();
+            .build()
+            .setFormula("C8H11N", true);
     public static final Material Chlorotrimethylsilane = fluidBuilder(25013, "chlorotrimethylsilane").fluidTemp(343)
             .color(0xE738FF)
-            .build();
+            .build()
+            .setFormula("C3H9SiCl", true);
     public static final Material Allyltrimethylsilane = fluidBuilder(25014, "allyltrimethylsilane").fluidTemp(343)
             .color(0xDDAA68)
-            .build();
+            .build()
+            .setFormula("C6H14Si", true);
     public static final Material Formaldehyde = fluidBuilder(25015, "formaldehyde").fluidTemp(343)
             .color(0x18773D)
-            .build();
+            .build()
+            .setFormula("CH2O", true);
     public static final Material Dimethylsilane = fluidBuilder(25016, "dimethylsilane").fluidTemp(343)
             .color(0x13EF5B)
-            .build();
+            .build()
+            .setFormula("C2H8Si", true);
     public static final Material OxalylChloride = fluidBuilder(25017, "oxalyl_chloride").fluidTemp(343)
             .color(0x4BEA00)
-            .build();
+            .build()
+            .setFormula("C2O2Cl2", true);
     public static final Material DimethylSulfoxide = fluidBuilder(25018, "dimethyl_sulfoxide").fluidTemp(343)
             .color(0x676525)
-            .build();
+            .build()
+            .setFormula("C2H6OS", true);
     public static final Material DimethylSulfide = fluidBuilder(25020, "dimethyl_sulfide").fluidTemp(343)
             .color(0xFB01AB)
-            .build();
+            .build()
+            .setFormula("C2H6S", true);
     public static final Material PropionicAcid = fluidBuilder(25021, "propionic_acid").fluidTemp(343)
             .color(0xED49EA)
-            .build();
+            .build()
+            .setFormula("C3H6O2", true);
     public static final Material PropionicAnhydride = fluidBuilder(25022, "propionic_anhydride").fluidTemp(343)
             .color(0xC8F8A7)
-            .build();
+            .build()
+            .setFormula("C6H10O3", true);
     public static final Material GreganylCitrateSolution = fluidBuilder(25023, "greganyl_citrate_solution").fluidTemp(343)
             .color(0xB50DEB)
-            .build();
+            .build()
+            .setFormula("(H2O)(C28H36N2O8)", true);
     public static final Material Dimethylformamide = fluidBuilder(25024, "dimethylformamide").fluidTemp(343)
             .color(0x42BDFF)
-            .build();
+            .build()
+            .setFormula("C3H7NO", true);
     public static final Material PhosphorylChloride = fluidBuilder(25028, "phosphoryl_chloride").fluidTemp(343)
             .color(0x7CA6CD)
-            .build();
+            .build()
+            .setFormula("POCl3", true);
     public static final Material SodiumNitrateSolution = fluidBuilder(25030, "sodium_nitrate_solution").fluidTemp(343)
             .color(0x09ed05)
-            .build();
+            .build()
+            .setFormula("(H2O)(NaNO3)", true);
     public static final Material RawCobalaminSelectiveGrowthMedium = fluidBuilder(25032, "raw_cobalamin_selective_growth_medium").fluidTemp(343)
             .color(0x5b9216)
             .build();
@@ -536,49 +559,49 @@ public class GTFOMaterialHandler {
     public static final GTFOOredictItem.OreDictValueItem CHOCOLATE_LIQUOR_DUTCHED_PRESSED = SHAPED_ITEM.addOreDictItem(1051, "chocolate_liquor_dutched_pressed", 0xab7550, GTFOValues.Organic, OrePrefix.crushed);
 
     //cursed edition
-    public static final GTFOProxyItem SodiumCyanide = new GTFOProxyItem(() -> SHAPED_ITEM.addOreDictItem(3000, "sodium_cyanide", averageRGB(1, Sodium.getMaterialRGB(), Carbon.getMaterialRGB(), Nitrogen.getMaterialRGB()), MaterialIconSet.SAND, dust, "NaCN"), 3000, "sodium_cyanide", () -> OreDictUnifier.get(dust, GregTechAPI.MaterialRegistry.get("sodium_cyanide")));
-    public static final GTFOProxyItem SodiumCyanideSmall = new GTFOProxyItem(() -> SHAPED_ITEM.addOreDictItem(3001, "sodium_cyanide", averageRGB(1, Sodium.getMaterialRGB(), Carbon.getMaterialRGB(), Nitrogen.getMaterialRGB()), MaterialIconSet.SAND, dustSmall, "NaCN"), 3001, "sodium_cyanide_small", () -> OreDictUnifier.get(dustSmall, GregTechAPI.MaterialRegistry.get("sodium_cyanide")));
+    public static final MetaOreDictItem.OreDictValueItem SodiumCyanide = SHAPED_ITEM.addOreDictItem(3000, "sodium_cyanide", 0x688199, MaterialIconSet.SHINY, dust, "NaCN");
+    public static final MetaOreDictItem.OreDictValueItem SodiumCyanideSmall = SHAPED_ITEM.addOreDictItem(3001, "sodium_cyanide", 0x688199, MaterialIconSet.SHINY, dustSmall, "NaCN");
     public static final MetaOreDictItem.OreDictValueItem Paracetamol = SHAPED_ITEM.addOreDictItem(3002, "paracetamol", 0xFFFFFF, MaterialIconSet.SAND, dust, "C8H9NO2");
     public static final MetaOreDictItem.OreDictValueItem ParacetamolSmall = SHAPED_ITEM.addOreDictItem(3003, "paracetamol", 0xFFFFFF, MaterialIconSet.SAND, dustSmall, "C8H9NO2");
-    public static final MetaOreDictItem.OreDictValueItem Aminophenol = SHAPED_ITEM.addOreDictItem(3004, "aminophenol", 0xFFFFFF, MaterialIconSet.SHINY, dust);
-    public static final MetaOreDictItem.OreDictValueItem IVNitrophenol = SHAPED_ITEM.addOreDictItem(3005, "ivnitrophenol", 0xFFFFE0, MaterialIconSet.SHINY, dust);
-    public static final MetaOreDictItem.OreDictValueItem IINitrophenol = SHAPED_ITEM.addOreDictItem(3006, "iinitrophenol", 0xFFFF00, MaterialIconSet.SHINY, dust);
-    public static final MetaOreDictItem.OreDictValueItem PhenylaceticAcid = SHAPED_ITEM.addOreDictItem(3007, "phenylacetic_acid", 0x645256, MaterialIconSet.SAND, dust);
-    public static final MetaOreDictItem.OreDictValueItem ThoriumDioxide = SHAPED_ITEM.addOreDictItem(3008, "thorium_dioxide", 0x417F87, MaterialIconSet.METALLIC, dust);
-    public static final MetaOreDictItem.OreDictValueItem Phenylacetone = SHAPED_ITEM.addOreDictItem(3009, "phenylacetone", 0xB5C79A, MaterialIconSet.SAND, dust);
-    public static final MetaOreDictItem.OreDictValueItem SodiumMethoxide = SHAPED_ITEM.addOreDictItem(3010, "sodium_methoxide", 0x448FCA, MaterialIconSet.SAND, dust);
-    public static final MetaOreDictItem.OreDictValueItem FormylImpostramine = SHAPED_ITEM.addOreDictItem(3011, "formyl_impostramine", 0x2E616A, MaterialIconSet.SAND, dust);
-    public static final MetaOreDictItem.OreDictValueItem ImpostramineHydrochloride = SHAPED_ITEM.addOreDictItem(3012, "impostramine_hydrochloride", 0x6BCBEB, MaterialIconSet.SHINY, dust);
-    public static final MetaOreDictItem.OreDictValueItem ImpostramineHydrochlorideSmall = SHAPED_ITEM.addOreDictItem(3013, "impostramine_hydrochloride", 0x6BCBEB, MaterialIconSet.SHINY, dustSmall);
-    public static final MetaOreDictItem.OreDictValueItem Hydroxyphenylethylpiperidine = SHAPED_ITEM.addOreDictItem(3014, "hydroxyphenylethylpiperidine", 0xD673F0, MaterialIconSet.SAND, dust);
-    public static final MetaOreDictItem.OreDictValueItem Phenylethylpiperidone = SHAPED_ITEM.addOreDictItem(3015, "phenylethylpiperidone", 0xA46B8C, MaterialIconSet.SAND, dust);
-    public static final MetaOreDictItem.OreDictValueItem Anilinophenylethylpiperidine = SHAPED_ITEM.addOreDictItem(3016, "anilinophenylethylpiperidine", 0xE8D6FC, MaterialIconSet.SAND, dust);
-    public static final MetaOreDictItem.OreDictValueItem Greganyl = SHAPED_ITEM.addOreDictItem(3017, "greganyl", 0xB50DEB, MaterialIconSet.SHINY, dust);
-    public static final MetaOreDictItem.OreDictValueItem Glucose = SHAPED_ITEM.addOreDictItem(3018, "glucose", 0xFFFFE0, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem Fructose = SHAPED_ITEM.addOreDictItem(3019, "fructose", 0x90EE90, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem PhosphorousPentachloride = SHAPED_ITEM.addOreDictItem(3020, "phosphorous_pentachloride", 0x093457, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem Aminophenol = SHAPED_ITEM.addOreDictItem(3004, "aminophenol", 0xFFFFFF, MaterialIconSet.SHINY, dust, "C6H7NO");
+    public static final MetaOreDictItem.OreDictValueItem IVNitrophenol = SHAPED_ITEM.addOreDictItem(3005, "ivnitrophenol", 0xFFFFE0, MaterialIconSet.SHINY, dust, "C6H5NO2");
+    public static final MetaOreDictItem.OreDictValueItem IINitrophenol = SHAPED_ITEM.addOreDictItem(3006, "iinitrophenol", 0xFFFF00, MaterialIconSet.SHINY, dust, "C6H5NO2");
+    public static final MetaOreDictItem.OreDictValueItem PhenylaceticAcid = SHAPED_ITEM.addOreDictItem(3007, "phenylacetic_acid", 0x645256, MaterialIconSet.SAND, dust, "C8H8O2");
+    public static final MetaOreDictItem.OreDictValueItem ThoriumDioxide = SHAPED_ITEM.addOreDictItem(3008, "thorium_dioxide", 0x417F87, MaterialIconSet.METALLIC, dust, "ThO2");
+    public static final MetaOreDictItem.OreDictValueItem Phenylacetone = SHAPED_ITEM.addOreDictItem(3009, "phenylacetone", 0xB5C79A, MaterialIconSet.SAND, dust, "C9H10O");
+    public static final MetaOreDictItem.OreDictValueItem SodiumMethoxide = SHAPED_ITEM.addOreDictItem(3010, "sodium_methoxide", 0x448FCA, MaterialIconSet.SAND, dust, "CH3ONa");
+    public static final MetaOreDictItem.OreDictValueItem FormylImpostramine = SHAPED_ITEM.addOreDictItem(3011, "formyl_impostramine", 0x2E616A, MaterialIconSet.SAND, dust, "C11H15NO");
+    public static final MetaOreDictItem.OreDictValueItem ImpostramineHydrochloride = SHAPED_ITEM.addOreDictItem(3012, "impostramine_hydrochloride", 0x6BCBEB, MaterialIconSet.SHINY, dust, "C10H16ClN");
+    public static final MetaOreDictItem.OreDictValueItem ImpostramineHydrochlorideSmall = SHAPED_ITEM.addOreDictItem(3013, "impostramine_hydrochloride", 0x6BCBEB, MaterialIconSet.SHINY, dustSmall, "C10H16ClN");
+    public static final MetaOreDictItem.OreDictValueItem Hydroxyphenylethylpiperidine = SHAPED_ITEM.addOreDictItem(3014, "hydroxyphenylethylpiperidine", 0xD673F0, MaterialIconSet.SAND, dust, "C13H19NO");
+    public static final MetaOreDictItem.OreDictValueItem Phenylethylpiperidone = SHAPED_ITEM.addOreDictItem(3015, "phenylethylpiperidone", 0xA46B8C, MaterialIconSet.SAND, dust, "C13H17NO");
+    public static final MetaOreDictItem.OreDictValueItem Anilinophenylethylpiperidine = SHAPED_ITEM.addOreDictItem(3016, "anilinophenylethylpiperidine", 0xE8D6FC, MaterialIconSet.SAND, dust, "C19H24N2");
+    public static final MetaOreDictItem.OreDictValueItem Greganyl = SHAPED_ITEM.addOreDictItem(3017, "greganyl", 0xB50DEB, MaterialIconSet.SHINY, dust, "C22H28N2O");
+    public static final MetaOreDictItem.OreDictValueItem Glucose = SHAPED_ITEM.addOreDictItem(3018, "glucose", 0xFFFFE0, MaterialIconSet.ROUGH, dust, "C6H12O6");
+    public static final MetaOreDictItem.OreDictValueItem Fructose = SHAPED_ITEM.addOreDictItem(3019, "fructose", 0x90EE90, MaterialIconSet.ROUGH, dust, "C6H12O6");
+    public static final MetaOreDictItem.OreDictValueItem PhosphorusPentachloride = SHAPED_ITEM.addOreDictItem(3020, "phosphorus_pentachloride", 0x093457, MaterialIconSet.ROUGH, dust, "PCl5");
     public static final MetaOreDictItem.OreDictValueItem CobalaminMixture = SHAPED_ITEM.addOreDictItem(3021, "cobalamin_mixture", 0x6c404e, MaterialIconSet.SAND, dust);
-    public static final MetaOreDictItem.OreDictValueItem SodiumNitrite = SHAPED_ITEM.addOreDictItem(3022, "sodium_nitrite", 0x878a68, MaterialIconSet.SAND, dust);
-    public static final MetaOreDictItem.OreDictValueItem Cyanocobalamin = SHAPED_ITEM.addOreDictItem(3023, "cyanocobalamin", 0x64ff61, MaterialIconSet.SAND, dust);
-    public static final MetaOreDictItem.OreDictValueItem Cobalamin = SHAPED_ITEM.addOreDictItem(3024, "cobalamin", 0x9c5276, MaterialIconSet.SAND, dust);
-    public static final MetaOreDictItem.OreDictValueItem ZincSulfate = SHAPED_ITEM.addOreDictItem(3025, "zinc_sulfate", 0x9b37d7, MaterialIconSet.SAND, dust);
-    public static final MetaOreDictItem.OreDictValueItem Hydroxycobalamin = SHAPED_ITEM.addOreDictItem(3026, "hydroxycobalamin", 0x2f0909, MaterialIconSet.SHINY, dust);
-    public static final MetaOreDictItem.OreDictValueItem SodiumNitrate = SHAPED_ITEM.addOreDictItem(3027, "sodium_nitrate", 0xff3db2, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem LevulinicAcid = SHAPED_ITEM.addOreDictItem(3030, "levulinic_acid", 0x9db5d6, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem MethylLevulinate = SHAPED_ITEM.addOreDictItem(3031, "methyl_levulinate", 0xb96dec, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem CupricChloride = SHAPED_ITEM.addOreDictItem(3032, "cupric_chloride", 0x0b924a, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem MethylChlorolevulinate = SHAPED_ITEM.addOreDictItem(3033, "methyl_chlorolevulinate", 0x7250b7, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem PhthalicAnhydride = SHAPED_ITEM.addOreDictItem(3034, "phthalic_anhydride", 0x507ef7, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem Phthalimide = SHAPED_ITEM.addOreDictItem(3035, "phthalimide", 0xad1f89, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem PotassiumPhthalimide = SHAPED_ITEM.addOreDictItem(3036, "potassium_phthalimide", 0x699a63, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem AminolevulinicAcid = SHAPED_ITEM.addOreDictItem(3037, "aminolevulinic_acid", 0xcd4c6a, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem Dinitrodimethylbenzene = SHAPED_ITEM.addOreDictItem(3038, "dinitrodimethylbenzene", 0x4115f2, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem Dimethylphenylenediamine = SHAPED_ITEM.addOreDictItem(3039, "dimethylphenylenediamine", 0x75ca5b, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem Dimethylbenzimidazole = SHAPED_ITEM.addOreDictItem(3040, "dimethylbenzimidazole", 0x7c58c2, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem BacillusMegabacterium = SHAPED_ITEM.addOreDictItem(3041, "bacillus_megabacterium", 0xce1b94, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem CobaltChloride = SHAPED_ITEM.addOreDictItem(3042, "cobalt_chloride", 0x97cc78, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem SodiumFormate = SHAPED_ITEM.addOreDictItem(3043, "sodium_formate", 0xffaaa, MaterialIconSet.ROUGH, dust);
-    public static final MetaOreDictItem.OreDictValueItem OxalicAcid = SHAPED_ITEM.addOreDictItem(3044, "oxalic_acid", 0x4aaae2, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem SodiumNitrite = SHAPED_ITEM.addOreDictItem(3022, "sodium_nitrite", 0x878a68, MaterialIconSet.SAND, dust, "NaNO2");
+    public static final MetaOreDictItem.OreDictValueItem Cyanocobalamin = SHAPED_ITEM.addOreDictItem(3023, "cyanocobalamin", 0x64ff61, MaterialIconSet.SAND, dust, "C63H88CoN14O14P");
+    public static final MetaOreDictItem.OreDictValueItem Cobalamin = SHAPED_ITEM.addOreDictItem(3024, "cobalamin", 0x9c5276, MaterialIconSet.SAND, dust, "C62H89CoN13O14P");
+    public static final MetaOreDictItem.OreDictValueItem ZincSulfate = SHAPED_ITEM.addOreDictItem(3025, "zinc_sulfate", 0x9b37d7, MaterialIconSet.SAND, dust, "ZnSO4");
+    public static final MetaOreDictItem.OreDictValueItem Hydroxycobalamin = SHAPED_ITEM.addOreDictItem(3026, "hydroxycobalamin", 0x2f0909, MaterialIconSet.SHINY, dust, "C62H89CoN13O15P");
+    public static final MetaOreDictItem.OreDictValueItem SodiumNitrate = SHAPED_ITEM.addOreDictItem(3027, "sodium_nitrate", 0xff3db2, MaterialIconSet.ROUGH, dust, "NaNO3");
+    public static final MetaOreDictItem.OreDictValueItem LevulinicAcid = SHAPED_ITEM.addOreDictItem(3028, "levulinic_acid", 0x9db5d6, MaterialIconSet.ROUGH, dust, "C5H8O3");
+    public static final MetaOreDictItem.OreDictValueItem MethylLevulinate = SHAPED_ITEM.addOreDictItem(3029, "methyl_levulinate", 0xb96dec, MaterialIconSet.ROUGH, dust, "C6H10O3");
+    public static final MetaOreDictItem.OreDictValueItem CupricChloride = SHAPED_ITEM.addOreDictItem(3030, "cupric_chloride", 0x0b924a, MaterialIconSet.ROUGH, dust, "CuCl2");
+    public static final MetaOreDictItem.OreDictValueItem MethylChlorolevulinate = SHAPED_ITEM.addOreDictItem(3031, "methyl_chlorolevulinate", 0x7250b7, MaterialIconSet.ROUGH, dust, "C6H9ClO3");
+    public static final MetaOreDictItem.OreDictValueItem PhthalicAnhydride = SHAPED_ITEM.addOreDictItem(3032, "phthalic_anhydride", 0x507ef7, MaterialIconSet.ROUGH, dust, "C6H4O3");
+    public static final MetaOreDictItem.OreDictValueItem Phthalimide = SHAPED_ITEM.addOreDictItem(3033, "phthalimide", 0xad1f89, MaterialIconSet.ROUGH, dust, "C6H5NO2");
+    public static final MetaOreDictItem.OreDictValueItem PotassiumPhthalimide = SHAPED_ITEM.addOreDictItem(3034, "potassium_phthalimide", 0x699a63, MaterialIconSet.ROUGH, dust, "C6H4KNO2");
+    public static final MetaOreDictItem.OreDictValueItem AminolevulinicAcid = SHAPED_ITEM.addOreDictItem(3035, "aminolevulinic_acid", 0xcd4c6a, MaterialIconSet.ROUGH, dust, "C5H9NO3");
+    public static final MetaOreDictItem.OreDictValueItem Dinitrodimethylbenzene = SHAPED_ITEM.addOreDictItem(3036, "dinitrodimethylbenzene", 0x4115f2, MaterialIconSet.ROUGH, dust, "C8H8N2O4");
+    public static final MetaOreDictItem.OreDictValueItem Dimethylphenylenediamine = SHAPED_ITEM.addOreDictItem(3037, "dimethylphenylenediamine", 0x75ca5b, MaterialIconSet.ROUGH, dust, "C8H12N2");
+    public static final MetaOreDictItem.OreDictValueItem Dimethylbenzimidazole = SHAPED_ITEM.addOreDictItem(3038, "dimethylbenzimidazole", 0x7c58c2, MaterialIconSet.ROUGH, dust, "C9H10N2");
+    public static final MetaOreDictItem.OreDictValueItem BacillusMegabacterium = SHAPED_ITEM.addOreDictItem(3039, "bacillus_megabacterium", 0xce1b94, MaterialIconSet.ROUGH, dust);
+    public static final MetaOreDictItem.OreDictValueItem CobaltChloride = SHAPED_ITEM.addOreDictItem(3040, "cobalt_chloride", 0x97cc78, MaterialIconSet.ROUGH, dust, "CoCl2");
+    public static final MetaOreDictItem.OreDictValueItem SodiumFormate = SHAPED_ITEM.addOreDictItem(3041, "sodium_formate", 0xffaaa, MaterialIconSet.ROUGH, dust, "CHO2Na");
+    public static final MetaOreDictItem.OreDictValueItem OxalicAcid = SHAPED_ITEM.addOreDictItem(3042, "oxalic_acid", 0x4aaae2, MaterialIconSet.ROUGH, dust, "C2H2O4");
 
     public static void onMaterialsInit() {
         Materials.Iron.addFlags(GENERATE_FRAME);

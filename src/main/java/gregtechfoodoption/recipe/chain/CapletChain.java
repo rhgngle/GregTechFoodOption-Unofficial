@@ -19,14 +19,14 @@ public class CapletChain {
         // Cyanide
         FORMING_PRESS_RECIPES.recipeBuilder().EUt(120).duration(100)
                 .inputs(CAPLET_BODY.getStackForm(1))
-                .inputs(SodiumCyanideSmall.get(1))
+                .inputs(SodiumCyanideSmall.getItemStack())
                 .inputs(CAPLET_CAP.getStackForm(1))
                 .outputs(CYANIDE_CAPLET.getStackForm(1))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, SodiumHydroxide, 3)
                 .fluidInputs(HydrogenCyanide.getFluid(1000))
-                .outputs(SodiumCyanide.get(3))
+                .outputs(SodiumCyanide.getItemStack(3))
                 .fluidOutputs(Water.getFluid(1000))
                 .duration(120).EUt(VA[LV]).buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder()
@@ -37,7 +37,7 @@ public class CapletChain {
                 .fluidOutputs(HydrogenCyanide.getFluid(1000))
                 .fluidOutputs(Water.getFluid(3000))
                 .duration(120).EUt(VA[MV]).buildAndRegister();
-        ModHandler.addShapelessRecipe("sodium_cyanide_small", SodiumCyanideSmall.get(4), SodiumCyanide.get());
+        ModHandler.addShapelessRecipe("sodium_cyanide_small", SodiumCyanideSmall.getItemStack(4), SodiumCyanide.getItemStack());
 
         // Paracetamol
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(500)
@@ -96,7 +96,7 @@ public class CapletChain {
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
-                .inputs(SodiumCyanide.get(3))
+                .inputs(SodiumCyanide.getItemStack(3))
                 .fluidInputs(BenzylChloride.getFluid(1000))
                 .output(dust, Salt, 2)
                 .fluidOutputs(BenzylCyanide.getFluid(1000))
@@ -154,7 +154,7 @@ public class CapletChain {
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
-                .inputs(FormylImpostramine.getItemStack())
+                .inputs(FormylImpostramine.getItemStack(28))
                 .fluidInputs(Water.getFluid(1000))
                 .fluidInputs(HydrochloricAcid.getFluid(1000))
                 .outputs(ImpostramineHydrochloride.getItemStack(2))

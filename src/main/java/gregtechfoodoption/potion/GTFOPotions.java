@@ -27,6 +27,7 @@ public class GTFOPotions {
         //event.getRegistry().registerAll(WithdrawalPotion.instance);
         event.getRegistry().registerAll(StepAssistPotion.INSTANCE);
         event.getRegistry().registerAll(SnowGolemSpawnerPotion.INSTANCE);
-        event.getRegistry().registerAll(CyanidePoisoningPotion.INSTANCE);
+        //event.getRegistry().registerAll(CyanidePoisoningPotion.INSTANCE);
+
     }
 }
