@@ -16,7 +16,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Loader;
 
 
-import static gregtech.api.recipes.ModHandler.removeRecipeByOutput;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.Paper;
 import static gregtech.api.unification.material.Materials.Water;
@@ -26,7 +25,7 @@ import static gregtechfoodoption.item.GTFOMetaItem.*;
 public class CoffeeChain {
     public static void init() {
         if (GTFOConfig.gtfoaaConfig.disableCoffeeMaker)
-            removeRecipeByOutput(new ItemStack(InitBlocks.blockCoffeeMachine));
+            ModHandler.removeRecipeByOutput(new ItemStack(InitBlocks.blockCoffeeMachine));
 
         if (Loader.isModLoaded(GTFOValues.MODID_AA)) {
             JEIGTFOPlugin.itemStacksToHide.add(new ItemStack(InitItems.itemCoffee));
