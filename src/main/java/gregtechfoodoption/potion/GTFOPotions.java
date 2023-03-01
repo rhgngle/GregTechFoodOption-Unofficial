@@ -15,7 +15,7 @@ public class GTFOPotions {
         //new WithdrawalPotion();
         new StepAssistPotion();
         new SnowGolemSpawnerPotion();
-        //CyanidePoisoningPotion CYANIDEPOISONING = new CyanidePoisoningPotion();
+        CyanidePoisoningPotion CYANIDEPOISONING = new CyanidePoisoningPotion();
     }
 
 
