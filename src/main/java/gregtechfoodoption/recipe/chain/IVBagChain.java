@@ -203,11 +203,6 @@ public class IVBagChain {
                 .output(dust, Copper)
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
                 .buildAndRegister();
-        DISTILLATION_RECIPES.recipeBuilder().EUt(480).duration(50)
-                .fluidInputs(PhthalicAcid.getFluid(200))
-                .outputs(PhthalicAnhydride.getItemStack(3))
-                .fluidOutputs(Water.getFluid(200))
-                .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
                 .inputs(PhthalicAnhydride.getItemStack(15))
                 .fluidInputs(Ammonia.getFluid(1000))
@@ -226,7 +221,7 @@ public class IVBagChain {
                 .fluidInputs(Water.getFluid(3000))
                 .notConsumable(HydrochloricAcid.getFluid(10))
                 .outputs(AminolevulinicAcid.getItemStack(1))
-                .fluidOutputs(PhthalicAcid.getFluid(1000))
+                .output(dust, PhthalicAcid, 8)
                 .fluidOutputs(Methanol.getFluid(1000))
                 .buildAndRegister();
         CHEMICAL_RECIPES.recipeBuilder().EUt(480).duration(400)
